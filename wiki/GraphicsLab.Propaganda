@@ -1,0 +1,60 @@
+(:title Libre Graphics Propaganda:)
+(:#toc:)
+
+!Libre Graphics
+
+Attach:lg_flyer_de_01.png\\
+Attach:lg_flyer_de_02.png\\
+[[(Attach:)lg_flyer_de.pdf]]
+
+!Libre Graphics Meeting
+
+Attach:lgm_2010_flyer_01.svg
+Attach:lgm_2010_flyer_02.svg
+Attach:lgm_2010_flyer_03.svg
+
+!Screencasts
+
+!!Howto
+
+* do some intro / outro in 2d graphics / animation
+* [[http://recordmydesktop.sourceforge.net|record my desktop]]\\
+[@ recordmydesktop -y 20 --width=1000 --height=715 --no-sound --overwrite@]\\
+or http://code.google.com/p/skreener/ ?
+* [[http://code.google.com/p/key-mon/|Key Status Monitor (KSM)]]
+** install
+*** it's not in the debian archives
+*** download source
+*** install to @@/usr/local/key-mon@@ with @@sudo ./setup.py install --prefix=/usr/local/key-mon@@
+*** edit @@/usr/local/key-mon/bin/key-mon@@ to let it find the key-mon libraries in a non standard path:\\
+[@python -c 'import sys;
+sys.path.append("/usr/local/key-mon/lib/python2.5/site-packages/");
+import keymon.key_mon as km;km.Main()' $*@]\\
+(without breaking the line)
+*** on top of the already installed libraries i had to install:
+**** hal
+**** librsvg2-common
+** run it as @@sudo /usr/local/key-mon/bin/key-mon@@
+** or install it through "sudo dpkg -i keymon_1.6-1_all.deb" (the install from source did not work anymore if the files are at a non standard lcation)
+* [[http://www.home.unix-ag.org/simon/gromit/|gromit]] allows to draw on the "desktop":\\
+[@gromit --key F12@]\\
+then press F12 to switch between draw and "normal" mode.
+* subtitling
+** {-with @@aosd_cat@@ one can write on top of the desktop (not sure if this is really useful, though: it will be easyer to add the text in the post-production)-}
+** create a small python program which reads a "script" and output the next paragraph through dzen
+** with [[http://www.nongnu.org/xbindkeys/xbindkeys.html|xbindkeys]] you can configure hotkeys in your .xbindkeysrc file and have the system run the file of your choice upon pressing a hotkey
+** the best way is probably to modify key-mon to read a text and on key press show the next line in a borderless window
+
+more on this topic:
+* http://superuser.com/questions/116320/how-to-record-screencast-on-linux-with-mouse-clicks-and-key-hits-shown
+* http://www.gimpforum.de/showthread.php?p=112231&mode=linear&highlight=screencast#post112231
+* alternative [[http://www.gimpforum.de/attachment.php?attachmentid=1937&d=1253967137|icons]] for key-mon
+* find a way to highligt the cursor (a gray transparent layer on the whole screen with a full transparent circle around the cursor:\\
+Attach:screencast_mouse_highlight.png
+* give some clue on the content like [[http://vimcasts.org/episodes/modal-editing-undo-redo-and-repeat/|here]]
+* not longer than 5 minutes (with exception like david revoy for mypaint)
+!Notizen
+
+* %3cDaniel-S-P> für inkscape könntest du den Uwe fragen, der hat ein Inkscapebuch auf deutsch geschrieben
+* %3cProkoudine> write write tutorials for popular tutorial hosts.
+* screenshots fancier: http://code.google.com/p/screenie/

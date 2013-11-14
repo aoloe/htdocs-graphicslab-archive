@@ -1,0 +1,87 @@
+!Ideas
+
+!Status
+
+
+# there is no patch available
+# it has nothing to do with qt (just in case)
+# modifying scribus to be able to do work from the command line is a hard work
+# using the scribus existing code to convert a .sla into a pdf is a doable job
+# there are several people interested in it, some are ready to throw some money into it, some developpers time
+# there is no advance
+# i've promised to get in contact with the people i know are interested in it, but have not done it yet
+
+!Letting Scribus listen for commands in a Port
+
+Dave:\\
+"""\\
+I recently contacted user list about a feature for exporting to PDF from command line,and/or a Scribus server listening for commands in a port.\\
+As my project is in its initial phase, and seeking for financial funds, we are not able to fund any development yet.\\
+I have contacted Farid (the other firm) telling we should define clearly the focus\\
+"""
+
+Juraj:\\
+"""\\
+Back in year 2006 I implemmented batch mode for scribus. What I was able to do is:
+* load and save PDF options from scripter into/from xml file
+* export pdf from command line scribus --to-pdf exported.pdf --pdf-options options.xml document.sla
+* run python script scribus --script program.py [arg1 [arg2 ...]]
+"""
+
+!Steps
+
+* make .sla reading and PDF exporting two "indipendent" libraries
+* create a scribus CLI which opens a .sla and produces a PDF
+
+modifying the .sla is harder (and some editing is bound to the GUI): implement it step by step.
+
+resources:
+* http://code.google.com/p/sla2pdf/
+!People
+
+* The german one
+* Farid
+* Dave
+* Alexandre
+* Somebody from Italy?
+* Juraj Fedel
+* alfadir
+* uga
+
+!mails
+
+!!scribus-dev, 6.4.2010
+
+[@
+hi devs,
+
+quite often, we get requests from people wanting to get scribus to work from the command line.
+
+the answer is always: it's a hard thing to do, we keep an eye on it, but it's not doable, yet.
+
+
+personally, i'm wondering if it would be possible to start a project implementing two aspects of it:
+
+- creating a library for reading the SLA files  into a memory structure
+
+- creating a library for exporting to PDF from a memory structure
+
+those two libraries would be "indipendent" and used by both Scribus and a new Scribus-CLI.
+
+do you think that such a project would be manageable?
+
+how much time do you estimate it would take for somebody to implement it? days? weeks? months?
+
+
+personally, i think that going through this first step would give a code base on which people
+wanting specific features could start submitting patches.
+i feel that the current effort to create small programs which manipulate SLA files or produce PDF
+from SLAs are a bit a waste of resources and would like to check if there is another way to go...
+
+ciao
+a.l.e
+
+* "indipendent" is meant as not dependent from the rest of the scribus code
+(except the plugins for reading different versions of SLAs); the Qt-dependency is not a
+problem, at least not for a first try.
+@]

@@ -1,0 +1,112 @@
+(:title LGM 2011:)
+(:#toc:)
+!Website
+* introduction à anwiki la semaine prochaine à paris
+* fixer le problème avec le css / dtd / js sur la textarea
+* studio hôtel ok, et prix dans le wiki de 2011. mettre en ligne les photos que louis m'a envoyé
+
+!!Howto
+!!!how to create a new page
+* first create a new page of the correct type
+* then add it to the navigation by editing the sitemap (top right +)
+
+
+!Lively Comunities / Sustainable comunities
+
+* http://tech.slashdot.org/story/11/04/08/0238240/Better-Open-Source-Communities-Through-Data
+* http://opensource.com/life/11/3/how-become-amazing-contributor-open-source-project?sc_cid=70160000000TKXxAAO
+* http://opensource.com/education/11/3/i-cant-bake-croissants-fable-project-documentation?sc_cid=70160000000TKXxAAO%3chttp://opensource.com/life/11/3/how-become-amazing-contributor-open-source-project?sc_cid=70160000000TKXxAAO
+
+[@
+> > > Patch for the man page? I can try contributing with the documentation,
+> > > but i have no programming experience.  
+> > 
+> > Yes, for the man page (Doc/cmus.txt). Just do your modifications, test
+> > them, commit them (git commit -a), generate the patch (git format-patch
+> > HEAD~1) and send it to the mailing list for inspection.  
+> 
+> I have attached the patch for cmus.txt. It's the first patch of my life :P  
+
+Looks good -- applied! Congrats on the first patch :-) Contributing to open
+source projects is a lot of fun, hope you'll like it!
+
+> Please point out any mistake.  
+
+OK, a couple of nitpicks then:
+
+> >From 8b1f0c2f0dffa1ac68a96659ad57cba95af6f8af Mon Sep 17 00:00:00 2001  
+
+For some reason the first line of the patch contains mysterious '>' at the
+start, and because of this can't be automatically applied. I usually use "git
+format-patch -1" to generate patch from the latest commit, and the resulting
+files always look good.  
+
+> Subject: [PATCH] Added example for %25{bitrate} format string.  
+
+"doc: add example for %25{bitrate} format string" would be a tiny bit better
+IMHO.
+
+https://github.com/erlang/otp/wiki/Writing-good-commit-messages is a nice
+summary of how to create decent commit messages.
+
+> +in the example below.   
+
+There was a trailing space in this line; I've removed it. When reviewing
+changes with "git diff" or "git log -p", git can highlight trailing whitespace;
+I think it even does that by default.
+@]
+
+!!Getting new roles into the projects
+
+titanpad
+
+We know programmers and -- for the most lucky projects around -- designers and XP specialists.
+
+But, what about:
+* Project managers (most of all to manage external contributors)
+* Journalists
+* Technical writers
+* Translators (not for GUI!)
+!!Technical tools
+
+Most projects have a wiki and a bug tracker. What can help getting and keeping contributors?
+* using distributed revision control systems to better manage patches and branches (but harder to learn for non-programmers)
+* allow task specific branches
+
+don't talk about it...
+
+shapado
+
+http://shapado.com/pages/code
+
+create wide?
+
+GSOC: pupils should fix one big and one small bug (unrelated to their project) during each GSOC period (and one small before getting accepted as a pupil)
+!!Discussion with BartK
+
+[@
+14:25 %3c a_l_e_> the panel will be 90 minutes...
+14:25  * BartK nods
+14:27 %3c a_l_e_> and we will probably be 4 people on stage (me and 2 other people who already have agreed to 
+                be part of it)
+14:28  * BartK nods.
+14:28 %3c BartK> Well, I'd love to take part. :)
+14:28 %3c a_l_e_> i'd like to have some sort of list of topics... the best thing would be to have 1 or 2 short 
+                talks (about 10 minutes) at the beginning, then start the discussion...
+14:29 %3c a_l_e_> ... and and have 2 other short presentations (again about 10 minutes each) when changing the 
+                topic in the panel.
+14:30 %3c a_l_e_> (i did already count you among the 2 people who did agree :-)
+14:31 %3c BartK> ah, very cool.
+14:31 %3c BartK> so I should plan on 10 minutes or so?
+14:31 %3c a_l_e_> tomrorrow i will travel to montreal, and on thurday i will certainly take the time to go 
+                through the details.
+14:31 %3c BartK> ok
+14:32 %3c a_l_e_> it could also be 15 or 5 minues... it depends on how much you have to say... but i'd like to 
+                keep an avarage of 10 minutes per talk...
+14:32 %3c BartK> Shouldn't be a problem.  I'll put something together and give you the time.
+14:32 %3c a_l_e_> as soon as all three guys have agreed to join the panel, i will send you (plural) an email 
+                with the list of the others who are in there.
+14:32 %3c BartK> cools
+14:33 %3c a_l_e_> i hope i can do it this evening CET
+14:33 %3c a_l_e_> voilà... and now: back to work :-)
+@]

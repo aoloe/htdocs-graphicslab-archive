@@ -1,0 +1,178 @@
+(:title Learning :)
+(:#toc:)
+
+!Grafiklabor
+
+Das Grafiklabor ist der Treffpunkt für Anwender, Grafiker, Lehrer, Fans und Entwickler von Freier Software im grafischen Bereich.
+
+Wir werden zusammen neue Programme ausprobieren, durchtesten und auf den Kopf stellen.
+
+
+Dazu gibt's jeweils ein Hauptthema: im März werden wir mit der Fotobearbeitung anfangen! 
+
+Für Neulinge wird es eine kurze Einführung in GIMP geben mit -- anschliessend -- ein paar Übungen, um das Programm kennenzulernen.
+
+Dazu werden wir über Farbkorrektur, digitale Fotoentwicklung, Bildermanagement u.s.w. sprechen.
+
+
+Material:
+
+* Jeder bringt seinen Laptop mit. Es sind drei vorinstallierte Laptops vorhanden!
+* Wenn möglich hast du GIMP (http://www.gimp.org) und eventuell Phatch bereits installiert.
+
+Kosten:
+
+* Für 60.-- wirst du regulärer Student in der Dock18 Akademie für Medienkulturen der Welt und erhältst ein Studienbuch; alle anderen können eine Spende hinterlassen.
+
+!!Wann und wo?
+
+* Im Dock18, Rote Fabrik, Zürich
+* Jeden 1er Sonntag im Monat von 14 bis 18 Uhr:
+** 7. März: Fotobearbeiung
+** 18. April (am 4. April werden Hasen im Garten gejagt): Bildbearbeitung und Computermalerei
+** 2. Mai: Vektorgrafik
+** 6. Juni: DTP
+** 4. Juli: Offene Werkstatt
+!! Bildbeareitung
+
+Attach:01_flyer.png
+
+!!!Announcements:
+* http://www.gimpforum.de/showthread.php?t=15540
+* http://www.foss-directory.ch/search/index.psp
+* http://www.rotefabrik.ch/de/dock18/eventdetail.php?id=8076
+
+!!!Links:
+* https://answers.launchpad.net/phatch/+question/20725 : install phatch on windows
+
+!!!Todo
+* Handout
+* laptops update
+* download gimp und phatch
+* photo management suchen
+* LG flyers ausdrucken
+* update versionen in der präsentation
+
+!!!Handout
+* Beschreibung
+* Screenshot mit Arbeitsfläche
+* Docking windows
+* Teilbild ausschneiden
+* Auswählen mit Viereck, Lasso, Farbe, Pfad und Schnellmaske
+** Auswahlverändern
+*** ctrl / shift / Hebeln
+** weiche Ränder
+* Farb-Werkzeuge (Helligkeit und Kontrast, Kurven, Farbstich)
+* Perspektive / Horizontlinie korrigieren
+** Perspektive Werkzeug
+** Horizontale hilfslinie + Frei rotieren
+** Measure tool + Rotate
+* Unscharf maskieren
+* Rote Auge
+* Text schreiben
+* Spezifische Userbilder anschauen
+
+!!Bildbearbeitung 2
+
+!!!Gimp plugins
+
+* Where to find them
+** In linux, first look for them in your package manager!
+** http://registry.gimp.org/
+* How to install them
+** http://www.techzilo.com/how-to-install-gimp-plugins-scripts-brushes-and-gradients/
+** put them in:
+*** linux: @@~/.gimp-2.4/plug-ins/@@
+*** os x: @@Users/username/.gimp-2.x/@@ or use mac ports
+*** windows: @@C:\Program Files\GIMP-2.0\lib\gimp\2.0\plug-ins@@ or @@C:\Document and Settings\%3cusername>\.gimp-%3cversion>\brushes\ and gradients into C:\Document and Settings\%3cusername>\.gimp-%3cversion>\plug-ins\@@
+
+
+!!!Doing magic with gimp
+
+!!!!High pass filter for selecting hairs
+
+* Download and install the High Pass
+* Separate in HSV and paste the V layer into the original picture
+* Enhance the contrast
+* Layer mask with alt key on the layer
+* for picture with a non sharp background or very white one
+* etc
+* tutorials:
+** http://www.gimpusers.com/tutorials/highpass-masking.html (read the comments: there are some good tips).
+** http://strobist.blogspot.com/2010/02/after-light-high-pass-post-production.html
+** http://gimpguru.org/Tutorials/SimulatedDOF/ + http://gimpguru.org/Tutorials/ReplaceBackground/
+
+!!!Resynthesizer
+* http://www.logarithmic.net/pfh/resynthesizer/removal now in [[http://o3.tumblr.com/post/470608946/photoshops-caf-content-aware-fill-unbelievable|CS5]] since a decade a gimp plugin\\
+([[http://www.youtube.com/watch?v=r2gonFtc1yc|see]])
+!!!Liquid rescale
+* [[http://liquidrescale.wikidot.com/|liquid rescale]]
+* http://liquidrescale.wikidot.com/en:tutorial
+!!!Links
+
+* http://www.noupe.com/tutorial/40-outstanding-photo-manipulation-tutorials.html
+
+!!!Todo
+* die Fabrikzeitung einladen; zdhk (informatikdienst + studierende)
+
+!!Inkscape
+
+* http://www.libregraphicsworld.org/articles.php?article_id=12 vs http://tomsartgallery.blogspot.com/2008/01/snowman-tutorial-part-1.html
+* make a gear:
+** http://vector.tutsplus.com/tutorials/icon-design/how-to-create-a-gearbox-settings-icon-using-simple-shapes/
+** http://www.youtube.com/watch?v=GMybg7O0gFY
+* make a plug http://www.linuxgraphics.ru/articles.php?article_id=91
+* make an icescream: http://chrisdesign.wordpress.com/2010/01/24/ice-pop-chrisdesignheathenx/
+* tutorials list http://verysimpledesigns.com/
+
+!!Scribus
+
+comment by su-v
+
+I haven't used Scribus so far (only peeked into the settings dialog and basic menu commands), but it would certainly be interesting, also to learn more about where Inkscape & Scribus can work in tandem, complementing each other.
+
+e.g. color management, high quality PDF for print shops, etc.
+(frequently asked questions by many Inkscape users ;)
+
+[[http://lacorte.noblogs.org/post/2010/04/22/corso-di-autoproduzione-editoriale-quinta-puntata|Corso di autoproduzione editoriale: impaginazione, gabbie e font]]
+
+
+!2010
+
+* Anmeldesystem (+feedback & fragen?)
+* Klarere themen?
+
+!Computer installieren
+
+* Install the stable version
+* Only install the base and mobile packages
+* add vim and sudo
+* change default editor\\
+@@update-alternatives --config editor@@
+* add ale to the sudoers
+* upgrade to testing:\\
+[@# vim /etc/apt/source.list
+:%25s/lenny/squeeze
+:wq
+# aptitude update
+# aptitude install apt dpkg aptitude
+# aptitude full-upgrade
+@]
+* reboot
+* @@# upgrade-from-grub-legacy@@ (?
+* add non-free and contrib to @@source.list@@
+* add wireless card\\
+[@lspci@]
+* add a graf user
+* install:\\
+wicd inkscape mypaint phatch geeqie openoffice.org iceweasel quassel wmii slim lxde
+* add scribus repositories and install scribus-ng
+* define .xsession with @@exec wmii@@ for ale
+* fix the colors for lxde
+* @@cp /etc/X11/wmii/wmiirc /home/ale/.wmii-5.7/@@ and set @@Mod-4@@ as the mod key
+* set the default terminal scheme to black on white:
+** Edit ~/.Xresources to contain the following (if it doesn't exist, create it):\\
+[@xterm*foreground: white
+xterm*background: black@]
+** Then,run this command: @@xrdb ~/.Xresources@@
+** Open a new terminal.

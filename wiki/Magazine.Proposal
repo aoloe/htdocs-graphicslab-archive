@@ -1,0 +1,148 @@
+(:#toc:)
+!The progress bar
+!!Old Drafts
+
+* 27.02.2010: [[(Attach:)02_beta.pdf]] (... coming soon)
+* 24.02.2010: [[(Attach:)01_beta.pdf]]
+* 22.02.2010: [[(Attach:)00_beta.pdf]]
+
+!Rewind
+
+!!project
+* which name?
+** "reclaim your tools"?
+
+!! who?
+
+* manuel?
+* grrrr?
+* publishing:
+** david meili && fanzines?
+** http://www.mottodistribution.com/
+** http://www.nieves.ch
+
+
+!! what?
+
+* [[http://libregraphicsworld.org/articles.php?article_id=24|Rock around 0.48: Interview with Inkscape team]]
+* article from aleray on opensvg? other contributions from opensvg?
+* article from yuval on hugin?
+* an existing article from OSP (or from one of the sites / events they link to)?
+* lgm and sewing http://www.sew-brilliant.org/2010/08/20/front-bodice-block-done/ (cf. her mail from the 20th august)
+* announce the documentary effort on the lgm 2010 ("tv", film, book and the "real" magazines?)
+!Deadlines
+
+One first issue at the mid march and the second one for the LGM at the end of may?
+
+!! 01 March 2010
+* First clear comments by the 4th of March
+* Deadline for content: 14th of March
+
+!! 02 June 2010
+* Deadline for content for the 2 issue: 30th April
+
+!Proposal
+
+You are welcome to write a summmary of your "concept" for the Libre Graphics Magazine. Through the views expressed in this chapter we can see how each one of us sees the full product...
+
+* Your concept can grow with the time
+* It will mostly contain ideas already expressed in other parts of this document: just in a more organic way!
+* Each person with a login for this site is invite to write a proposal (write it in your language if you can't express it in english and you think that other people can read / translate your sentences)
+
+!!Ale
+
+!!Alexandre
+
+!!Cedric
+
+!!Elisa
+
+!!Lorena
+
+!!Louis
+
+!Name and Logo
+* Libre Graphics Magazine
+* Logo from LGM 2010\\
+Attach:logo_lgm_2010.png
+* Louis: I have a reticence with the modified logo that is somehow melting... (ale: that logo has been used by OSP on their latest flyers...)
+* Louis : I love the 2010 logo. It’s outstanding in my view. But no matter our individual tastes, I think we should stick to it if only for a reason of consistency.
+!Publishing and Format
+* Professional printing and budget
+* 36 A5 pages is the minimum; 48 pages may be an optimal number.
+** 48 may be impossible to manually fold
+** Ale is trying with 40 
+* 4 issues a year?
+* For self printing:
+** A5 Booklet
+** Moving the last page to the right of the first page to make a A4 landscape file
+* It would be nice to have the two first issues printed for LGM 2010
+* Watch out for the bleed in page 9 and 15. If we’re going to use bleed, then we need to prepare the document accordingly and know in advance that this will have a cost. The job will need to be cut on three sides after the  saddlestitching is done. And we need to include this into the A5 format. Overall, the document will be a bit shorter to accomodate the bleed.
+* Should we have two formats A5 for self printing and something slightly bigger for publishing?
+* Perfect binding or just with a simple stapler?
+** I want to take some copies at a booth, the easyest way is to have a A5 booklet stapled: do we want to support his usecase? Warning: We may have to cut the booklet to make it even...
+** For perfect binding we need a bigger inner margin
+* http://www.mottodistribution.com/
+* Here is a summary of a discussion between Louis and Cedric:
+** The magazine needs to be highly professional from all points of view.
+** We need outstanding content and design.
+** The A5 format is small with regards to other publications.
+** Will the people really want to print it by themselves and then, is this really the question? If we produce and print a nice magazine to hand at LGM and in other event, we might as well have a PDF version for web reading. We could also provide the source file and the PDF as a high res to download if anyone really wants to do that. But let’s discuss this. We can rethink the concept. Will people really bother printing on their home printer a 4-color bleed job when they can read it on the web?
+** There is a need to find a printer to sponsor the job.
+** Let’s pursue the discussion!
+!Content
+* Who is the main target? (graphic artists? linux users? current LG software users? event visitors? people having subscribed the magazine?)
+** There seems to be an agreement on: Graphic designers!
+
+
+!!Rubriques
+
+* Free font of the month
+* News
+* LG Courses and events around the world
+
+!! Issue 01.10
+* LGM is coming (written by OSP? Louis for the "souvenir de Montréal"?)
+* Scribus 1.4 (Ale based on the review by Prokoudine?)
+* Photobook from Marcus Holland-Moritz (mostly pictures + some technical details from his flickr gallery; maybe a text short text from him on how he used the software?)
+* Mypaint 0.8.1 (LGW article written by Portnov; interview with David Revoy?)
+* News
+!Cover and art design
+* Let an artist create the first page of each issue (with much freedom; it may relate to the content or not... but it must be done with LG software).
+* The last page is the "real" cover: with a bigger teaser on the content and a sort of table of contents
+* Louis: We need an Art Director and a designer. For cover and interior.
+* Ale: the idea was to have a different artist for each cover; for the interior a supervisor would be welcome... but we should have some "templates" to enable almost everyone to layout an article.
+* We could also let invited graphic designer work on sections of the magazine.
+!Formatting and Layout
+* Which fonts to use? (currently only Cantarell and Cantarell bold)
+** Titles
+** Subtitles
+** Normal text
+** Evidenced text
+* Basing the page layout on a A5 page, with 1 cm margin on all sides (more for the inner margin?) and with a 3 x 3 grid:\\
+Attach:page_grid.png
+* How to put a header / footer (at least the page number) on each page (most pages)?
+* The captions near the picture are important catchy texts and are not meant as complement.
+* Louis: I like the transparency in page 16 and the  the litlle note on page 17 about the pictures.
+* Louis: we should be very careful with the justification (fine tuning, reducing the typesize, turning hyphenation)
+!Software
+* Scribus 1.5svn? (Ale would like to use 1.5svn and develop a script to get the text (and it's translation directly from a wiki; It would also be a nice testbed for Scribus)
+* A script to create a booklet:\\
+[@psbook $1.ps $1b.ps
+echo 'psnup'
+psnup -2 -ptabloid -Pletter $1b.ps $1p.ps
+echo 'psselect'
+psselect -o   $1p.ps $1o.ps
+psselect -e -r  $1p.ps $1e.ps@]
+!Translation
+* Ale thinks that it's important to translate the magazine in a few languages
+* In which languages should it be published?
+** English?
+** French?
+** German?
+** Italian?
+** Dutch?
+** Hindi?
+* One Magazine per language?
+* Which work flow for the translation?
+** Should everything be translated or we should fix a deadline and publish what is available? (the rest being left in the original language or in english)

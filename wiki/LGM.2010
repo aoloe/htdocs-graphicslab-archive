@@ -1,0 +1,143 @@
+(:title LGM 2010:)
+(:#toc:)
+!Organization
+
+!!People not having registered yet
+* {-Peter Sikking-} (Gimp)
+* Franz Schmid (Scribus)
+* {-Andreas Vox (Scribus)-}
+* {-Andy Fitzsimon-}
+* Alchemy people?
+* {-Ginger Coons-}
+* {-Cedric Gémy-}
+* {-Øyvind Kolås-}
+* {-Doug Schepers-}
+* {-Nicolas Spalinger-}
+!!Manage the talks
+
+!!!talks module for anwiki
+
+!!Create a badge
+* Export script is there
+* .sla exists and must be adapted
+* scribus script must be adapted
+* add logo for each known project on the badge?
+
+!!Talks Schedule
+* Out on May, 3
+* How to do it? with anwiki or not?
+
+!!Brochure
+
+http://create.freedesktop.org/wiki/LGM_2010_Brochure
+
+!!!Planning
+
+* do it as a draft for the Libre Graphics Magazine?
+* 1000 copies, a5, 24 pages on bio-set cost 750 euros incl vat
+* and there will probably be an edition Code:Free for the lgm: if christian is fast enough (and if he doesn't plan to print it) we could take parts of it and make some publicity for the online version of code:free.
+* ginger has done some nice things
+* osp can see what we can use from interviews around
+* prokoudines writing about lgm ... maybe he would want to adapt it for this?
+* personally, i think we should concentrate on text which have already been written but not yet printed + some original works...
+* i think that i'd like to do a more precise plan about the magazine before the end of april.
+* rlafuente: any identity guidelines that we should follow? or are we free to go for an awesome layout proposal? :o)  ---> (free imho)
+* let's gather ideas on a wiki page and take it from there. we should work on this in week 10-14 may
+* design is up to us/ricardo + Ana (well ... free fonts, free software)
+* printer is 3 day printing time
+
+!!!Content
+* a free version (draft) of [[http://inspirationlab.files.wordpress.com/2010/04/soyouneedatypeface.jpg|so you need a typeface?]] ???
+* article from prokoudine on lgm
+* "extrait" from code:free
+* book on new zealand
+* the application for python foundation
+!! Recording the workshops
+* how can we do it?
+
+!!My todos
+
+* ask louis or cedric about eyrolles
+* http://www.bomots.de/ or http://www.dpunkt.de/ or http://www.addison-wesley.de for german books?
+* find out whether the pledge is worth the hassle (energy we put in it / how many external people give how much money)
+!! Make sure that the following things happens
+
+* reserving some physical space for Wang Lingzheng and her book project
+* Wang Lingzheng gets an invitation
+* getting helen varley jamieson to present UpStage
+* seeing if Ilmari Heikkinen should be at lgm (ff plugin for wacom tablets)
+* zgrirg (http://www.ong-adg.be/spip/ADG-News,51.html) should show his newsletters at lgm
+* see who Kasper Souren could host
+* Inga Kaupelyte and other curious graphic designer: how can we welcome them?
+
+
+!Anzeigentafel
+
+after having read this request from jon, i thought that it may be nice
+to prepare a wall @ lgm where the devs could physically hang such
+requests...
+
+i'm thinking more of an ordered grid (simply marked with some tape?)
+where everyone could put his A5/A4 piece of paper...
+
+i could even think about putting online something similar...
+
+-> i will work on it the days i'm in bruxelles...
+
+!Meeting place
+
+* A place with rectangular tables, with (white?) paper tablecloths where the people is welcome to write their notes / messages
+* when the paper is full it gets replaced with a fresh one
+* every evening the tables get photographed and the image archived, put in the web and analyzed
+* every morning there is a short report over the content of the tablecloths.
+
+References:
+* http://transformedbyyou.blogspot.com/2009/08/how-can-you-liven-up-meetings.html
+
+Todo:
+* Is it easy to find the paper tablecloths in Bruxelles?
+* Are there some rectangular tables?
+* Who does the report?
+* how to store them?
+** just hang them somewhere?
+** a poster display? (something like http://www.edimeta.com/pos-equipment/newspaper-stand/poster-stand/poster-display.html)
+
+!Informal lighnting-talks
+
+We may offer some (visible) place for "spontaneous" lightning talks over lunch:
+* 1 table, 1 flip chart 1 beamer, 20 chairs
+* 1 flip chart where the people can reserve a slot for the same day
+* we should keep an informal atmosphere...
+* mostly orienteted to artists, graphic artists and smaller projects
+!Scribus developers manual
+
+* creating a script
+* creating a plugin
+* enhancing the scripter with new functions
+* feedback
+** how to better integrate the patches
+!Libre Graphics Magazine
+
+* what to do at lgm?
+* do a draft with ricardo lafuente?
+* graphicslab/magazine/ ? ligbragraphicsmagazine.org? libregraphics.org/magazine?
+
+
+!openhatch
+
+[[http://openhatch.org/|OpenHatch]] is an open source involvement engine. 
+
+* use it?
+* create our own server?
+
+!lgm.tv@neuemedie.zhdk
+
+ein mal in die woche (am abend?): 2 talks aus lgm an die zhdk / neue medien zeigen + diskussion.
+!/tmp/
+!! tweakfest
+* stani (coin)
+* osp
+* cedric
+** meteo france international (inkscape)
+** chabre de commerce et d'industrie de rennes: create templates for local companies using scribus
+** mégalis (inkscape, gimp, scribus)

@@ -1,0 +1,123 @@
+(:title Grafiklabor:)
+(:#toc:)
+
+!grafiklabor08: open book
+
+!!software
+* scribus 1.3.8\\
+http://sourceforge.net/projects/scribus/files/scribus-devel/1.3.8/
+* gimp 2.6\\
+http://www.gimp.org/downloads/
+
+
+!! inkscape
+* 0.48 (extensions brauchen patch für snow leopard)
+** self compile on debian!
+* snap toolbar hinzufügen
+* text verändern (rotation, kerning, shifting...)
+* spraydose (mit calygraphy tool)
+* pencil (freehand) tool only with high smooth using
+* inkscape vertiefung -> inkscape pfad (kalligraphie rausnehmen... und mit spray und effekten?)
+
+slides:
+* new snap toolbar hinzufügen
+* eps (nur falls ghostscript korrekt installiert)
+
+!!vorbereitung
+
+*(email foto in foto)
+* seb from osp: ok? geld?
+* public? announce to ronorp? announce to the normal attendees
+* hardware (who, what)
+
+
+!seb
+%3c a_l_e_> je viens de me rendre compte d'un petit probl&#8730;®me... est-ce que tu comprends l'allemand? au moins un petit peu?
+
+%3c sebsan> pas du tout :-(
+
+%3c a_l_e_> btw, comme tu ne parles pas l'allemand... anglais?11:05 %3c a_l_e_> je ne crois pas qu'on pourra faire le truc en francais...
+
+%3c sebsan> je parle anglais couramment
+
+%3c a_l_e_> ok, pas trop grave... mais il faudra en tenir compte!
+
+%3c sebsan> dis moi un peu comment cela va se passer?
+
+%3c a_l_e_> alors, vendredi soir on aura une pr&#8730;©sentation des logiciels + -- je crois -- les gens vont se pr&#8730;©senter..
+%3c a_l_e_> les participants am&#8730;®nent du mat&#8730;©riel (surtout texte) pour remplir une vingtaine de pages.
+
+samedi apr&#8730;®s-midi / soir workshop: chacun travaille sur son texte. si je ne me trompe pas, l'id&#8730;©e est qu'il y ait des &#8730;©changes entre les participants, aussi au niveau du contenu.
+dimanche apr&#8730;®s-midi, finalisation du projet... et impression -- peut-&#8730;™tre -- dans l'impremerie du centre culturel.
+l'apr&#8730;®s-midi comprends (j'imagine) aussi le soir surtout le samedi.
+et vendredi soir je crois qu'on va d&#8730;©j&#8730;† commencer &#8730;† travailler sur le mat&#8730;©riel.
+
+%3c sebsan> donc c'est + ou - 2 jours de workshop
+
+%3c a_l_e_> mario -- celui qui m'a forc&#8730;© la main, pour organiser ce workshop si rapidement -- revient 
+          vendredi des vacances et j'esp&#8730;®re pouvoir en discuter avec lui dimanche.
+%3c sebsan> quels type de participants avez vous invit&#8730;©?  artiste, graphiste, ...
+
+%3c a_l_e_> pour l'instant on a: ...
+
+%3c a_l_e_> moi je ferai le support pour scribus, il y a quelqu'un qui devrait s'occuper d'inkscape...
+
+%3c sebsan> donc je serais l&#8730;† plus comme participants que comme intervenant. car je ne connais absolument pas scribus
+
+%3c a_l_e_> bon, je crois que je pourrais bien m'imaginer des inputs au niveau typographique et sur comment mettre en valeur le texte...
+
+%3c sebsan> bien sur je pense pourvoir aider &#8730;† ce niveau l&#8730;†
+
+%3c a_l_e_> oui, pour scribus, je m'y connais -- du moins au niveau technique -- plut&#8730;¥t bien...
+
+en invitant quelqu'un d'osp je cherche plut&#8730;¥t quelqu'un qui donne des inputs au niveau gestaltung (aucune id&#8730;©e comment ca se dit en francais... mais je crois que c'ets un mot allemand bien connu dans le monde graphique)... &#8730;† la fois dans le support des gens aux gens sont en train de travailler sur leur texte et en montrant par son propre travail comment on peut pr&#8730;©senter un texte... par ailleur, le texte ne doit pas &#8730;™tre &#8730;©crit par toi-m&#8730;™me... mais il doit &#8730;™tre "libre" (cc pd)
+%3c sebsan> plus prosa&#8730;Øquement , comment fait on pour le voyage et le logement ?
+
+%3c a_l_e_> pour le voyage, je peux trouver une financement et pour le logement je peux mettre &#8730;†  une chambre d'h&#8730;¥tes...
+alternative: couch surfing / hospitality club. &#8730;† ce que j'en sais ca marche tr&#8730;®s bien &#8730;† zurich!
+
+si marcus moritz-holland vient aussi, il faudra trouver une solution pour la deuxi&#8730;®me personne... un des deux pourrait devoir dormir au s&#8730;©jour...
+
+%3c sebsan> dois-je m'occuper des r&#8730;©servations et paiements ? et vous reverser le montant &#8730;† OSP par la                 suite?
+
+%3c a_l_e_> si possible, tu devrais occuper de l'achat des billets et je te rembourse cash...11:04 %3c a_l_e_> et, si possible, voyage en train... 11:04 %3c a_l_e_> il y a une liaison directe (mais lente) bruxelles - zurich...
+
+%3c sebsan> est-il possible de pr&#8730;©voir une solution de logement pas trop camping ?
+au moins un matelas dans un pi&#8730;®ce chauff&#8730;©e :-)
+
+%3c a_l_e_> tout l'appart est chauff&#8730;©!
+
+%3c sebsan> je suis un peu fragile ;-)
+
+%3c a_l_e_> j'ai une chambre d'h&#8730;¥tes avec lit et chauffage (+ mat&#8730;©riel de bricolage &#8730;©lectronique de katrin)...
+
+%3c sebsan> &#8730;Éme semble parfait
+
+%3c a_l_e_> si markus vient aussi, il faudra voir qui des deux dort au salon... ou bien convaincre le co-locataire &#8730;† ranger son local tv...
+
+%3c sebsan> on pourrais toujours alterner
+
+%3c sebsan> j'am&#8730;®nerais quand m^me mon mat&#8730;©riel de camping ;-)
+
+%3c a_l_e_> non, n'am&#8730;®ne pas de mat&#8730;©riel de camping... &#8730;† la limite un sac &#8730;† couchage...
+
+%3c sebsan> je regarde les prix de train, &#8730;Étourne autour de 300 euros
+
+%3c a_l_e_> si tu prends un ice, tu peux essayer avec les offres sp&#8730;©ciales des DB... dans ce cas tu dois 
+          prendre un billet bruxelles - cologne et un cologne - z&#8730;ºrich ... et &#8730;™tre s&#8730;ªr de ne pas rater 
+          la correspondence...
+
+%3c sebsan> j'ai une carte de r&#8730;©duction railplus pour l'allemagne
+
+%3c a_l_e_> ok
+
+%3c a_l_e_> vendredi et lundi t'as un EC ou ICE &#8730;† 80 euro par direction k&#8730;&#8706;ln - z&#8730;ºirch + 30 euro bruxelles - cologne... toujours par direction
+
+%3c a_l_e_> tu peux aller voir ici: http://www.bahn.de/p/view/index.shtml
+!Leute
+
+*andrea sonderey einladen
+
+!Idee
+
+* simon eugster: kdenlive

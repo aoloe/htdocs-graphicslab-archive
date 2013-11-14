@@ -1,0 +1,834 @@
+(:title Libre Graphics Projects:)
+(:#toc:)
+!Photo editors and painting
+
+!!Projects
+
+!!!Alchemy
+
+Alchemy is an open drawing project aimed at exploring how we can sketch, draw, and create on computers in new ways. Alchemy isn’t software for creating finished artwork, but rather a sketching environment that focuses on the absolute initial stage of the creation process.
+
+http://al.chemy.org/
+
+!!!CMYKTool
+
+With CMYKTool you can convert images between ICC profiles  (RGB, CMYK) while preserving pure black, preserve pure grey, or attempt to underfill black to give a fake "overprint" effect.
+
+Images and their individual channels can be inspected, and a soft proof mode shows images would look when printed.
+
+Saves JPEG, TIFF (8- and 16-bit) with or without embedded profiles.
+
+
+http://www.blackfiveimaging.co.uk/index.php?article=02Software%252F05CMYKTool
+
+!!!Drawpile
+
+DrawPile is a sketching oriented drawing program with a twist: you can share your drawing live with other users. There are no restrictions on who may draw where; every user has full access to the whole picture simultaneously.
+
+http://drawpile.sourceforge.net
+!!!Gimp
+
+GIMP is the GNU Image Manipulation Program. It can be used as a simple paint program, an expert quality photo retouching program, an online batch processing system, a mass production image renderer, an image format converter, etc.
+
+GIMP is expandable and extensible. It is designed to be augmented with plug-ins and extensions to do just about anything. The advanced scripting interface allows everything from the simplest task to the most complex image manipulation procedures to be easily scripted.
+
+It works on many operating systems, in many languages. 
+
+http://www.gimp.org/
+
+!!!G'MIC, GREYC's Magic Image Converter
+
+G'MIC
+* Defines a minimal but powerful script language (G'MIC) dedicated to the design of image processing pipelines.
+* Provides an interpreter of this language (in C++), distributed as an open-source module/library embeddable in third-party applications.
+* Proposes two binary tools one to be run from a shell and the other as an interactive plug-in for GIMP.
+
+G'MIC is focused on the design of complex pipelines for converting, manipulating, filtering and visualizing generic 1d/2d/3d multi-spectral image datasets. Of course, it is able to manage color images, but also more complex data as image sequences or 3d volumetric datasets. 
+!!!Hugin
+
+With hugin you can assemble a mosaic of photographs into a complete immersive panorama, stitch any series of overlapping pictures and much more.
+
+http://hugin.sourceforge.net/
+
+!!!Krita
+
+Krita is a KDE program for sketching and painting, offering an end–to–end solution for creating digital painting files from scratch by masters.
+
+Fields of painting that Krita explicitly supports are concept art, creation of comics and textures for rendering.
+
+Modelled on existing real-world painting materials and workflows, Krita supports creative working by getting out of the way and with snappy response.
+
+http://www.krita.org/
+
+!!!Leonardo
+
+Leonardo is an open source vector drawing program which focuses on the place where the desktop and the web meet.  It is a drawing & presentation program, but it’s designed to pull in interesting webservices and data from the web, as well as be extended with plugins written in several scripting languages.
+
+http://leonardosketch.org/
+
+!!!Luminance HDR
+
+Luminance HDR provides a (GUI based) workflow for HDR imaging.
+
+http://qtpfsgui.sourceforge.net
+
+!!!MtPaint
+
+mtPaint is a painting program to easily create pixel art and manipulate digital photos.
+
+http://mtpaint.sourceforge.net/
+!!!Mypaint
+
+MyPaint is a fast and easy graphics application for digital hobby painters. It lets you focus on the art instead of the program. You work on your canvas with minimum distractions, bringing up the interface only when you need it.
+
+http://www.mypaint.info/
+
+!!!Nathive
+
+Nathive is an image editor focused on usability, logic and providing a smooth learning curve for everyone.
+
+http://www.nathive.org/
+
+!!!Nip2
+
+
+nip2, the "free love child of Photoshop and Excel," is the GUI of vips. You don't directly edit images --- instead, like a spreadsheet, you build relationships between objects. nip2 actively manages these relationships: if you change an object property, the change is propagated "spreadsheet-style."
+
+Like vips, nip2 is fast and needs little memory. You can comfortably work with multi-gigabyte images on very modest hardware.
+
+In addition to the visual programming interface accessible through the GUI, nip2 has command-line and batch modes. It even has its own functional programming language (for writing extensions).
+
+http://www.vips.ecs.soton.ac.uk/index.php?title=Nip2
+
+!!!Phatch
+
+Phatch is an user friendly, cross-platform Photo Batch Processor and Exif Renamer with a nice graphical user interface. Phatch handles all popular image formats and can duplicate (sub)folder hierarchies. Phatch can batch resize, rotate, apply shadows, perspective, rounded corners, … and do much more actions in minutes instead of hours or days if you do it manually.
+
+http://photobatch.stani.be/
+
+!!!Photivo
+
+Photivo is a photo processor which handles your RAW files as well as your bitmap files (TIFF, JPEG, BMP, PNG and many more) in a non-destructive 16 bit processing pipe with gimp workflow integration and batch mode.
+
+http://photivo.org
+
+!!!Pinta
+
+Pinta is a drawing/editing program for casual users.
+
+http://pinta-project.com/
+
+!!!Ramen
+
+Ramen is a node based video compositor, which works in full HDR color precision.
+
+http://ramenhdr.sourceforge.net/
+
+!!!Rapid Photo Downloader
+
+Rapid Photo Downloader is a photo and video downloader for the Linux Desktop which
+* generates meaningful, user configurable file and folder names,
+* downloads photos and videos from multiple devices simultaneously
+* backs up photos and videos as they are downloaded
+
+http://damonlynch.net/rapid/
+!!!RawTherapee
+
+Raw Therapee is a RAW converter and digital photo processing software.
+
+http://www.rawtherapee.com/
+
+!!!Seashore
+
+Seashore is an image editor for Mac OS X. It features gradients, textures and anti-aliasing for both text and brush strokes. It supports multiple layers and alpha channel editing. It is based around the GIMP's technology and uses the same native file format.
+
+However, unlike the GIMP, Seashore only aims to serve the basic image editing needs of most computer users, not to provide a replacement for professional image editing products.
+
+http://seashore.sourceforge.net/
+!Vector graphics
+
+!! Projects
+
+!!! Blender
+
+Blender is a 3D animation program that can be used for modeling, UV unwrapping, texturing, rigging, skinning, animating, rendering, particle and other simulating, non-linear editing, compositing, and creating interactive 3D applications.
+
+!!!Ink2canvas
+
+An Inkscape extension to convert graphics from inkscape to HTML5 code
+
+http://github.com/karlisson/Ink2canvas/
+
+!!! Inkscape
+
+http://www.inkscape.org/
+
+!!! Nodebox 2
+
+NodeBox is a software application for creating generative art using procedural graphics and a new way to approach graphic design.
+
+http://beta.nodebox.net/
+!!!Pencil
+
+Pencil is to build antool for making diagrams and GUI prototyping that everyone can use.
+
+!!!Shoebot
+
+Shoebot is a pure Python graphics robot: It takes a Python script as input, which describes a drawing process, and outputs a graphic in a common open standard format (SVG, PDF, PostScript, or PNG).
+
+http://shoebot.net/
+
+!!!Ponyscape
+
+Ponyscape is a derivative of Inkscape:
+
+* Providing vector art software that is easy and entertaining to use
+* Creating vector art software which contains cutting edge features
+* Creating software which is relatively stable so it can be used both professionally and by hobbyists
+* Adhere as close as possible to the SVG 1.1 standard, but don't let this get in the way of the previously listed goals
+
+http://ponyscape-vectors.deviantart.com/
+!!!SK1
+
+sK1 is an illustration program supporting professional publishing features, such as CMYK color, separations, ICC color management and press-ready PDF output.
+
+Platform: Linux
+
+http://sk1project.org/
+
+!!!Skencil
+
+Skencil is a lightweight interactive vector drawing application, it is a flexible and powerful tool for illustrations, diagrams and other purposes.
+
+http://www.skencil.org/
+
+!!!svg-edit
+
+SVG-edit is a fast, web-based, Javascript-driven SVG editor that works in any modern browser
+
+http://code.google.com/p/svg-edit/
+!DTP and typesetting
+
+!!Projects
+
+!!!Laidout
+
+Laidout is desktop publishing software, particularly for multipage, cut and folded booklets, with page sizes that don't even have to be rectangular.
+
+* Website: http://www.laidout.org/
+* Articles: http://lwn.net/SubscriberLink/392246/61ba487a624f86b2/
+!!! Passepartout
+
+The main focus is on making it easy for the user to create publications with a flexible layout, typical examples being magazines, brochures and leaflets.
+
+http://www.stacken.kth.se/project/pptout/
+
+!!!Scribus
+
+Scribus is a professional page layout application with a combination of "press-ready" output and new approaches to page layout. Underneath the modern and user friendly interface, Scribus supports professional publishing features, such as CMYK color, separations, Spot Colors, ICC color management and versatile PDF creation. 
+
+http://www.scribus.net/
+
+
+!!! Tex, Latex, Xetex, ...
+
+!!Related projects
+
+! CAD
+!!Projects
+
+!!!CADuntu
+
+A QT4 port of the community edition of QCad.
+
+http://sourceforge.net/projects/caduntu/
+
+!!!BRL-CAD
+
+http://brlcad.org/
+
+!!!FreeCAD
+
+http://sourceforge.net/apps/mediawiki/free-cad/
+
+!!!LibreCAD
+
+LibreCAD is a comprehensive, 2D CAD application
+
+http://librecad.org/
+
+!!!QCad
+
+http://www.qcad.org/qcad.html
+
+!Photo
+
+!!Projects
+
+!!!Fotoxx
+
+Fotoxx is a program for photo editing and collection management
+
+http://kornelix.squarespace.com/fotoxx/
+
+!!!GTKRawGallery
+
+GTKRawGallery is a workflow oriented photo retouching software for camera raw image development. 
+
+http://sourceforge.net/projects/gtkrawgallery/
+
+!Video editing and animation
+
+!!Projects
+
+!!!Avidemux
+
+Avidemux is a video editor designed for simple cutting, filtering and encoding tasks.
+
+http://avidemux.sourceforge.net/
+
+!!!Celtx
+
+Celtx is a all-in-one media pre-production system. It replaces 'paper & binder' pre-production with a digital approach that's more complete, simpler to work with, and easier to share.
+
+http://www.celtx.com/
+!!!Cinelerra
+
+Cinelerra is s non-linear video editor and compositor which includes a video compositing engine, allowing the user to perform common compositing operations such as keying and mattes as well as support for very high-fidelity audio and video
+
+http://www.heroinewarrior.com/cinelerra.php
+
+!!!Kdenlive
+
+Kdenlive is an intuitive and powerful multi-track video editor.
+
+http://kdenlive.org/
+
+
+!!!Kino
+
+Kino is a non-linear DV editor featuring excellent integration with IEEE-1394 for capture, VTR control, and recording back to the camera.
+
+http://kinodv.org/
+
+!!!KToon
+
+design and authoring tool for 2D Animation inspired by animators for animators
+
+http://ktoon.net/
+!!!LiVES
+
+LiVES (LiVES is a Video Editing System) is a video editing program and VJ tool. LiVES mixes realtime video performance and non-linear editing in one professional quality application.
+
+http://lives.sourceforge.net/
+
+!!!Lux Renderer
+
+LuxRender is a physically based and unbiased rendering engine. Based on state of the art algorithms, LuxRender simulates the flow of light according to physical equations, thus producing realistic images of photographic quality.
+
+http://www.luxrender.net
+!!!OpenShot
+
+Non linear video editor.
+
+http://www.openshotvideo.com
+
+!!!Synfig
+
+Synfig is a vector-based open-source 2D animation software package, designed from the ground-up for producing feature-film quality animation with fewer people and resources.
+
+http://www.synfig.org/
+
+!!!Toonloop
+
+Toonloop is a live stop motion animation software. It aims to show the creation process the the audience as well as the result of the creation. The frame by frame animation is made by adding frames one by one to a clip made of many frames. Clips are displayed in a never ending loop.
+
+http://toonloop.com/
+
+!!!Tupi
+
+A design and authoring tool for digital artists interested in 2D Animation, offering an interface experience focused on 8-100 years old kids
+
+http://www.maefloresta.com/portal/about
+!Fonts
+
+!!Projects
+
+!!!aldusleaf
+
+Crimson Text is a font family for book production in the tradition of beautiful oldstyle typefaces.
+
+
+* http://aldusleaf.org/
+
+!!!Arvo
+
+Arvo  by Anton Koovit
+
+* http://files.korkork.com/index.php?/fonts/arvo/
+* Licence: OFL
+
+!!!Birdfont
+
+Birdfont is a font editor that lets you create outline vector graphics and export ttf, eot & svg fonts.
+
+* http://birdfont.org/
+!Graphic resources
+
+!!Projects
+
+!!!Glyphtracer
+
+Glyphtracer takes an image of letters. It detects all letter forms and allows the user to tag them. They are then vectorised and passed on to Fontforge for fine tuning.
+
+https://launchpad.net/glyphtracer
+
+!!!OSP-foundry
+
+Complete and work in progress fonts created by Open source publishing.
+
+http://ospublish.constantvzw.org/foundry/
+
+!!!Open Clipart Library
+
+An archive of clip art published as Public Domain.
+
+http://openclipart.org/
+
+!!!Openfontlibrary
+
+A nice place to get, share and remix fonts
+
+http://openfontlibrary.org/
+
+!!!Ubuntu Font Family
+
+The Ubuntu Font Family are a set of matching modern humanist fonts that are optimised for screen legibility.
+
+http://font.ubuntu.com/
+!Tools and libraries
+
+!!Projects
+
+!!!Agave
+
+Agave is a very simple application for the GNOME desktop that allows you to generate a variety of colorschemes from a single starting color. 
+
+http://home.gna.org/colorscheme/
+!!!Argyll Color Management System
+
+ArgyllCMS is an ICC compatible color management system. It supports accurate ICC profile creation for scanners, cameras and film recorders, and calibration and profiling of displays and RGB & CMYK printers.
+
+!!!Bookbinder
+
+http://www.quantumelephant.co.uk/bookbinder/bookbinder.html
+
+A program to create a bindable book from a PDF file  (signatures, page reordering, imposing four pages per sheet).
+
+
+!!!BookletImposer
+
+http://kjo.herbesfolles.org/bookletimposer/
+
+BookletImposer / pdfimposer is an utility to achieve some basic imposition on PDF documents, especially designed to work on booklets.
+!!!dispcalGUI
+
+dispcalGUI is a graphical frontend for several utilities from the open source color management system Argyll CMS (dispcal, dispread, colprof and dispwin), which when used together allow you to calibrate and profile your display using a measurement device
+
+http://hoech.net/dispcalGUI/
+
+!!!FontForge
+
+An outline font editor that lets you create your own postscript, truetype, opentype, cid-keyed, multi-master, cff, svg and bitmap (bdf, FON, NFNT) fonts, or edit existing ones. Also lets you convert one format to another.
+
+http://fontforge.sourceforge.net/
+
+!!!Fontmatrix
+
+Fontmatrix is a font manager: it allows its users to find, choose and classify fonts according to the characteristics of the project they have in mind, to enable and disable fonts on the fly, and to pack the font files to easily distribute them.
+
+Further functionalities include a Panose widget, a font extractor, or a glyph comparison widget.
+
+http://www.fontmatrix.net/
+
+!!!GEGL
+
+GEGL (Generic Graphics Library) is a graph based image processing framework.
+
+GEGL's original design was made to scratch GIMP's itches for a new compositing and processing core. This core is being designed to have minimal dependencies. and a simple well defined API.
+
+http://www.gegl.org/
+
+!!!Ghostscript
+
+Ghostscript provides an interpreter for the PostScript language and for the Portable Document Format (PDF) files, with the ability to convert between them but also to many raster formats, view them on displays, and print them on printers that don't have PostScript language capability built in.
+
+The Ghostscript library implements the graphics and filtering (data compression / decompression / conversion) capabilities that appear as primitive operations in the PostScript language and in PDF.
+
+http://www.ghostscript.com/
+
+!!!GPick
+
+A color picker which can create color palettes from images.
+
+http://code.google.com/p/gpick/
+
+dependency: gtk
+!!!gscan2pdf
+
+gscan2pdf is a GUI to produce PDFs or DjVus from scanned documents.
+
+http://gscan2pdf.sourceforge.net/
+
+!!!Kooka
+
+Kooka is an intuitive, easy to use raster image scan program for KDE. Kooka helps you to handle the most important scan parameters, find the correct image file format to save and manage your scanned images. It offers support for different OCR modules. Libkscan, a autonomous part of Kooka, provides a scan service for easy and consistent use to all KDE applications.
+
+http://kooka.kde.org/
+!!!Laxkit
+
+The Laxkit is a semi-permeable C++ Xlib wrapper. If you are looking for a window toolkit for X that is rough, highly experimental, and whose API is quite unstable, this is the toolkit for you. It is being made with an eye toward being able to easily make programs and utilities that are useful to artists.
+
+http://laxkit.sourceforge.net/
+
+!!!LCDF Typetools
+
+Type 1 and OpenType font manipulations; TeX metrics from OpenType.
+
+http://www.lcdf.org/type/
+
+!!!LensFun
+
+LensFun is a  shared library dedicated to rectifying the defects introduced by your photographic equipment.
+
+* Logo bitmap: [@http://profile.ak.fbcdn.net/hprofile-ak-snc4/hs861.snc4/71037_111548052242519_7494281_n.jpg@]
+* Logo SVG:
+* Technology: C/C++
+* Licence: GNU GPL
+* Website: http://lensfun.berlios.de/
+* Articles: (list)
+* Tutorial: (short list)
+* Features: (list)
+
+!!!Libora
+
+* Website:
+** http://gitorious.org/openraster/libora
+** http://gitorious.org/openraster/gimp-plugin-file-ora
+* Article: http://www.pro-linux.de/news/1/16323/openraster-haelt-auf-dem-desktop-einzug.html
+!!!LPROF
+
+LPROF is an ICC profiler with a graphical user interface. It can be used to create ICC version 2 compliant profiles for cameras, scanners and monitors.
+
+http://lprof.sourceforge.net/
+
+!!!La poule ou l'oeuf
+
+La Poule ou l'Œuf est un logiciel destiné à la rédaction, la publication et l'exploitation professionnelle de documents longs (monographies, cours, mémoires, thèses, actes, rapports, manuels techniques, revues...)
+
+Il s'adresse à toute entreprise ou institution productrice de savoirs pour une édition structurée et intégrée au réseau en vue d'une exploitation dynamique et évolutive des connaissances.
+
+http://www.pouleouoeuf.org
+!!!OpenFrameworks
+
+Openframeworks is a c++ library designed to assist the creative process by providing a simple and intuitive framework for experimentation.
+
+The library is designed to work as a general purpose glue, and wraps together several commonly used libraries under a tidy interface: openGL for graphics, rtAudio for audio input and output, freeType for fonts,freeImage for image input and output, quicktime for video playing and sequence grabbing.
+
+http://www.openframeworks.cc
+!!!SANE Scanner Access Now Easy
+
+SANE stands for "Scanner Access Now Easy" is an application programming interface (API) that provides standardized access to any raster image scanner hardware (flatbed scanner, hand-held scanner, video- and still-cameras, frame-grabbers, etc.). 
+
+http://www.sane-project.org/
+
+!!! Squiggle (Batik)
+
+Squiggle is a SVG browser which is very useful for testing if an SVG is standard compliant.
+
+http://xmlgraphics.apache.org/batik/tools/browser.html
+
+!!!PDFEdit
+
+PDFedit is a library for manipulating PDF documents which includes a PDF manipulating library based on xpdf, a GUI and a set of command line tools. 
+
+http://pdfedit.petricek.net/en/screenshots.html
+
+!!!pdf-preflight
+
+Check your PDF files meet the standard you require.
+
+https://github.com/yob/pdf-preflight
+
+!!!PDFRider
+
+PDFRider is a GUI for "pdftk" and allows you to make some simple manipulations to PDF documents. and  aims to be simple and user friendly (windows only).
+
+http://pdfrider.codeplex.com/
+
+!!!PDFSam
+
+PDF Split and Merge is splits and merges pdf documents.
+
+http://www.pdfsam.org/
+
+!!!PDF-Shuffler
+
+PDF-Shuffler is a small application, which helps the user to merge or split pdf documents and rotate, crop and rearrange their pages using an interactive and intuitive graphical interface.
+
+http://sourceforge.net/projects/pdfshuffler/
+
+!!!SampleICC
+
+SampleICC provides an open source platform independent C++ library for reading, writing, manipulating, and applying ICC profiles along with applications that make use of this library.
+
+http://sampleicc.sourceforge.net
+!!!Scenari
+
+Scenari is an open source application suite for designing publishing chains, used for creating professional standard multimedia documents.
+
+http://scenari-platform.org
+
+!!!Scour
+
+Scour aggressively cleans SVG files, removing a lot of ''cruft'' that certain tools or authors embed into their documents.  The goal of scour is to provide an identically rendered image (i.e. a scoured document should have no discernable visible differences from the original file).
+
+http://www.codedread.com/scour/
+!!!Showtell
+
+Shotwell is a digital photo organizer
+
+http://www.yorba.org/shotwell/
+
+!!!The League of Moveable Type
+
+A collection of fonts under  the Open Font License
+
+http://www.theleagueofmoveabletype.com
+
+!!!Simple Scan
+
+Simple Scan is Simple Scanning Utility for Ubuntu.
+
+https://launchpad.net/simple-scan
+
+!!!Skanlite
+
+Skanlite is a simple image scanning application that does nothing more than scan and save images. Skanlite can open a save dialog for every image scanned or save the images immediately in a specified directory with auto-generated names and format. The user can also choose to show the scanned image before saving.
+
+http://userbase.kde.org/Skanlite
+!!!Moonshiner
+
+Moonshiner is a graphical frontend (GUI) for Ghostscript's PostScript-to-PDF converter. It allows to do color conversion, image resampling etc.
+
+http://moonshiner.sourceforge.net/
+!!!PhotoPrint
+
+PhotoPrint is a utility designed to assist in the process of printing digital photographs.
+
+* Print photographs 1-up, 2-up, 4-up or with any user-selectable number of rows and columns.
+* Create posters, split over several pages.
+* Arrange images into a sort of Carousel, fading from one to another.  (Ideal for CD labels)
+* Crop images to fit a specific frame.
+* Apply a decorative border to an image.
+* Make use of ICC colour profiles to provide accurate output.
+* Send 16-bit data to the printer, to avoid "contouring" problems in smooth gradients.
+* Apply a handful of effecs to an image, including sharpening, removing colour and adjusting colour temperature (ideal for cooling or warming black-and-white prints).
+
+http://blackfiveimaging.co.uk/index.php?article=02Software%252F01PhotoPrint
+
+
+!!!PosteRazor
+
+The PosteRazor cuts a raster image into pieces which can afterwards be printed out and assembled to a poster.
+
+As input, the PosteRazor takes a raster image. The resulting poster is saved as a multipage PDF document. An easy to use, wizard like user interface guides through 5 steps.
+
+http://posterazor.sourceforge.net/
+!!!RE-lab
+
+RE-lab is joint effort of gimp.ru team and developers of various open source 
+projects to do clean-room reverse engineering of various proprietary file 
+formats useful for mankind.
+
+http://github.com/prokoudine/re-lab
+
+!!!SwatchBooker
+
+Swatchbooker is a swatch viewer, convertor and editor.
+
+http://www.selapa.net/swatchbooker/
+!!!Uniconvertor
+
+UniConvertor is a universal vector graphics translator which can be used as a command line tool, as a library or through a simple GUI.
+
+http://sk1project.org/modules.php?name=Products&product=uniconvertor
+
+!!!ValiProof
+
+Comparison and validation tool for proofing processes in the graphic arts industry.
+*    Colorimetric validation of hard copy proofing process
+*    Save validation report for documentation
+*    Supports ISO 12642-2 (IT8.7/4) chart
+*    Descriptive statistics of colour difference
+*    Colour difference table for analysis
+
+
+http://valiproof.sourceforge.net/
+
+!!!Weasy Print
+
+WeasyPrint is a visual rendering engine for HTML and CSS that can export to PDF. It aims to support web standards for printing. WeasyPrint is free software made available under a BSD license.
+
+It is based on various libraries but not on a full rendering engine like WebKit or Gecko. The CSS layout engine is written in Python, designed for pagination, and meant to be easy to hack on.
+
+http://weasyprint.org/
+!Distributions
+
+!!Projects
+
+!!!AVLinux
+
+AV Linux LiveDVD ISO image created using the Debian GNU/Linux Testing branch and Remastersys.
+
+http://www.bandshed.net/AVLinux.html
+
+
+!!!dyne:bolic
+
+dyne:bolic is shaped on the needs of media activists, artists and creatives as a practical tool for multimedia production: you can manipulate and broadcast both sound and video with tools to record, edit, encode and stream, having automatically recognized most device and peripherals: audio, video, TV, network cards, firewire, usb and more; all using only free software!
+
+You can employ this operating system without the need to install anything, and if you want to run it from harddisk you just need to copy a directory: the easiest installation ever seen!
+
+It is optimized to run on slower computers, turning them into full media stations: the minimum you need is a pentium1 or k5 PC 64Mb RAM and IDE CD-ROM, or a modded XBOX game console - and if you have more than one, you can easily do clusters. 
+
+http://dynebolic.org/
+
+!!!OpenArtist
+
+OpenArtist is a linux distrubution for creative people. It focuses on and features all flavours of digital arts : 2d, 3d, audio, video, vjing, hardware interfacing (arduino, robotics, reactable..). OpenArtist is an ubuntu-based distribution which features many programs which are not available in other distributions. The one thing which sets openArtist apart from other distributions is its universal approach. It has its own, selfexplaining menu-system, comes with its own documentation, has builtIn sharing, and the preconfiguration of the system exeeds any comparable distriubtions. 
+
+http://openartisthq.org 
+
+!!!Puredyne
+
+http://puredyne.goto10.org/index.html
+
+!Community
+
+!!Projects
+
+!!!Developers communities
+
+!!!!Create
+
+Create catalizes the communication and sharing between Free and Open Source creative software communities. We do Libre Graphics Meeting and share Specifications.
+
+http://create.freedesktop.org/
+
+!!!User communities
+
+
+
+!!!! *-forum.de
+* http://gimp-forum.de, http://inkscape-forum.de, http://scribus-forum.de
+
+!!!! GIMP users @ flickr
+
+http://www.flickr.com/groups/gimpusers/
+
+
+!!!! Meet the GIMP
+
+Video tutorials for GIMP
+
+* http://meetthegimp.org/
+
+!!!! Open Source Photography
+
+* http://www.osphoto.org/
+* http://www.flickr.com/groups/83823859@N00/
+!!! Artists communites
+
+!!!!Open Source Cinema
+
+Open Source Cinema is a collaborative website, an application designed to help filmmakers and audiences create together.
+
+www.opensourcecinema.org
+
+
+!!!! Open Source Publishing
+
+Open Source Publishing is a graphic design platform that uses only Free and Open Source Software. Closely affiliated with the Brussels based digital culture foundation Constant, OSP aims to test the possibilities and realities of doing graphic design using an expanding range of tools.
+
+http://ospublish.constantvzw.org/
+
+
+
+!!!! UpStage
+
+An open source venue for cyberformance: remote performers combine images, animations, audio, web cams, text and drawing in real-time for an online audience. All you need is a web browser!
+
+http://upstage.org.nz/blog/
+
+!!! Tutorials
+
+!!!! Computer Magazines
+
+Desktop Publishing and PDF Magazines
+
+http://dtpscribus.wordpress.com/
+
+!!!! Gimpers
+
+Gimpers.com is a website dedicated for Gimp Video Tutorials.
+
+http://www.gimpers.com
+!Press and Information
+
+!!Projects
+
+!!!Blender Art Magazine
+
+Blender Art Magazine is a bi-monthly PDF magazine providing quality learning content for the blender community, from the efforts of the community itself.
+
+http://blenderart.org/
+
+
+!!!Calcyum
+
+Calcyum est un centre de ressources sur les logiciels libres et open source tournés vers le design graphique, et notamment le prépresse.
+
+http://www.calcyum.org
+
+!!!Code:Free
+
+A pdf magazine / art book for the open source scene. It contains only pictures made with free  software.
+
+http://chrisdesign.wordpress.com/codefree/
+
+!!!Graphics Planet
+
+Graphics Planet is a window into the world of people involved in free software development in the field of computer graphics and publishing.
+
+It collects entries from the blogs of the developers of graphics software project distributed under a free software license and from artists who uses free software and have contributed artwork to free software projects.
+
+http://www.graphicsplanet.org/
+
+!!!Libre Graphics World
+
+News, tutorials and forum around the libre graphics software
+
+http://www.libregraphicsworld.org/
+!Outdated projects
+
+* http://drawpile.sourceforge.net DrawPile is a sketching oriented drawing program with a twist: you can share your drawing live with other users. There are no restrictions on who may draw where; every user has full access to the whole picture simultaneously. (it seems to be still under development)
+* http://www.flowpaint.org/ Flowpaint is a next generation paint program that focuses on usability and power. It's open source, cross platform, and supports pressure sensitive graphics tablets.
+* http://sourceforge.net/projects/qaquarelle/ Qaquarelle is the opensource Qt4-based graphical editor, whose goal is to provide the native way of painting with emulated traditional instruments, including the full support of tablet input and OpenGL-based processing in GPU.
+* http://www.chibipaint.com/ ChibiPaint is an open source oekaki applet, a software that allows people to draw and paint online and share the result with other art enthusiasts.
+* http://mrdoob.com/projects/harmony/ harmony is a canvas based HTML5 painting application
+
+!FAQ
+
+!! Ideas for this project list
+* each project should be able to write one sentence (maximal length) + add 1 picture (fixed size) and 1 link
