@@ -1,0 +1,21 @@
+(:table:)
+(:cell colspan=2:)MacGuffins: never forget that ???
+(:cellnr:)Changelist
+(:cellnr:)
+A MacGuffin is an element in the document which will raise a warning when exporting to PDF or when printing. It can be attached to text selection which are not ready for production like a placeholder for a unmatched reference ('???') or a bibliographic reference which has to be checked.
+(:cellnr width=150:)Features
+(:cell:)
+* it should be attached to a text string
+(:cellnr:)Further ideas
+(:cell:)
+* is there a need to attach it to other frames, too?
+(:cellnr:)User interface
+(:cell:)
+* keyboard shortcut
+(:cellnr:)Source code
+(:cell:)
+* pageitem_textframe.cpp
+** Line 485: test reference
+** show(): other test
+(:cellnr:)
+(:tableend:)

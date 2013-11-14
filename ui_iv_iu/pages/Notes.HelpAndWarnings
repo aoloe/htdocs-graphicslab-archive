@@ -1,0 +1,9 @@
+* Avoid messages that could make the user expect trouble (like SVG import)
+* Display help messages in status bar (like Inkscape).
+* Scribus tooltips are good but sometimes so long that they hide the option they describe : include some inline help instead/Add just a beginning description in tooltip and say "for more press XXX". Gimp handles that very well
+* it's not evident how one can move an image inside its frame (double clicking on it and making sure that scale to frame size is not selected): how can we do it better?
+** latsamy says: "moi j'avais essayé en appuyant sur shift, ou Ctrl, ou autre, je n'avais pas pensé à double-cliquer. l'avantage avec ces touches, c'est qu'on peut voir le curseur changer"
+** ale thinks that it may be better to use a information/status palette (like inkscape's status bar, but with a bit more place)
+
+links:
+* [[http://www.alistapart.com/articles/neveruseawarning/|Never Use a Warning When you Mean Undo]]

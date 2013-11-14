@@ -1,0 +1,57 @@
+!Goals
+
+We are a small group working on the Scribus User Interface.
+
+Our goal is to provide small "homeopathic" patches to the Scribus team.
+
+The focus will be on small and easy to implement changes for which we can write patches ourselves (replacing icons, redrawing dialogs, moving menu entries, ...).
+
+If we have ideas for bigger projects, we will document them and propose them to the Scribus team or external developers who may be interested in implementing them.
+
+We will start by uploading patches to the Scribus' own bug report system.
+
+We will target the 1.5 version.
+
+!Team
+
+We are:
+
+* Alessandro, old time member of the Scribus community, Developer
+* Cedric, member of the Scribus community, graphic designer, teacher, book author
+* Claudia, interface designer
+* Eric, visual artist interested in the way our group will work
+* Jakob, icon designer
+* Louis, printer
+* Vlada, graphic designer
+
+We will probably need a "sponsor" who will help us to get our patches into the Scribus code.
+
+Other people having shown interest to the project:
+* Michael Curtis michael@moltenmercury.org
+!Tasks
+
+* define our communication flow (mailing list? own irc channel?)
+* identify the projects and define some priorities (which are more important? which are good to start with?)
+* define a road map (do we want to do some first steps before doing it?)
+* once we our work will be ready for it, we should have a long weekend together where we could work on the project (a Scribus developer should be with us and help us with the programming).
+
+!Resources
+
+!!Books on interaction design
+
+!!!Beahviour
+*[[http://www.amazon.de/Interface-Directions-Designing-Interactive-Systems/dp/0201379376/ref=pd_rhf_shvl_1|Interface-Directions-Designing-Interactive-Systems]]
+*[[http://www.amazon.de/Inmates-Are-Running-Asylum-High-tech/dp/0672326140/ref=cm_lmf_tit_9_rdssss0|Inmates-Are-Running-Asylum-High-tech]]
+*[[http://www.amazon.de/About-Face-Essentials-Interaction-Design/dp/0470084111/ref=pd_sim_eb_3|About-Face-Essentials-Interaction-Design]]
+*[[http://www.amazon.de/Design-Everyday-Things-Don-Norman/dp/0465067107/ref=cm_lmf_tit_7_rdssss0|Design-Everyday-Things-Don-Norman]]
+
+!!!Design
+*[[http://www.amazon.de/Designing-Interactions-Moggridge/dp/0262134748/ref=cm_lmf_tit_3_rdssss0|Designing-Interactions-Moggridge]]
+*[[http://www.amazon.de/Systemisches-Design-Cyrus-Dominik-Khazaeli/dp/3499600781|Systemisches-Design-Cyrus-Dominik-Khazaeli]]
+
+!!!Patterns
+*[[http://www.amazon.de/Designing-Interfaces-Jenifer-Tidwell/dp/0596008031/ref=sr_1_1?ie=UTF8&s=books-intl-de&qid=1289224833&sr=1-1|Designing-Interfaces-Jenifer-Tidwell]]
+!Links
+
+* http://www.openusability.org
+* http://www.designintheopen.org

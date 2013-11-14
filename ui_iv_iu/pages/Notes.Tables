@@ -1,0 +1,29 @@
+The tables are being reworked by jain basil. We should contact him and ask him
+* what he plans to do
+* if he wishes to get some help from us
+
+We could improve user experience of table by adding some simple action scripts :
+
+* select a row (could be done with naming rules like table_a_1 table_a_2 and a regexp)
+* select a column
+* change the size of a column/row and the next is following
+* split cell (divide size of a frame by 2 and add a frame after)
+* merge cell (on multiselect : get the selection size, delete the frames and create a new frame at the selection size)
+* in fact, the tool should be rebuild so that no dialog opens, because people are afraid of dialog and that they might have not prepared their table. The workflow could be :
+** draw a table frame
+** display a table window or a table tab in the PP or whatever it becomes
+** the user set the rows and columns number in this window which can update the table at any time (by doing size calculations)
+** the window has some button to manipulate cells (merge, split, link, import content [if image auto convert cell to image frame, if CSV use importCSV2table])
+
+* eventually : auto link of row cells or columns cells
+
+* since strokes are drawn equally within and without the frame limit, and there is no way to tell the border is within there is some issues 
+** stroke is larger than the cell
+** stroke on a left cell will be under stroke of the next one so that the first can get invisible if it is same size or thiner. We could avoid this by automatically adding a space between cells : i guess when a cell get a Npx stroke it is resize by half the stroke on the side the stroke is set. It needs some calculation but this might not be to difficult. 
+
+* allow calculations when adding =sum(row) or =table1_a_1+table1_a_2, click on a button in the table window and get the content, convert strings to what needs and interprets it\\
+----> this should be done in the general effort of introducing variables into scribus (cf. MrB)
+
+Links:
+* http://wiki.scribus.net/index.php/Table_implementation
+* http://bugs.scribus.net/view.php?id=2564

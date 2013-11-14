@@ -1,0 +1,52 @@
+(:title Notes:)
+(:#toc:)
+
+This sections contains all the new ideas for our project. Feel free to add new ones (right on this page or on their own page)
+
+Some random ideas which have not been yet integrated in their own page:
+
+* pressing ctrl when creating a frame or shape should enforce some sort of ration...
+* document settings: [save] should also apply
+* all menu items should have Shortkeys (underlined)
+* document settings: return should be Ok (everywhere: enter should be Ok button!)
+* in a dialog, even if a button is active, return should still be "Ok" and "space" should activate it
+* should the keyboard shortcut be in the tooltip?
+* create a palette with a list of fonts using the font to show the name (and, probably, the size, too) and let apply the font from there.
+** Louis: wait! I have... actually we have defintely something cooking about font with
+Pierre and Andreas and Dave Crossland and now me!
+* move "file > import > image / text" under "item" and "file > import > vector file" under "insert > vector drawing"
+* add a button into the image tab of the PP to load an image
+** Louis: how do we work with images ? how would we want to work with images ? 
+* copy / paste, duplicate and multiple duplicate: is it correct that duplicate doesn't create the copy at the sample place as the original? wouldn't we expect this behaviour for copy / paste, instead?
+* find a better weay to define the paper / document format (cf. bug report by Louis)
+* Remove the "Edit frame content" from the toolbar and add a "Edit content" item into the "Item" Navigation entry. This new command will bring you in edit mode for the currently selected item (if you want to be faster, you can always double click on the frame...)
+** [[http://bugs.scribus.net/view.php?id=168|This feature request]] explain the rationals behind the edit content tool.
+* Manage the white space in the inner part of the image frame
+* replace the rotation tool by a rotation handle in the frame (like inkscape or like the migros tool?)
+** we need 9 reference point for rotating* align and distribute:
+** replace "selected guide" by "active guide"
+** try to add the measure to the select box
+* make the text overflow marker active for linking frames
+* add a border for the real size of the image (if different than the frame size)
+* display the text linking arrow always at the same size
+* why is the border of the frame red when it's part of a linked flow?
+* find a color scheme for all the "information" lines (linked frames, frame border, page border, guides, page size, image "real" size when different than the frame size)
+
+Some ideas for bigger projects
+* reading louis [[http://bugs.scribus.net/view.php?id=8805#c24200|comment in the scribus' bug report]] i think we could write some sort of typographic / usability guidelines for scribus. the goal would be a 2 to 3 A4 pages document. (ale/20100624
+* which frame modifications are useful and in which context?
+** [[http://bugs.scribus.net/view.php?id=7413|bug on flipping text]] + [[http://bugs.scribus.net/view.php?id=9024#c24208|comment from louis]]
+** [[http://bugs.scribus.net/view.php?id=9024|resizing text frames while editing content]]
+* Hyphenation and language:
+** [[http://bugs.scribus.net/view.php?id=417|hyphenate word by minimum *letters* options]]
+** [[http://bugs.scribus.net/view.php?id=1108|some more considerations in the comments]]
+** [[http://bugs.scribus.net/view.php?id=4676|automatic avoid hyphenation for certain strings]]
+* Arrows: find a way to define more arrows:
+** add new arrows
+** implement an arrow style
+** add an arrow editor
+** find a way to import arrows
+
+
+!People interested in the project
+* subeditor

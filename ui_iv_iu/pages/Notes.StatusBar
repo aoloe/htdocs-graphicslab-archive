@@ -1,0 +1,145 @@
+(:title Status bar:)
+(:#toc:)
+
+There is a bug open for it: http://bugs.scribus.net/view.php?id=7368
+
+! Fix preview button
+
+* change icon to monitor with glowing glass (like the print preview)
+* do a submenu in the icon like for cms
+
+!Move seldom used buttons to new toolbars
+
+* Zoom
+* Page navigation
+
+(Louis) Not sure at all the Zoom button is seldom used, unless it doesn’t work well...
+
+IMO, the first 12 buttons should all be replaced by keyboard shortcuts. Basically, they can all be found from the top menu bar and down... Why do we need tool buttons for these is beyond me. Just so we know what we’re talking about:
+
+* New
+* Open
+* Save
+* Close
+* Print
+* Preflight
+* Save as PDF
+* Undo
+* Redo
+* Cut
+* Copy
+* Paste
+
+Get rid of those 12 buttons is my take.
+
+Then we have: 
+
+* Select tool
+
+Followed by no less than 9 Insert Buttons...
+
+* Insert Text Frame
+* Insert Image Frame
+* Insert Render Frame
+* Insert Tables
+* Insert Shape
+* Insert Polygon
+* Insert Line
+* Insert Bézier Curve
+* Insert Freehand Line
+
+It’s an arguable choice. If it was me, I would probably try to gather some of those into one single tool with an extended menu. Something like that :
+
+* Text
+* Images
+* Line
+
+That’s one
+
+The rest is Nº 2...
+
+Then...
+
+Then we have 6 tools: 
+
+* Rotate Items
+* Zoom in and out
+* Edit Content of Frame
+* Edit Text
+* Link
+* Unlink
+
+Then we have another line of buttons below the top line:
+
+* Measurements
+* Copy Item Properties
+* Eye Dropper
+
+Then we have the PDF buttons... There are 7 buttons for PDFs...
+
+All in all, we have 38 buttons in the top menu bar...
+
+I think we can do with much less...
+
+!Merge the two status bars
+
+* Reorder the Status bar (Claudia ?)
+
+!Info status bar
+
+[ale] personally, i'd prefer to have an information palette (instead of a toolbar), which you could easily place, hide, show...
+
+a mix of the the status bars in inkscape and scribus. but as a palette, not as a toolbar.
+
+for editing, there is the properties palette.
+
+!Notification area
+
+Currently, the status bar is also used as a notification area. Personally, I think that this the best way to use it and we should keep it and we may even try to improve it.
+
+One idea would be to have also a "Notification" palette which could show the last few notifications (we should prevent the save 10%25, 20%25, ... to be repeated at aeternum) and maybe even show additional information (links to the documentation?)
+
+I wonder if this could be a Clipper done right...
+
+[@
+hi peter,
+
+>> > > personally, i'm for finding a good notification system for scribus.
+>> > > but, generally speaking, alert boxes are not what i understand
+>> > > under a good way of communicating between a program and its users.
+>> > > it scares some of the users and annoys most of the rest...
+> > 
+> > But who has been talking about alert boxes? Tooltips are not the same
+> > thing as alert boxes. Tooltips show up when you hover the mouse
+> > pointer over an item for a second or so, and disappear as soon as you
+> > move the mouse again. How often do you keep you mouse pointer above a
+> > disabled menu item?
+> > 
+> > I have previously on this list mentioned how most printer setting
+> > dialoges handle disabled features: A small mark (usually exclamation
+> > mark or question mark) appears near the item that is disabled and when
+> > you click or hover it you get an explanation like "Staple option can
+> > not be used when using the upper output tray". A similar notice would
+> > be perfect for that diabled PDF/X-3 export button.
+i was talking about popups... the discussion has changed to alert boxes and tooltips.
+
+it does not make much difference to me: they are all annoying. well, they are annoying if they are not built upon a concept which is both non invasive and useful for the user.
+(and i'm not talking about the real tooltips you're getting when hovering a button: those ones are very useful: i asked for one, i get it. i'm talking about tooltips, alert boxes, notifications and other artifacts that popup from nothing without me having asked for them.)
+
+just adding warnings, tooltips, popups, and so on won't make scribus usability any better. it will imo just clutter the interface. and it will make scribus' code even more complicated with ad hoc messages spread everywhere.
+
+and i repeat myself: i'm for a notification area where the user gets the notifications. and he knows that if there is a notification it will be there. and he can browse through a few past notifications. and can get more information about specific notifications. even links to the online doc. 
+i just don't want it to spread all over the UI.
+and i'm not for a hard to use scribus which can only be used by few.
+
+going back to your example, we can certainly add an action to a disabled button which shows an alert when you click on it or when you hover it... but wouldn't it be better that scribus writes to a notification area a list of warnings when you choose to PDF/X-3 as a target? as soon as you notice that you have problem and can't click on a specific button, you go to the notification area and check if there is a pertinent message in there.
+
+the same, if you can't paste an item into a locked layer (well, the question is, whether scribus can notice this at all... but this is another problem) it will send a message to the notification area. the third time you try to do it and it does not work, you will go to the notification area (if it's not already under your eyes yet) and check what's going on.
+
+if you prefer to always see all notification, you have the notification area always open, if you don't want to see it, you display when you think you need. (yes, i think of the notification area as a new palette... maybe with a toolbar where you see the last message and a button which gets very bright when a warning is issued, similar to maemo).
+
+and if you want to be interrupted all the the time by the things that other people think are important (because you won't be interrupted often for the things *you* think are important: you'll be careful there!), well do it... just give an option to disable it.
+
+i hope i could explain a little bit better why i'm against adding notifications for specific single problems, most of all if you want to be sure that the users does not miss that notification.
+notifications have been implemented a lot of times in a bad way (everybody loves the clipper) and a few times in a good one. let's try to get inspiration from the few examples where it has been done well!
+@]

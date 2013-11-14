@@ -1,0 +1,13 @@
+Join all the page managing dialogs in one window.
+
+mean :
+* Manage Pages
+* Manage Master Pages
+* Insert several Pages
+* Apply Master Pages
+
+Questions :
+* should it manage the layers, too?
+     - not sure layers are related to page (more content management)
+* add context menu support on pages
+* use button/action icons in the windows (somewhat in Adobe style !)

@@ -1,0 +1,27 @@
+(:title Color lists:)
+
+Show colors as preview boxes with name in tooltip
+
+* we may need a way to import SVG files into an image frame to avoid color pollution (or ignoring imported colors if not used) : ** cedric : pressing some key while placing
+* First, in just about any job we should know before the beginning if we’re going to print process
+of spot. That means that whenever we are importing an image file from another environment, it must comply at some point in the process to the intented printing color scheme. So, if we have checked, for instance, CMYK at the beginning, then we know that any imported image will have its colors moved to the CMYK scheme. Otherwise we’re in the spot color scheme and then again, be it 1 or 2 or 3 or even more spot colors, the imported image will have its colors mapped to the colors picked for the document. In other words, we can think that the Create New Document should offer right away the color scheme to the user. From that choice, when importing a graphic we would be offerd the choice of mapping the colors to iether process colors (or rgb if we choose to work in that color space knowing at the end that we will export at least one iteration of the file to CMYK color scheme) or spotcolors from a given list (short list that is).
+
+[Louis] I completely support this. ''(Maybe we could even at the start ask whether the file is going to be PDF/X-1a or anything else and this choice would determine a certain amount of settings, such as the color space.)''
+
+* To better reflect this, I suggest we redesign the ''New Document'' dialog and add to it this ''intended printing color scheme'' (with a shorter name!).
+* The mutually exclusive choices (radio button or pull down list, TBD) for this would be:
+** CMYK
+** CMYK + Spot color(s) [including a number field*]
+** Black
+** Black + Spot color(s) [including a number field]
+** Spot color(s) [including a number field]
+
+The number field would reflect into the color list where the user wil see Spot color 1, Spot color 2, etc. In any event this will be a reminder that this job has a number of spot colors and there is a need to establish what they are. Unless they are defined, it’s better to have a neutral name like "Spot Color 1". Thus, there will be a plate for that color. The color list would then only display at the begining the actual colors in the job. If the creator of the file wants to add new colors into a CMYK job for instance, the option for spot color would be greyed and there would be a warning saying all new colors will be CMYK.
+
+[Sugestion: please make a subsection title]
+* have a real ink managment : spot should be added to the new color window like a primary.
+
+* add link from color editing window to colorwheel
+* modify colorwheel 
+** enable free modification of each colors (actually, only predefine rules mono, tetra ...)
+** clarify adding color to swatch or modify swatch

@@ -1,0 +1,11 @@
+(:title Sketching:)
+(:#toc:)
+
+it would be nice to separate the sketching from the task of drawing a real dialog
+
+* we will try to draw the sketches with [[http://pencil.evolus.vn/|pencil]]
+* we will use the svn repository to store all the sketches in the original format
+* we will upload png of the sketches to the wiki, adding the name / path to the orignal sketch
+
+* we will draw the real dialogs in qt designer
+* we will also share the *.ui files through the google svn repository

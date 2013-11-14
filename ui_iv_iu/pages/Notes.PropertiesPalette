@@ -1,0 +1,151 @@
+(:title Properties Palette:)
+(:#toc:)
+
+!Accordeon to tabs with icons
+
+* Pierre knows how to change the code (he should already have a patch for it) and it's a simple job.
+* Choosing the icons (Claudia and Jake?)
+** X,Y,Z (new name?)
+** Shape
+** Group
+** Text
+** Image
+** Line
+** Colors
+** Transparency
+* Using color neutral icons?
+
+Question: What is Group supposed to allow?
+Comment: There are too many tabs.
+I have a group, I want to apply a line (why would I do that is behond me but since I can, I may want to work like this... When you have a spoon in hand, you might dream of a soup bowl...)
+So I want to apply a line. I select the line tab. Then I want to apply color to that line. I select the color tab. All that seems to be pretty logical. But it doesn’t make any sense. And on top of that, it simply doesn’t work!
+
+Suggestion:
+* Remove the group tab (it has no utility whatsoever)
+* Put Colors AND Transparency into all tabs where they are needed: Text, Image, Line, and then remove the Colors and Transparancy tabs
+* ''to be continued''
+
+
+
+! Split the Properties palette
+
+!! Container Palette with tabs
+
+* The split between frame (container) and content will probably make things better... but we should not forget to think about [[http://bugs.scribus.net/view.php?id=3630|this bug report on remembering the last tab used]]
+* [[http://bugs.scribus.net/view.php?id=3766|Here a bug]] with some usability concerns.
+* New icon for the border color?
+
+!! Pierre ideas : dockable widget per properties
+
+!! Content Palette adapting to the content
+
+!!! Join items of the text tab
+
+''All text settings should be available in the PP.''
+Everything available in the styles should be available in PP !
+
+see : > 0008805: hyphenate text and short words should be property of paragraph style
+> http://bugs.scribus.net/view.php?id=8805
+
+0001279: Adequation of settings in Paragraph styles/Properties palette/Text editor
+> http://bugs.scribus.net/view.php?id=1279
+
+:Actually missing (but available in the Style dialog):
+* Drop caps
+* Right Indent
+* Left Indent
+* First Line Indent
+* Space Above Paragraph
+* Space Below Paragraph
+
+!!! Work on Color and Transparencies tabs
+* There is a need to discuss about the interest of having separate tabs for things that can apply to many elements such as color and transparency for:
+** Text
+** Lines
+** Frames
+** Shapes
+
+* This is a very good case to demonstrate just how clumsy the interface is when a user has to open up another tab to complete what could (should) be acheived within one single tab.
+* As much as possible, the back and forth from one tab to another while acting upon one single frame should be avoided.
+** I wonder for instance why the number of columns went from Shape to Text and not migrate to a Text Frame tab? I don’t say I have all the answers but we certainly need to give this more thought on how we work and not on how we have developped clever workarounds with the years.
+* Thus: we can discuss about the benefits of having those fields into each tab where they are needed. And in fact, getting rid of the Color and transparency tabs. This of course needs more thoughts. If, for instance, we are to use the PP to create styles, then we need a Color and Transparancy tab. ''(To be continued...)'' (Louis, August 3, 2010)
+
+!!! Contour line and shape editing
+
+* change the way shape and contourline editing are switched: two buttons for shape and contour line?
+* move some (or all the editing) into the properties palette instead of its own dialog
+* reduce the number of clicks to define the contour line
+* see http://bugs.scribus.net/view.php?id=1137
+!!! Sanitize the icons
+
+* tango already has text formatting icons with A (format-text*.png
+
+!!! Images
+
+* 0001562: "Scale to frame size" locks the image in the frame: no more free positionning
+> http://bugs.scribus.net/view.php?id=1562
+cedric :  I had in mind to add some kind of ID-style "fit to frame width" and "fit to frame height" commands. Could be done in python i guess.
+
+!!! edit mode and content tab
+
+if the properties palette is kept as it is now (no splitting of the content), the content tab should be automatically selected when entering content mode.
+!Move "Info" context menu to the Content palette
+
+Or create a new palette for the infos (in a.l.e's eyes, when you're interested in the infos, you moslty want to get them for several frames sequentially). [[http://bugs.scribus.net/view.php?id=9177|bug]]
+
+!Notes
+
+* There is a bug assigned to riku (in 2006!) for it: http://bugs.scribus.net/view.php?id=3766
+* http://bugs.scribus.net/view.php?id=8624 bug report with mock up
+
+!Discussion entre Cedric et Ale du 22.7.2010
+
+(we should get a proposal out of it and send it to the ui_iv_iu list)
+
+%3ca_l_e> personnellement, je crois que nous devrions tout d'abord rendre possible le changement en tabs des 6 ou 7 dialogues existants. Il nous faudra donc proposer des icones...
+
+%3cpygmee> Qu'en penses Jakub ? Des nouvelles ?\\
+%3ca_l_e> pas de nouvelles. mais je crois qu'entre vlada, claudia et toi on devrait pouvoir trouver des icones.
+
+%3cpygmee> Je pense qu'il faudrait aussi qu'on se prépare pour la phase 2 du boulot de Pierre
+%3ca_l_e> là je vois trois boulots importants, surtout au niveau conceptuel:
+* comment gérer la liberté offerte par la modularisation absolue (fragmentation de l'interface)
+* comment gérer la création de palettes personalisées
+* formuler des propositions pour réunir les champs en widgets pour chaque élément
+%3cpygmee> il faudra certainement des fichiers .rc ou ressemblant pour ça. Ce qu'il faudrait surout c'est que l'utilisateur puisse changer d'organisation d'interface sans avoir à rebooter.\\
+%3cpygmee>si on considère l'interface comme des éléments qu'on ouvre et ferme (fenêtre..) ça ne devrait pas trop poser de problèmes, si on veut prendre en compte d'autres éléments, ça risque d'être plus compliqué
+
+%3cpygmee> Je pense qu'il faudra éviter de calquer l'UI sur la modularisation du code, ou du moins se dire qu'on peut aboutir à une modularisation différente
+
+%3cpygmee> Point 1 : ça passe à mon avis par la proposition de plusieurs organisation par défaut.
+# PP actuelle
+# PP Contenant/Contenu
+# Modèles avec diverses fenêtres spécialisées
+
+%3ca_l_e> je crois  qu'il faut garder un défault qui reste fixe, bien raisonné et, en plus donner la liberté à qui veut autre chose de s'organiser de facon intelligente...
+
+%3cpygmee> oui, autant qu'on pourra. Il faudra donc réfléchir à la façon dont l'utilisateur pourra faire ses "assemblages" :
+* glissé d'une fenêtre à l'autre
+* fenêtre UI-organizer ou quelque chose dans le genre
+* une fonction permettant de mémoriser la structure courante
+
+%3ca_l_e> personnellement, j'aimerais partir de la question: qu'est-ce qu'on veut offrir. avant de se demander comment le faire...\\
+%3cpygmee> oui, mais il faudrait lister les possibles. Que peut QT sans trop de difficulté à implémenter ?\\
+%3cpygmee> A mon sens, je verrai bien :
+* proposer des regroupements de fonctions  a minima
+* regrouper ces regroupements dans une PP nouvelle
+* laisser l'utilisateur faire ces propres regroupements à partir de la PP (enlever ou ajouter ou déplace)
+ On offre donc un 2 composé des 1 qui peut donner 3 pour les experts
+
+%3ca_l_e> personnellement, je ne laisserais pas toucher à la PP... elle doit être de bonne qualité et c'est tout. j'ai un peu peur que la possibilité de personalliser soit une excuse pour faire le travail à moitié.\\
+à mon avis, l'utilisateur devrait avoir al certitude de trouver tout ce que scribus offre dans la PP (contenu / contenant) et il peut être très rapide s'il utilise ses palettes personnalisées.\\
+autrement: comment tu gères l'ajout de nouveaux widgets par les devs?
+
+%3ca_l_e> et, comme j'ai écris avant, je crois que je préfère discuter tout d'abord sur ce qu'on veut offrir au graphiste (et principiant / geek?) et après voir comment on peut le réaliser...\\
+%3cpygmee> je ne pensais pas laisser l'utilisateur changer la PP par défaut, mais se construire une variante de la PP qui correspond mieux à ces besoins. Voir le laisser construire plusieurs PP propres à ces usages.\\
+Mais je suis d'accord qu'il ne faut pas se reposer dessus. La majorité des utilisateurs ne personnalisent pas
+
+%3ca_l_e> moi, j'aimerais surtout trouver une très bonne façon de permettre aux utilisateurs d'avoir à disposition les widgets dont ils ont le plus besoin...\\
+%3cpygmee> cela signifie faire un tri et tu trouveras toujours quelqu'un pour te dire que tu n'aurais pas du enlever celui-ci ou celui-là. Mais il faudrait mettre en avant l'essentiel. Actuellement, tout est traité de la même façon dans la PP, il faut évidemment changer ça\\
+%3ca_l_e> est-ce un problème?\\
+%3cpygmee> non, juste un sujet de réflexion

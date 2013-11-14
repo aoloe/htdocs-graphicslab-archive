@@ -1,0 +1,23 @@
+http://stephenjungels.com/jungels.net/articles/diff-patch-ten-minutes.html
+
+!apply a patch
+
+[@patch -p1 %3c thepatch.patch@]
+
+the @@-l@@ parameter may be needed if there is a white space mismatch
+
+!create a patch
+
+To create a patch for a single file, use the form:\\
+[@diff -u original.c new.c > original.patch@]
+
+To create a patch for an entire source tree, make a copy of the tree:\\
+[@cp -R original new@]
+
+You can also use SVN's own diff to create the patch without having the original file on your disk:
+
+[@svn diff path/to/dir --diff-cmd /usr/bin/diff -x "-i -b" > mypatch@]
+
+or even
+
+[@svn diff path/to/dir  > mypatch@]

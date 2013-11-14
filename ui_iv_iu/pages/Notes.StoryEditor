@@ -1,0 +1,40 @@
+(:title Story editor:)
+(:#toc:)
+
+WYSIWYG editing is now working in the frame. We need a new Story editor for structure oriented editing (only paragraph and char styles without any preview)
+
+The story editor becomes a power tool.
+* show hidden chars
+* normally view only shows the applied styles
+* option to show all tags (bold, ...)
+
+We may also suggest to build the SE as a standalone application, which would be a powerful text editor with typographic tools.
+
+'''Pros and cons of a standalone application — An ongoing discussion'''
+
+''Pros'' [please complete]
+* Someone or a team could edit the text without affecting the layout.
+* A typographic text file is much lighter to carry over a network or to share by any means than a layout with graphic elements, including pictures. 
+* To be fully efficient, we would need that program to allow server-based editing (à la Google Docs).
+* A good alternative for poeople in need of typographic controls in their WP or text editor.
+* A direct channel towards layout as the text file would be ready to use within Scribus.
+
+''Cons'' [please complete]
+* It’s arguable whether we need WP on the first place and why such a text tool hasn’t been put together before?
+* The idea of this standalone application was born long ago in the proprietary world of software and afaik hasn’t lived to the expectations of the vast majority of the publishing world to the point they are hardly used.
+* When it comes down to editing text it’s not clear that editors don’t need to see the layout; both layout and text are part of a whole and they closely interact with eachother.
+** For instance, if a layout allows for a certain number of lines for a given text or if we want to go back to editing to solve widows and orphans issues, we need to have the text in full context.
+* What would prevent any user to simply use the full application to write and edit their text?
+** To address the layout editing issue we could have a low level (or text only) editing permission. That way, no object can be edited, no container, only content, only text.
+
+'''Brainstorming''' [please add more to this]
+
+[Louis]
+I would envision a ''galley mode'' within Scribus. One could see the text as one column of the width of the composition in a letter size document that would be easily printable on any office printer. The text would be formatted just like within the layout but displayed on one single column. Each line would be numbered for easier traceability and there would be an automatic page header with the name of the story and the page in the publication and any data that would be needed in this specific publishing workdlow. There would be lots of room for corrections that could be made in various ways:
+* Directly within the text
+* On paper
+* Adding notes to the file using text frames.
+* The galley could be synchronised or not to the layout so the person in charge could see and accept the corrections before they make it into the layout '''(this needs further thought)''' We could have a ''hold'' check box and a data base of each edit in the file. If there was to be a number of people involved in the approval process, each would have an ''approved'' check box that once approved cannot be unchecked.
+* ''Not useless to mention that the actual PDF options for annotating a document and handling those proofs to production is completely clumsy and does not work well, at least from our experience with various publishers. So there is room for an alternative in this PDF workflow and this standalone application or galley mode could well be a better way of handling the case of proofreading.''
+
+''We need to list the steps of proofreading and dowstream editing to better analyse the workflow and help find solutions for this. There is a real need. PDF notes are just not the way to go in many environments, although it works in others.''

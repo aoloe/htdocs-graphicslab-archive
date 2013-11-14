@@ -1,0 +1,9 @@
+* Theming? One interface for beginners and one for designers? (Cedric, Louis)
+* Or different palettes for different uses? (Ale)
+* Shortcuts for more function like typographic action (kerning...) : as must for professional users
+** Things like kerning needs the arrows or the mousewheel (Louis)
+
+* sticky tool mode should be available with a keyboard modifier
+** Sticky tool mode: we only need it because the tools don’t behave properly on the first place. (Louis)
+** The worst of it all is the content tool that doesn’t stick and the select tool that is just an extra and unessary step before editing the content.
+***The Content tool should allow to click on a frame and just edit the content, that's it. Any other way is clumsy. Having to select the object first then take another tool to edit the content is completely wrong. Plus, it has led to an incredible number of errors because the frame could move at select time while all you want to do is access the content and not move the frame. I mean, this really has to go. I hope we can settle on this!

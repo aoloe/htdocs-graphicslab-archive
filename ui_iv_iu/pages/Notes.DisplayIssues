@@ -1,0 +1,10 @@
+(:title Display issues:)
+
+Inputs from Vlada:
+* border of selected page 1 pixel (we already have a first patch)
+* border of selected frame not blurred (we already have a first patch)
+* boundig box always looks 1 px away of snapped guideline.
+
+cedric:
+* bleed line inside the left page when multipage document type
+* make frame-link-arrows nicer, thiner...

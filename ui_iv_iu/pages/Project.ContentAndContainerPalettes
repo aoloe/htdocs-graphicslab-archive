@@ -1,0 +1,92 @@
+(:title Content and Container Palettes)
+(:#toc:)
+
+!Accordeon to tabs with icons
+
+* Pierre knows how to change the code (he should already have a patch for it) and it's a simple job.
+* Choosing the icons (Claudia and Jake?)
+
+!! Drawing the icons
+
+Ale, Cedric and Vlada have drawn 8 icons in a collective effort. You can see (and eventually edit) them here:
+
+https://docs.google.com/drawings/edit?id=1eEfVgV625gY7ChjYY4deKvxSlxR-PBxfb3zkvabSVVU&hl=en&authkey=CL2G4n8
+
+%25width:300px%25 Attach:pp_icon_draft_01.png
+
+Please put below your comments on the icons.
+
+Notes of the authors:
+* We will try to have icons which are as desaturated as possible.
+* The icons may change in the future as we get to refactor the content of the PP.
+
+somme comments:
+
+* X,Y,Z (new name?)
+** we want to avoid the idea of the coordinates
+**[Louis] XYZ is the precisefulness tab of Scribus... It’s the basic positions of elements. The icons proposed are not explicit enough but I realy have not much to say to help further here.
+* Shape
+* Group
+* Text
+* Image
+** [Louis] I would prefer to see something "real" and in color, or at least in color!
+* Line
+** [Louis] The Inkscape version is strong. I much prefer the arrow than in the Sribus version. I agree that the line thickness in Inkscape is a bit a distraction.
+* Colors
+** [Louis] The color tab must show colors in my view. I like the register mark and to solve the issue here I would simply remove the grey and black quarter circles by CMKY quarter circles.
+* Transparency
+**[Louis] What about 2 colored circles overlapping and showing a third color? The circle and the square are too close to the shape tab. The absence of color is mindboggling a bit in my view.
+
+!! Changes to the PP
+* move the style selector to the top of each tab
+* char styles only shown when a text is selected; otherwise only show paragraph styles
+* mark with bold the differences against the base style
+* the reset to "parent" marker should be part of each widget (a widget may have several reset markers; see an example in qt-designer; it may be interesting to pop up a context menu when clicking on the marker)
+
+other topics:
+* add a last line offset (analogous to the first line offset)
+
+!! QuickAccess
+
+* enter drucken = zu machen
+* ok button = zu machen
+!! Next steps
+
+* Get internal feedback
+* Draw the final drafts in Inkscape and post them on the SVN server
+* Get external feedback:
+** Jakub ([[http://tango.freedesktop.org/ArtLibreSet|Tango-compatible]])
+** Pierre (who will probably integrate them in the Scribus code)
+* Post the icons in the bug tracker
+
+!The philosophy of the PP
+
+!! Which information is managed in the PP?
+
+!! Focusing on the styles
+
+!! How to display the information?
+
+!Use cases for a modular Properties Palette
+
+!!Repetitive access to some PP elements
+
+I'd like to explain how one could use a stack of PP widgets... tbc.
+
+!!Dynamically adding elements to the PP
+
+* Scripts (loaded at startup?)
+* Plugins
+
+!Prototyping the new PP
+
+%25width:300px%25 Attach:pp_single_panel_20101110.png
+
+* move the levels to a "layers and levels" palette
+* fast changing of the shape is something which normally not needed and will be offered in the edit dialog of the shape
+* The line information related to the border are integrated in the border section (the rest go to the content palette for the beziers and lines: is there a need for lines and beziers?)
+* for the colors, only the basic inoformation is shown in the PP. the rest gets shown when you click on the bordre / background or transparency button.
+* What is shown in the color section depends on the type of color (solid gradient or pattern). the border has 2 more lines related to the line.
+* Should the style be for the whole PP or should there be a flow style, a border style, a background style, ...)?
+* The details on the color (cmyk vs rgb, code) is shown when hovering on it.
+* There should be a way to hide the colors which are not been "actively" used (they may be part of an imported svg, but you will never assign them to any frame).

@@ -1,0 +1,31 @@
+(:title How to use this wiki:)
+
+(:#toc:)
+
+! Links and anchors
+
+if you want to create an "anchor" just type
+
+[@
+[[#bug_esc_key_too_overloaded]]
+@]
+
+at the place your want to reference (where the label must start with a letter and it can't contain any spaces) and use it then in the place you want to reference from:
+
+[@
+see the [[ThatPage#bug_esc_key_too_overloaded|bug]] i already described
+@]
+
+or, if you're on the same page:
+
+[@
+see the [[#bug_esc_key_too_overloaded|bug]] i already described
+@]
+
+it's a bit clumsy and i wouldn't use it too much.
+
+! Images and attachments
+
+* [@Attach:image_name.png@] lets you upload an image and shows it in the page.
+* [@[[(Attach:)lg_flyer_de.pdf]]@] lets you upload a file and shows the link to it.
+* [@(:attachlist:)@] to manage the uploads

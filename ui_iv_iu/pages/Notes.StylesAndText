@@ -1,0 +1,159 @@
+(:title Styles and Text:)
+(:#toc:)
+
+!Manage fonts
+* add font profiles to save fonts that are activated (#9222)
+* add an uncheck all available font in the Available font tab of the Preferences (#8435 or #9223)
+
+!Styles
+
+please refer to the consistency trouble between style window and PP options : we might have the same
+
+[Louis] We don’t need 2 dialogs for the same task. The Style Manager is wrong and should a) not allow style editing; b) concentrate on managing styles. Thus, creating, editing, applying styles is the work of the PP. Importing, exporting, mapping styles is the work of the Style Manager. What we have now is due to the fact that for some reasons we have not access to the exact same type settings in the PP and in the SM. Once we do, we’ll only need one tool for one task.
+
+* rename "character style" tab of the Paragraph style to something else like "Character" to prevent confusion with the real character style
+
+[Louis] This is in fact completely confusing and will be solved when we get rid of the editing capabilities of the Style Manager. It’s obvious for anybody that a paragraph styles needs a font. Also, we need to have a distinct style for Justification and Hyphenation. This J&H could be reused into any paragraph style.
+
+[ale] I think that making the style manager non modal and opening a new dialog for editing the style (probably in a modal way) may also be a solution...\\
+Editing from the PP has the big disadvantage, that you have to apply the style before you can edit it.
+
+[Louis] Can you tell me what is meant by modal? \\ In my view, there is no disadvantage in the apply/edit sequence. To create a style you have to tell the program. Unless you have done so, the formatting is just formatting. Then, if you want to edit the style, you want to see how your change will affect the layout and the best place to check this is where the style is applied or, in other words, in the context.
+
+[ale] modal = you can't do anything else when the dialog is open (like file > new); non modal = you can click on the main window while the dialog is open (like the layers window)
+
+Attach:styles_stylemanager.png
+
+Attach:styles_styleeditor.png
+
+Attach:styles_stylepp.png
+
+(:attachlist:)
+
+!Style editors instead of a style manager
+
+[ale] i'd rather have two different managers: one for the paragraph styles (where you could "bind" a character style through a drop down box) and one for the character styles.
+
+if we manage to make them non modal (as it is now) and we can dock them to another, we may even be able to edit them in parallel...
+
+[greg] I wouldn't take the current PP/Text tab situation as an example of an expandable dialog (it's something of a hybrid mess). The dialog for choosing glyphs is more of an expandable dialog.
+
+One of the things we suffer from in our hospital using a computerized medical record is that we have various bits of information in various programs, windows or dialogs if you will. There are many times when you must switch from one to another, then back again, maybe even back and forth, to understand what you need to know in a comprehensive manner. What you find very soon is how poor your memory is in keeping up with what you just saw one or two or more windows ago.
+
+We tend to work with some mindset of what we are working with, but in complex situations like DTP layout this mindset can only have so much detail, so when we need to refresh detail it is good to have a single window/dialog to refer to, even if it's just informational.
+
+Perhaps when a frame is selected, there can be a strip under the toolbar as a sort of "dashboard" (not really so fond of this term) of its settings/content. Obviously for a text frame, one set of information is there, for image frames, another. This might lead to a redesign or even abandonment of the PP as we now know it, having what currently is our PP become more of a dynamic structure, and frame- or object-oriented. 
+
+!Managing styles from the canvas
+
+[louis] And this is exaclty why I say that in this particular case of styles we should not need any further interface than the one we already have in front of us: the actual page! Why an extra dialog is beyond me.
+
+[ale] on the one side it's nice to be 100%25 free in our actions, on the other side i fear that we need some control on which formatting make it in the style definition and we probably also need an overview and fine tweaking.
+
+
+but the idea is not bad at all:
+* right click on a paragraph and define a paragraph from its formatting
+* right click on the paragraph and get a list of the differences against the current style. you can accept or reject each of them and patch the paragraph style
+* open the style dialog and you can check and fine tune it
+* this should be true for each type of style (char, line, frame, ...)
+* each style editor is a separate window (no style manager anymore!)
+
+[louis] All of this can be acheived on the canvas.
+
+Experiment as you wish and stabilise when you’re ready (or when you think
+you are...). Fine tweak. Change only one parameter and save as a new style
+when you are ready to do so. That’s even simpler than Duplicate a style and
+then open the actual Style Manager dialog, edit it and then apply it to see
+the change and then confirm.
+
+Say you want to set the type of a brand new book. Say it’s the brand new
+Scribus manual. You’re not sure about which font you’re going to use, which
+font size, which linespacing, if you’re going to need a drop cap or no, what
+space between paragraphs and in the end will there be any or would you
+prefer an indention on the first line or both a space and an indention,
+whatever. You need to experiment, to play around with pages and pages, print
+them, compare them, test readability, try to evaluate the number of pages,
+tweak again, increase the typesize, the linespacing, tweak the hyphenation
+settings, set the headers, running titles, titles, subtitles of all
+levels...
+
+This typical job would need, say, 10 or so stylesheets but you don’t know
+yet how they are going to be defined. You are experimenting. And once you
+think you’re done, you might even change your mind afterwards and this is
+all so easy with the magic of stylesheets.
+
+So, all the experimental work is done and now you think you are ready to
+have your ideas fixed into stylesheets because you have this book to format
+and you don’t want to apply dozens of settings to hundreds of cases.
+
+Here comes the magic. Why open a dialog and re-enter the values you already
+have found and set? Just put the cursor on the paragraph you like and
+right-click, type the name for this style and hit the keypad for a shortcut
+if you need one, and that’s it! Click on the next formatted paragraph you
+need a style sheet for and do the same. In seconds you’ll have all the style
+sheets you need for the paragraphs of the Scribus manual.
+
+The page already *is* the "style dialog" because you are on the page and you
+have all you need in front of you. If you want to fine tune a style that
+already exists or edit it in any way, you simply modify the paragraph
+settings and right click. You’ll be prompted for either create a new style
+or apply the changes to the existing style if there was one applied to this
+paragraph!
+
+The Manager would simply list the available styles you can pick to apply to
+any paragraph or your choice. In this small window you could delete styles
+or map one or more styles to another existing style. Manage. Not set, tweak,
+create. Manage. The Manager could tell you how many instances use this
+style, for example. The Manager could allow to print a list of the settings
+used in all the stylesheet and print a sample text showing each of the style
+sheets used in the file. This would be very useful for quality control and
+for proofreaders who would know precisely what settings were used or were
+supposed to be used.
+
+
+
+[ale] see this case:
+* you have a paragraph you want to use as style
+* you create a style out of it (just by being prompted a name: that's ok)
+* you then change the kerning of the paragraph to better fit the text
+* you change the font
+* you fix the kerning again
+* now you want to update the style you have first created by using the new font
+* as you update the style (or create a new based on the current paragraph) the kerning information will be included.
+* you just wanted to update /store the font change... and now you're upset. 
+
+[louis] Such changes that apply to a selection of text over a paragraph
+stylesheet flag the stylesheet with a plus sign like this "+stylename" in
+most apps that use stylesheets, meaning that the user have applied local
+settings on top of the stylesheet.
+
+Of course, when creating or updating a stylesheet it is expected the user is
+fully aware of what he’s doing. In this particular case, the mechanism
+doesn’t prove to be wrong but the user can make mistakes. It would be better
+if he'd pick a paragraph that show the stylesheet name without this plus
+sign. That way he's sure he's updating a clean stylesheet and he will not
+apply unwanted settings to the whole job.
+
+In any event, having to set the kerning to the default settings in an extra
+dialog or in the paragraph on the canvas will take the same amount of time.
+And at this point of tweaking it is not impossible that the user finds out
+he’s been affecting a lot of other paragraphs on which he may or may have
+not put local settings... When you come to the point you adjust your type at
+this level, you are pretty far into the production workflow. A change in the
+font will definitely have effects on widows and orphans.
+
+!Handling text size with keyboard shortcut
+
+currently, it's possible to define a shortcut for some pre-defined sizes. it would be nice to also have in the preferences > keyboard shortcuts also a size increase /decrease
+
+!Removing the idea of "No style"
+
+Every paragraph should have a style. "Default style" should be the style applied by default.
+
+This has several consequences:
+* 
+* For the text tool there won't be any setting anymore in the "Document setup"; The ones in the Preferences will define what will be in the Default style for the newly created styles.
+* Eventually, in "Document setup" one could choose which style get's applied by default for the newly created frames.
+* When you create a text frame, the default style will be applied by default to its paragraphs.
+* What happens with the character style? I guess that -- by default -- no style should be applied.
+* This may also be applied to other types of frames, as soon we have styles for everything

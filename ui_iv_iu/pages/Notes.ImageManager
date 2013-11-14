@@ -1,0 +1,6 @@
+When manage images shows missing pictures, searching the picture has 
+to be done on each, even all the pictures are in the same directory. 
+Scribus should list all the image of the document that were in the same 
+directory and look for them in this new one.
+
+http://bugs.scribus.net/view.php?id=9154

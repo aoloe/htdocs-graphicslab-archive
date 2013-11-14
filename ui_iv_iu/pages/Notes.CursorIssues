@@ -1,0 +1,3 @@
+* [[http://bugs.scribus.net/view.php?id=9035|Only one cursor for three actions: workspace paning, contnent panning and frame moving]]: is it sane?
+cedric: agree this could be done quite easily, i guess. Why do it after other things ?
+* [[http://bugs.scribus.net/view.php?id=168|single click should place text cursor]]

@@ -1,0 +1,14 @@
+(:title Check sanity of the Toolbars:)
+
+* remove the close file button
+* remove the preflight verifier button
+** Louis: not sure about this one but in a trim down situation, why not...
+** Ale: do you really use it without firing up the PDF export dialog? It would still be accessible from the windows menu entry and you can keep it open when working if you really need it!
+** Cedric : yes because i like to see my errors, real-time. There is already a window menu for this. It can be enough because only advanced user seem to really use preflight.
+* remove the print button?
+* remove the edit frame button? (and add it to the item navigation section)
+* separate inserting items (text frame to line drawing) from the editing of the frames (rotate, ...)
+* pdf toolbar should not enable by default
+* file and edit toolbars can't be en/desables in the windows menu (shouldn't they be under view or in the preferences / document settings > view ?)
+* we may want to add the sticky tool modifier to the toolbar...
+

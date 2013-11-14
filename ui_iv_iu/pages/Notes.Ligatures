@@ -1,0 +1,7 @@
+(:title Ligatures:)
+
+There should be a way to write "ff" in a text field and get scribus to replace it with the correct ligature (and use search/replace to replace all candidates with the correct one)
+
+Cedric : Remember we wouldn't like to have ligature in the whole document. There should be an option in PP or styles telling that ligatures are used. This could be used for automatic changes or in the search/replace.
+
+Louis: This is the job of OTF and OTF management. Please see Pierre Marchand for this. It is in fact a known issue with a known solution. It only takes time to solve it.

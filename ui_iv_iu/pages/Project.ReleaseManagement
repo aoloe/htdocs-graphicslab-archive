@@ -1,0 +1,37 @@
+(:title Release management:)
+(:#toc:)
+
+The idea of this project is to define some goals, roadmap and deadlines for the Scribus releases. And to define what we can do to help those releases to happen.
+
+!Scribus 1.4
+
+As of the 8th of December 2010, the release of Scribus 1.4 is planned for February 2011.
+
+!! Open tasks
+
+!!! Avoid content loss by undoing text edits
+
+We may have a real solution: Cezary is currently working on a first implementation of undo for text edits and formatting.
+
+The minimal goal to be achieved are:
+* Avoid that a text frame with content can be removed by an undo (and the content can't be restored when redoing).
+* Make clear to the user what is being undone (focus and switch to the element concerned by the undo)
+
+!Scribus 1.6
+
+Main features:
+* New preferences dialog (stable)
+* First support for advanced OTF features: (founded by OIF; work in progress)
+** Ligatures
+** Arabic
+** Indic
+** eventually vertical scripts
+* Scripter 2: Henning should get it to work again. Most of the work is done, but it should be polished. Can we have him to get commit rights to the svn server for this project?
+* Table editor: 
+* Code improvements to allow further contributions:
+** Modularization of the Properties palette
+** Description of the .sla format and make it possible to 
+* GUI improvements
+** New Properties palette
+** New status bar
+** Eventually new Style manager based on the Properties palette
