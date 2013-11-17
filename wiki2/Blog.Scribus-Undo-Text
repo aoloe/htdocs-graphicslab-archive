@@ -1,0 +1,23 @@
+(:title Scribus:)
+(:title Scribus:)
+(:title Scribus:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!Scribus14]](:title Text undo for Scribus:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1297321200:)
+(:entryauthor:ale:)
+(:entrytitle:Text undo for Scribus:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus, Scribus14:)
+[[#blogit_entrybody]]Attach:{Blog.Scribus-Undo-Text$FullName}/scribus_undo_text.png
+
+Our grand parents used to cultivate the art of patient writing, caring about calligraphy, rich vocabulary and correct grammar. If they weren't happy with the result, they started over. Time have changed and the developers are adapting Scribus to the modern times: Editing in text frames is fast enough for most normally skilled typists and -- it's today's breaking news --  you can even undo your text editing without risking to lose your work!
+
+Kidding aside. Scribus has slowly grown during the last 10 years and many features have been added. During the development of the 1.3.x series, an undo system has been introduced and -- one after the other -- more and more actions have been been added to the actions manager. One major piece was missing: the undo of text editing and formatting!
+
+At the beginning of December, Cezary [[http://bugs.scribus.net/view.php?id=3301|uploaded the first version of his patch]] and now -- after going through three revisions -- the patch has been added to 1.4svn... just in time to be included in the first release candidate for 1.4, which has been promised for the next weekend!
+
+We congratulate Cezary on his first big patch for Scribus and are very pleased for this big improvement in Scribus usability.
+
+Now, we can confidently look forward the release of Scribus 1.4![[#blogit_entrybodyend]]

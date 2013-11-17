@@ -1,0 +1,33 @@
+(:title What icon for PDF files?:)
+(:title What icon for PDF files?:)
+(:title Do we need our PDF icon?:)
+(:title Where is the "open" PDF icon?:)
+(:title Where is the "open" PDF icon?:)
+[[#blogit_pmmarkup]][[!pdf]](:title What icon for PDF files?:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1318499100:)
+(:entryauthor:ale:)
+(:entrytitle:What icon for PDF files?:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:pdf:)
+[[#blogit_entrybody]]In the recent past, I've been involved &ndash; very little, I admit it &ndash; in the [[http://pdfreaders.org/|Get a Free PDF reader]] campaign and, on  the other side, in the [[Blog/Scribus-Icons-Contest-2011|contest for a new icons set for Scribus]].
+
+One thing that bothers me is: do we really need, for each button related to a PDF document, a logo which is probably trademarked by the Adobe company?
+
+A [[http://www.google.ch/search?q=pdf&tbm=isch&hl=en&cr=&safe=off&orq=pdf&tbs=isz:i|quick search]] for icons related to the "Pdf" term does not leave many doubts:
+
+Attach:{Blog.Pdf-icon$FullName}/Pdf_icon.png
+
+The red "A" is used as a synonym for PDF... even if it is probably meant to identify the "Acrobat" product by Adobe...
+
+Even the Wikipedia authors &ndash; often very picky on this kind of issues &ndahs; couldn't find anything better:
+
+[[http://en.wikipedia.org/wiki/Portable_Document_Format|Attach:{Blog.Pdf-icon$FullName}/Pdf_icon_wikipedia.png]]
+
+Is there really no graphic artists who can come up with an original icons for this format? PDF is an open standard and deserves a vendor neutral icon!
+
+By the way: I think that Google revealed what inspired that logo!
+
+Attach:{Blog.Pdf-icon$FullName}/Pdf_icon_acrobat.png[[#blogit_entrybodyend]]

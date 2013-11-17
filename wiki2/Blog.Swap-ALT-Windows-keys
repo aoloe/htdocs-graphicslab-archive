@@ -1,0 +1,45 @@
+(:title Switching the ALT and Windows keys:)
+[[#blogit_pmmarkup]][[!Graphics]][[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1298647740:)
+(:entryauthor:ale:)
+(:entrytitle:Switching the ALT and Windows keys:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Graphics:)
+[[#blogit_entrybody]]
+[@
+[20:49:42] %3ca_l_e> then, the Alt key will be free for scribus
+[20:49:54] %3cAporie> yes but can I do that key change from scibus? because "alt" key in gnome is very usefull
+[20:50:17] %3ca_l_e> then, you will be able to use the win key instead of the alt one...
+[20:50:39] %3ca_l_e> it's generally better... i don't know why the window managers haven't switched, yet.
+[20:51:09] %3ca_l_e> nowadays, every keyboards as such a key and it's unused in linux.
+@]
+
+!!Gnome
+on Gnome
+System > Preferences > Keyboard
+
+Attach:Swap-ALT-Windows-keys.png
+
+(thanks to Máirín for the screenshot)
+
+!!Ubuntu / Unity
+
+Open the ''Keyboard'' configuration panel (''System settings > Hardware > Keyboard''), go to the ''Layout'' pane , click on the @@Options@@ button and in the ""Keyboard layout options'', under the ''Alt/Win key behavior'', try to choose something else than ''default''.
+
+Attach:Swap-ALT-Windows-keys-unity.png
+
+
+Warning: currently, there is no way to have a good behaviour under unity, since the system uses both the Alt and Win keys.
+
+!!LXDE
+
+in @@~/.config/openbox/lxde-rc.xml@@ replace all occurrences of\\
+@@A-Left@@, @@A-Right@@ and @@A-Middle@@\\
+through
+@@W-Left@@, @@W-Right@@ and @@W-Middle@@
+
+If you think that LXDE should have a more user friendly way of switching you can comment on my feature request:\\
+https://sourceforge.net/tracker/?func=detail&aid=3383835&group_id=180858&atid=894872[[#blogit_entrybodyend]]

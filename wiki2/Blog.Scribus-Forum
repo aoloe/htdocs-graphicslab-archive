@@ -1,0 +1,34 @@
+(:title Scribus forums!:)
+[[#blogit_pmmarkup]][[!Scribus]][[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1298531520:)
+(:entryauthor:ale:)
+(:entrytitle:Scribus forums!:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Scribus:)
+[[#blogit_entrybody]]In the last few months, there has been some work going on to give Scribus a Forum.
+
+After a longer -- but a bit boring? -- discussion on the mailing list, last Wednesday Aleksander has given birth to [[http://forums.scribus.net]].
+
+I would have been curious to hear first from a Forum ''specialist'' which criteria we should care about, but the discussion turned mostly into a forum bashing with some poor "Forum Rulez" replies which didn't give much insight, either, in what one could do to successfully run a forum.
+
+So I'm glad, that we have a new way for beginners to get in touch with the Scribus community, but my first imporession is not 100%25 positive:
+
+* With so many quite specific sections, don't we risk to have  many of them  without much content? And does it not make it difficult for the reader to find the correct place to post their questions or look for an answer?\\
+Do we really want something like [[http://www.libregraphicsworld.org/forum/index.php|Libre Graphics World's Forum]] with 21 sections, 40 threads and 148 messages? (this forum has been brought up by his author as an example to look at... so let's do it!). 5 section are empty and 12 further sections have had less than 10 messages since the blog creation about one year ago. The overall avarage is by 7 messages per section and the most busy of them have about slightly more than 30 messages.\\
+Now, at it's creation the Scribus Forums have 14 sections and one of them is split in three sub sections: do we really need from the beginning or should we rather have a few sections which we can split in the future?
+* Do we have enough energy to run both a mailing list and a forum?\\
+Here there is some work being done to get a Mailing List - Forum interface which would bring the mailing list's posts to a forum section and post the messages from the forum into the Mailing list, too. Let's see how far we can get!
+* In a topic the list of answers gets longer and longer: the "test" thread in the general discussions is already difficult to read through. As soon as the content is paginated, this gets even harder!\\
+Personally, my next step in the Forum discussion was to ask if we don't want something more like [[http://stackoverflow.com|stackoveflow.com]].\\
+I've been looking around a bit, and i could find two clones written in PHP (which is the technology the Scribus' server admins seem to know best):
+** [[http://sourceforge.net/projects/cahoots/|cahoots]]
+** [[http://sourceforge.net/projects/phpancake|phpancake]]
+** [[http://www.qandasystem.com]]
+** [[http://www.question2answer.org/]]
+Both are only half good supported but they may be worth a try!\\
+Advantages:
+** Tags instead of sections
+** Priority/Voting system[[#blogit_entrybodyend]]

@@ -1,0 +1,38 @@
+[[#blogit_pmmarkup]][[!Scribus]](:title Getting Scribus latest code:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1312787340:)
+(:entryauthor:ale:)
+(:entrytitle:Getting Scribus latest code:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Scribus:)
+[[#blogit_entrybody]]The existing (and active) branches:
+* trunk svn
+* 1.3.5 svn
+* OIF svn
+* tables git
+* scripter git
+* command line git
+
+(:table:)
+(:cellnr:)
+action
+(:cell:)
+svn
+(:cell:)
+git
+(:cellnr:)
+see the changes since the last update
+(:cell:)
+@@svn log -rBASE:HEAD@@
+(:cell:)
+@@git log @{1}..HEAD@@
+(:cellnr:)
+update to latest code
+(:cell:)
+@@svn update@@
+(:cell:)
+@@git pull@@
+(:tableend:)[[#blogit_entrybodyend]]
+

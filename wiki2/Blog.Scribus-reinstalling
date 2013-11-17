@@ -1,0 +1,18 @@
+[[#blogit_pmmarkup]][[!Scribus]](:title Reinstalling Scribus:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1299076680:)
+(:entryauthor:ale:)
+(:entrytitle:Reinstalling Scribus:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Scribus:)
+[[#blogit_entrybody]]Lot of people think reinstalling an application may solve the problems they're experiencing with Scribus.
+
+While this may have solved your problems in the past, it's unlikely that it will 
+
+On the contrary, letting Scribus rebuild its settings has been a workaround which made lots of problems go away in the past.
+
+* on Linux: @@/home/yourusername/.scribus@@
+* on Windows: @@C:\\Documents and Settings\yourusername\@@[[#blogit_entrybodyend]]
+

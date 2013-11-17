@@ -1,0 +1,17 @@
+[[#blogit_pmmarkup]][[!Scribus]](:title Are you missing the "Display Ink Coverage" in Scribus?:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1316638320:)
+(:entryauthor:ale:)
+(:entrytitle:Are you missing the "Display Ink Coverage" in Scribus?:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Scribus:)
+[[#blogit_entrybody]]Some people seems to be missing the option to show the ink coverage in the print preview...
+
+The reason is probably related to ghostscript: but, how?
+
+Gstaniak with a 64 bit linux and gs 9.02 does not have it and i have it, both in a self compiled 1.5 and a debian / malex 1.4RC5.
+
+avox suggested to run "gs -? | grep tiffsep" but we both get a very similar result[[#blogit_entrybodyend]]
+

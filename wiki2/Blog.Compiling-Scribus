@@ -1,0 +1,219 @@
+(:title Compiling Scribus:)
+(:title Compiling Scribus:)
+[[#blogit_pmmarkup]][[!Scribus]](:title Compiling Scribus:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1308826320:)
+(:entryauthor:ale:)
+(:entrytitle:Compiling Scribus:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Scribus:)
+[[#blogit_entrybody]]Why?
+* to test the newest code
+* to get patches for bugs which affect you
+
+
+[@
+%3cJohn_Jason> I think I should start over from the beginning, remove all directories and start clean
+%3ca_l_e> you probably don't need to remove anything for now... you can remove things afterwards...
+%3ca_l_e> ... for now you should just pay attention that you don't mix old and new data.
+%3cJohn_Jason> OK. I like to keep "funny" software (not from a repo) in ~/Software
+%3ca_l_e> ok, that's a good idea.
+%3ca_l_e> and where do you want to keep the sources for it?
+%3cJohn_Jason> Currently there is a folder ~/Software/Scribus that contains previous attempts
+%3ca_l_e> ok, delete that folder...
+%3cJohn_Jason> OK, done
+%3cJohn_Jason> OK, I should make a folder ~/Software/Scribus/src and .../bin
+%3ca_l_e> do you want to craete a ~/Sources folder?
+%3cJohn_Jason> I'd like the sources to be inside the Scribus folder
+%3ca_l_e> i would really separate sources and binaries. it helps better understanding what happens.
+%3cJohn_Jason> What do you suggest?
+%3ca_l_e> you can have both in the same scribus folder, but it will be easier to track if you're at the right place, if you have a sources folder (where you put all the sources you download) and a binary folder (where you put all the binaries you make)
+%3ca_l_e> personally, i have ~/docs/src and ~/docs/bin/
+%3ca_l_e> and then ~/docs/src/scribus and ~/docs/bin/scribus
+%3ca_l_e> in your case i would do ~/Software/Scribus and ~/Sources/Scribus
+%3cJohn_Jason> Can't I put them both inside Scribus. It makes more sense to my overall housekeeping -- each program in ~/Software has its own folder and everything for that program is inside that folder
+%3ca_l_e> you can, but it won't help you to understand what is source code and what are binaries.
+%3cJohn_Jason> OK, I'll make a ~/Sources folder
+%3ca_l_e> ok, now cd to that folder and let's get the sources...
+%3ca_l_e> you don't have to create a folder for scribus, we will create one while fetching the code
+%3ca_l_e> so cd ~/Sources
+%3ca_l_e> and then:
+%3cJohn_Jason> Oh, Sources is inside ~/Software
+%3ca_l_e> no, put sources outside of software.
+%3cJohn_Jason> OK, just a sec
+%3ca_l_e> software are binaries you want to run, sources is what you downloaded
+%3cJohn_Jason> OK, I am in ~/Sources
+%3ca_l_e> at the end it's really not important what you put where... you can really do whatever you want (as long you don't want to build a package named Sources in the future :-)... but there are a few way of doing that help you better understand what happens and/or are easier to manage
+%3ca_l_e> this will fetch the source code from the scribus server...
+%3ca_l_e> ... and put it in the scribus folder
+%3ca_l_e> svn co svn://scribus.net/trunk/Scribus scribus
+%3ca_l_e> svn is the app we use to upload/download the code (and manage its revisions)
+%3cJohn_Jason> OK, it's fetching
+%3cJohn_Jason> Done
+%3ca_l_e> ok, check that there is a directory scribus in ~/Sources
+%3cJohn_Jason> Yes, there is, with subfolders and lots of stuff
+%3ca_l_e> now create a build directory in scribus...
+%3ca_l_e> ... this will avoid mixing source code and compiled code...
+%3ca_l_e> mkdir ~/Sources/scribus/build
+%3ca_l_e> and go into that directory
+%3ca_l_e> cddir ~/Sources/scribus/build
+%3cJohn_Jason> done
+%3ca_l_e> now, we can launch the first try to compile..
+%3ca_l_e> ... the first times you should expect to have several errors due to missing -dev packages...
+%3cJohn_Jason> ok
+%3ca_l_e> but you should already have gone through that process :-)
+%3cJohn_Jason> I hope I have them all now
+%3ca_l_e> now, let's say that we want put the scribus we want to run in ~/Software/Scribus...
+%3ca_l_e> first, make sure that this directory does not exist
+%3ca_l_e> (well, renaming it may be a bit more on the secure side... but you probably have nothing important in there...)
+%3ca_l_e> then, cross your fingers and (while being in the build directory you've created) launch
+%3ca_l_e> cmake -DCMAKE_INSTALL_PREFIX:PATH=/home/jjj/Software/Scribus -DWANT_DEBUG=1 ..
+%3ca_l_e> (i suppose that your home directory is called jjj ...)
+%3cJohn_Jason> yes
+%3ca_l_e> please take care of the two dots at the end of the command...
+%3cJohn_Jason> I run this command inside .../build/
+%3cJohn_Jason> ?
+%3ca_l_e> ... there should be a space than two dots at the end of the command to tell cmake to look for the sources one level below the current directory (which is the place where it will put the files make will be building)
+%3ca_l_e> yes you should be in ~/Sources/scribus/build
+%3cJohn_Jason> OK, ready to run the command
+%3ca_l_e> and don't fear anything, you can't break anything at this point :-)
+%3cJohn_Jason> OK, it finished ... "build files have been written to: /home/jjj/Sources/scribus/build
+%3ca_l_e> ok, now paste the result you've seen in the terminal on
+%3ca_l_e> http://pastebin.ch/
+%3ca_l_e> so, i can make sure that everything worked ok
+%3ca_l_e> ... and then paste the link to the newly create pastebin in here :-)
+%3ca_l_e> on pastebin.ch you have to click on new entry and just paste the text in the big textarea... and then click on the submit button it says you should hit
+%3cJohn_Jason> OK, done.
+%3ca_l_e> you will be missing some functions because some packages have not been found, but nothing which should block the compiling.
+%3ca_l_e> is your computer somehow new?
+%3ca_l_e> i mean: a multiprocessor?
+%3cJohn_Jason> No, 3.5 years old
+%3ca_l_e> core 2?
+%3cJohn_Jason> Oh, dual core 2 GHz
+%3ca_l_e> ok, let's try to use all the computer power to compile, then :-)
+%3ca_l_e> in ~/Sources/scribus/build (you should already be there) run
+%3ca_l_e> make -j2
+%3ca_l_e> -j2 tells make to do up to 2 jobs at the same time... it will be using a bit more of your computer power that way.
+%3cJohn_Jason> OK, it's running
+%3ca_l_e> it will be running for about quart of an hour...
+%3ca_l_e> (just an estimation...)
+%3cJohn_Jason> I recall doing this before -- it took ~40 minutes
+%3ca_l_e> did you use -j2 ?
+%3cJohn_Jason> It's at 12%25
+%3cJohn_Jason> No, didn't use j2
+%3ca_l_e> the %25 does not say much...
+%3ca_l_e> and with j2 it should be 80%25 faster... it will use both cores of your processor
+%3cJohn_Jason> Done
+%3ca_l_e> yeah, now you have to install the built files...
+%3cJohn_Jason> OK
+%3cJohn_Jason> make install?
+%3ca_l_e> installing them will copy them to the ~/Software/Scribus directory (it will create the Scribus directory in ~/Software if it's not there. in future you don't have to delete each time... this time i told you to do so, in order to make sure that it's empty)
+%3ca_l_e> yep, "make install"
+%3cJohn_Jason> from within .../build?
+%3ca_l_e> yes from whithin build/
+%3cJohn_Jason> OK, here goes ...
+%3cJohn_Jason> Done
+%3ca_l_e> cd ~/Software/Scribus
+%3ca_l_e> and see if there is a bin/ folder in there...
+%3ca_l_e> if it's there, just type ./bin/scribus ...
+%3ca_l_e> since scribus 1.5 is not in your path (for now) you will always have to give a "non relative" path to start it...
+%3ca_l_e> "." means here. so the command above means: run scribus in the bin folder in here...
+%3cJohn_Jason> There is, but ./bin/scribus gives me Segmentation fault (core dumped)
+%3ca_l_e> argh!
+%3cJohn_Jason> %3csigh>
+%3cJohn_Jason> That's the same error message I was getting before
+%3ca_l_e> let me try here...
+%3cJohn_Jason> I think meho on the list found that it was a bug
+%3ca_l_e> works correctly here...
+%3cJohn_Jason> Hmm
+%3ca_l_e> can you run
+%3ca_l_e> gdb ./bin/scribus
+%3ca_l_e> ?
+%3cJohn_Jason> Yes, it leaves me at a (gdb) prompt
+%3ca_l_e> type
+%3ca_l_e> run
+%3ca_l_e> i mean type:
+%3ca_l_e> run
+%3ca_l_e> :-)
+%3ca_l_e> "run" is the command you should type when you're in gdb.
+%3cJohn_Jason> Did it. Lots of stuff. Will paste on pastebin
+%3ca_l_e> yes...
+%3ca_l_e> than type:
+%3ca_l_e> bt
+%3ca_l_e> and paste also what bt is spitting out...
+%3ca_l_e> (without quitting gdb, the gnu debugger...)
+%3cJohn_Jason> OK, done and pasted
+%3ca_l_e> hmmm
+%3ca_l_e> ok, 64 bits...
+%3ca_l_e> can you go back to the build/ directory and redo the cmake command?
+%3ca_l_e> this time:
+%3ca_l_e> cmake -DCMAKE_INSTALL_PREFIX:PATH=/home/jjj/Software/Scribus -DWANT_PRIVATE_CAIRO=0 -DWANT_DEBUG=1 ..
+%3cJohn_Jason> OK
+%3ca_l_e> paste it's output to the pastebin and -- if everything is ok -- rerun make
+%3ca_l_e> ... this time it should be faster than the first time... with a bit of luck
+%3ca_l_e> scribus is providing its own cairo library, but one should also installed in your system.
+%3ca_l_e> by using the one in your system you may lose some features but maybe getting one which also works correctly on 64 bit...
+%3cJohn_Jason> OK, done
+%3ca_l_e> can you paste the result of cmake?
+%3cJohn_Jason> Just a sec
+%3cJohn_Jason> Done
+%3ca_l_e> it's still using the private cairo...
+%3ca_l_e> i think that i'll post your bt to the bug tracker and see if somebody knows what's going on...
+%3ca_l_e> i'm compiling the current trunk on the 64 bit laptop... let's see if i can reproduce...
+%3ca_l_e> ... i don't think that i can give you a fix in the next hour...
+%3ca_l_e> ... let's see what you have to do to update your scribus, then...
+%3ca_l_e> you will need it as soon as there is a fix :-)
+%3ca_l_e> go to ~/Sources/scribus
+%3cJohn_Jason> OK
+%3ca_l_e> "svn update" will update to the current trunk
+%3ca_l_e> it should do nothing right now....
+%3cJohn_Jason> "At revision 16688"
+%3ca_l_e> if there are files which can be updated you will see a "U" before them
+%3ca_l_e> new files will have a "A"...
+%3cJohn_Jason> OK, so before I start again I should update to the latest
+%3ca_l_e> after running the svn update command (and if there were changes)...
+%3ca_l_e> you should go to the build/ folder...
+%3ca_l_e> and if there were "A"s or "D"s (deletes) you will have to rerun the cmake command (the first one i gave you)
+%3ca_l_e> then (or otherwise) run make and make install
+@]
+
+[@
+17:00 %3c scott_ino> I am wondering what is the recommended/preferred way in having both 1.4 and 1.5 installed
+                   on Ubuntu
+17:02 %3c a_l_e_> just intsall both in two different paths...
+17:02 %3c avox> or build with -DWANT_VERSIONING=1
+17:03 %3c avox> (or was that called WANT_VERSIONS ?)
+17:04 %3c a_l_e_> maybe... but i think that the easiest way is having ~/sources/scribus14 and ~/src/scribus15 
+                on the one side, and ~/bin/scribus14/ and ~/bin/scribus15 on the other side...
+17:04 %3c avox> anyway, 1.4 and 1.5 use different prefs files, so if you install both at different locations 
+              and call Scribus from there, it should just work
+17:04 %3c a_l_e_> ... and then symbolic links from /usr/local/scribus14 and /usr/local/scribus15 pointing to 
+                each binary...
+@]
+
+
+greg:
+
+
+Caveats:
+
+I think most of us would agree that John is out on a limb and perhaps 
+sawing off the wrong side with his method.
+
+There is not such great value in updating every night. If your Scribus 
+is broken, you want to keep an eye out for fixes, otherwise some more 
+modest updating would seem to be worthwhile.
+
+Something that John does with his script is to wipe out his 1.5.0svn, 
+which has some risk of breaking his current 1.5.0svn installation, about 
+which we have recurrent messages from John about these episodic events. 
+In a sense, he's playing Russian roulette every night.
+
+Our understanding is that the abiding value of 1.5.0 for him is its 
+ability to export to PDF x-1a, certainly understandable, but in which 
+case I would think it highly important to maintain a working version. It 
+would be not so difficult to save a working version while a more current 
+one is experimented with.[[#blogit_entrybodyend]]
+

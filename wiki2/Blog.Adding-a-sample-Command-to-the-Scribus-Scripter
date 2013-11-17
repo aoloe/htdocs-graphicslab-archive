@@ -1,0 +1,41 @@
+(:title The architecture of a new Command for the Scribus' Scripter:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!Scripter]][[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1293482580:)
+(:entryauthor:ale:)
+(:entrytitle:Adding a sample Command to the Scribus' Scripter:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scripter, Scribus:)
+[[#blogit_entrybody]]We have seen [[Blog/Enhancing-the-Scribus-Scripter|how the Scripter Commands are defined]], in this second article we will go through the steps which are necessary to add a command to the Scribus Scripter.
+
+In order to add a new command to the Scribus' Scripter you will have to go through three steps:
+* In @@scriptplugin.cpp@@ add to the @@scribus_methods@@ array the call to the function:\\
+@@{const_cast%3cchar*>("newFancyCommand"), scribus_newfancycommand, METH_VARARGS, tr(scribus_newfancycommand__doc__)},@@\\
+this will define the new Scripter command @@newFancyCommand()@@, which is attached to the Scribus' function @@scribus_newfancycommand()@@ and is described through the documentation string @@scribus_newfancycommand__doc__@@
+* Add to the header file of the  "commands collection" (in our case @@cmdtext.h@@)
+** the documentation string for the command and
+** the signature for the new command; the will always return a @@PyObject@@, have as the first parameter a reference to the containing class and have a dummy parameter @@args@@ which will contain the values passed to the function:\\
+@@PyObject *scribus_newfancycommand(PyObject * /*self*/, PyObject *args);@@
+* The implementation of the new command goes into the @@.cpp@@ file corresponding to the header file we have just enhanced:
+(:source lang=cpp:)
+PyObject *scribus_newfancycommand(PyObject* /* self */, PyObject* args)
+{
+	double parameter_1, parameter_2;
+	if (!PyArg_ParseTuple(args, "dd", &parameter_1, &parameter_2))
+		return NULL;
+	if(!checkHaveDocument())
+		return NULL;
+	Py_RETURN_NONE;
+}
+(:sourceend:)
+
+We will explain later what all this means: for now, you should just know that we have defined a new command which expects two numeric parameters, does nothing and returns nothing.
+
+There are some conventions which should be followed when naming the new commands:
+* the function name will always start with @@scribus_@@, has its name written without any spaces (and other separators), all in lower cases.
+* the command name is written with [[http://en.wikipedia.org/wiki/CamelCase|Camel Case]], with no separator
+
+Finally, it's a good idea to take an existing patch for the Scripter, study it and try to understand what has to be patched to add a new command. One good example is:\\
+[[http://bugs.scribus.net/view.php?id=8650|0008650: Patch adding two new Scripter API functions]][[#blogit_entrybodyend]]

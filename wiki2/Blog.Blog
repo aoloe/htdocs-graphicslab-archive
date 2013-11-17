@@ -1,0 +1,7 @@
+(:notitle:)
+(:includesection "#blog-summary-pagelist blogid=blog1 status=publish":)
+
+(:if equal {$bi_BlogIt_Enabled} 1:)(:include Site.BlogIt-SideBar:)
+(:else:)
+
+(:if:)

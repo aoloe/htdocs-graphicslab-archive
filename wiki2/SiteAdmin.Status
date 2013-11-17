@@ -1,0 +1,5 @@
+(:Summary: PmWiki version {$Version} (VersionNum={$VersionNum}):)
+(:comment Any local edits to this page may be lost!:)
+
+This site is running {$Version} (VersionNum={$VersionNum}).
+

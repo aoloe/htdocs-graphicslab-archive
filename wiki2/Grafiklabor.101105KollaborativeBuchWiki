@@ -1,0 +1,97 @@
+(:title Das kollaborative Buch Wiki:)
+(:title Das kollaborative Buch Wiki:)
+* [[KollaborativeBuchWikiDani|dani]]
+* [[KollaborativeBuchWikiSandra|sandra]]
+* [[KollaborativeBuchWikiSimon|simon]]
+* [[KollaborativeBuchWikiniKlaus|niklaus]]
+* [[KollaborativeBuchWikiniClaudia|claudia]]
+* [[KollaborativeBuchWikiniSamuel|samuel]]
+* [[KollaborativeBuchWikiniChristoph|christoph]]
+* [[KollaborativeBuchWikiniOlivier|olivier]]
+* [[KollaborativeBuchWikiSven|sven]]
+* [[KollaborativeBuchWikiMario|mario]]
+
+!Produktion
+
+Dienstag abend habe wir eine erste Maquette erstellt:
+* [[Attach:kollabuch_maquette_20101110_1245.pdf|pdf]]
+* [[https://www.wuala.com/wildprovider/das%2520kollaborative%2520buch?key=1BT7Wn0JNqcHa]]
+* loook for images: @@/PFILE="[^"]@@ and replace them with a subfolder @@f"lvf"F/hxi_Images^[:w^M@@
+
+!!Todo
+
+* Alle .sla + .pdf + .bilder zu  Ale
+* Das ganze material and Sven für korrekturlesung
+* Sandra fragen, ob ihre texte eine korrekturlesung brauchen
+* Ale stellt die 12 kapitel zusammen
+* Ale schickt die PDFs an Mario
+* Mario druckt 3 kopien
+* 3 Personen gehen durch das Ganzes Material
+* Ale: letzte korrekturen ab Papier
+* PDF(s) werden auf Lulu hochgeladen
+
+
+* 1 oder 12 pdf generieren
+!Gewünschte Features
+
+* Bild "im Rahmen" vergrössern (http://bugs.scribus.net/view.php?id=8978)
+* Stile ab Auswahl definieren
+* Textgrösse sollte per shortcut definierbar sein (cf. Einstellungen)
+* Allow to include a scrapbook in the document itself
+
+!Ärgerliche Bugs
+
+!!Guides from Master Pages disappear from page
+
+* create a document (double page) with three pages
+* create a new master page
+* define guides in master page
+* apply the master page to page two
+* go to page three
+* the guides on the previous page disappear
+* open the master page editor
+* close it
+* the guides are there again and won't disappear when changing page again
+
+resolved: http://bugs.scribus.net/view.php?id=9475
+
+!!Guides from Masterpages misplaced after file opening
+
+* create a new file double sided with three pages, inside margin 5cm, outside margin 1cm
+* create two master pages "a" for left and "b" for right with 5 columns guides relative to the margins, with 5mm gap
+* by using "apply master pages" apply the "a" master page to the even pages and the "b" one to the odd pages
+* the first page has the "b" master page but the guides are not shown on it.
+* edit master pages, select "b", manage guides, change reference to page and back to margin, close the manage guides dialog and leave the master pages editor
+* the first page now has the guides
+* close and reopen the file
+* add 2 pages, with "a" MP on the left and "b" on the right
+* page 4 has no guides, page 5 has the guides
+* open the master pages editor, the "a" MP has the wrong (well the "b") guides, select the "b" MP and it's ok, back to the "a" MP it's ok
+* close the MP editor
+* the 4th page has guides
+
+resolved: http://bugs.scribus.net/view.php?id=9476
+
+!!scribus crashes when modiying a font path
+Description	* open scribus with no file
+* add a path in the font preferences
+* restart scribus (no file open)
+* go the the preferences
+* choose the previously created font path
+* click on change
+* choose the parent directory
+* ok
+* crash
+
+resolved: http://bugs.scribus.net/view.php?id=9477
+
+!Love and hate
+* Christoph\\
++ Bildbearbeitung ist intuitiv, Bilder sind schnell austauschbar.\\
+- Snap to grid/etc. war z.T. mühsam.
+
+
+!One more time?
+
+* set up a NAS / server (file sharing, wiki, svn)
+* wie kann man die Kollaboration noch besser fördern und thematisieren?

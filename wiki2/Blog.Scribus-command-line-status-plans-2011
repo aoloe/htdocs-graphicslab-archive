@@ -1,0 +1,31 @@
+(:title Scribus from the command line: status and plans for the near future:)
+[[#blogit_pmmarkup]](:title Scribus from the command line: status and plans for the near future:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1316507460:)
+(:entryauthor:ale:)
+(:entrytitle:Scribus from the command line: status and plans for the near future:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]][@
+10:18 %3c a-l-e> you can
+10:19 %3c a-l-e> a/ wait for scribus being able to produce PDFs from the command line (won't happen in the next three months... at least not from me...)
+10:20 %3c a-l-e> b/ use your time to work on the existing patches and get them to be integrated in the 1.5 codebase
+10:21 %3c a-l-e> c/ use your time to test and eventually adapt the existing python script to create a pdf from a .sla file (cf. the sourceforge project; which has nothing to do with the scribus project)
+10:24 %3c fcmartin> I may have been a bit vague on the matter, but the conversion from .sla to PDF has to be done programmatically. which is why I believe I need a CLI-option. or is the python script runnable stand alone? I believe I read it required scribus to be started
+10:25 %3c a-l-e> it does not. but each change to the .sla format breaks it.
+10:26 %3c a-l-e> i've never used it. but it is free (gpl, iirc) and already used for (at least one) commercial projects
+10:26 %3c fcmartin> do you have the project address or a keyword that will point me in the right direction?=
+10:28 %3c a-l-e> google python scribus to pdf
+10:28 %3c@mrscribe> http://wiki.scribus.net/canvas/Reduce_the_size_of_Scribus_generated_PDFs
+10:28 %3c a-l-e> http://code.google.com/p/sla2pdf/
+10:29 %3c@mrscribe> Title: sla2pdf - Small python lib to convert scribus sla files in pdf - Google Project Hosting (at code.google.com)
+10:44 %3c a-l-e> there is no real discussion about it... i wanted to work on it this fall, but i had to change plans and i had to skip it to the beginning of the next year...
+10:45 %3c a-l-e> afaict there is no working code for it you can just download, compile and run...
+10:45 %3c fcmartin> I'm more curious what it would take to get it implemented.. is it a huge project on its own?
+10:46 %3c a-l-e> there is work to be done, yes...
+10:47 %3c a-l-e> most of all, the patches are against 1.4 but i'm not really comfortable to apply any big change to (the soon to be released) 1.4... so the patches should be ported to 1.5...
+10:47 %3c a-l-e> i almost got one of both to work, but i had a link error... probably due to a wrong makefile.
+@][[#blogit_entrybodyend]]
+

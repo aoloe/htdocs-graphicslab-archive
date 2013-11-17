@@ -1,0 +1,23 @@
+(:title Grafiklabor: 6. November Farben:)
+(:title Grafiklabor: 6 November Farben:)
+(:title Grafiklabor: 6 November Farben:)
+[[#blogit_pmmarkup]](:title Grafiklabor am 6. November: Farben:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1318276860:)
+(:entryauthor:ale:)
+(:entrytitle:Grafiklabor am 6. November: Farben:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]]6. November 2011\\
+Farbmanagement und Freie Software\\
+ICC-Profile installieren, sich Farbprofile beschaffen und erstellen, Farbkonversion... und möglichst farbtreue Resultate: das ist auch mit Freier Software möglich!
+
+* georg bauer: lcms?
+* christian zwahlen: farbpaletten?
+* Gpick - An Easy to Use Color Picker for Gnome Desktop! (GTK+) -> ich
+* Scribus' Color wheel (creating palettes)
+* Import Pantone into scribus & co
+
+ich: creating palettes or managing colors with scribus (pantone + others)[[#blogit_entrybodyend]]

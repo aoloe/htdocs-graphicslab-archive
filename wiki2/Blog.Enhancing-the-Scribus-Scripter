@@ -1,0 +1,83 @@
+(:title Enhancing the Scribus Scripter:)
+(:title Enhancing the Scribus Scripter:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!Scripter]](:title Enhancing the Scribus Scripter:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1292922000:)
+(:entryauthor:a.l.e:)
+(:entrytitle:Enhancing the Scribus Scripter:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus, Scripter:)
+[[#blogit_entrybody]]''We are starting today a set of articles on the internals of the [[http://www.scribus.net|Scribus]] Scripter. This first article will teach you how to find where a Scripter command is defined, read it's source code and -- eventually -- tweak it.''
+
+First: what is the Scripter? It's the Scribus plugin which allows to run Python scripts inside of Scribus and let them interact with Scribus documents.
+
+You'll first have to download the current source code for Scribus 1.4 and compile it:\\
+(:source lang=bash:)
+$ mkdir src
+$ cd src
+$ svn co svn://scribus.info/Scribus/branches/Version135/Scribus/scribus scribus14
+$ cd scribus14
+$ mkdir build
+$ cd build
+$ cmake -DCMAKE_INSTALL_PREFIX:PATH=/home/yourname/bin/scribus14 -DWANT_DEBUG=1 -DWANT_NOOSG=1 .
+$ make
+$ make install
+(:sourceend:)
+It's not the subject of this article to teach you how to use Subversion or how to compile Scribus: if you don't understand the commands above, please refer to the [[http://wiki.scribus.net/canvas/Building_SVN_versions_with_CMake|Howto in the Scribus Wiki]].
+
+The Source code for the Scripter is located in @@[scribus14/]scribus/plugins/scriptplugin@@. You may open them and have a short look around.
+
+The Scripter commands are defined in the files with the extension @@.cpp@@ and starting with @@cmd@@, @@obj@@, and in the two files @@svgimport.cpp@@ and @@guiapp.cpp@@.
+
+It's not always easy to guess where a command is defined. The best way is to
+* Search in the file @@scriptplugin.cpp@@ for the line which defines the Scripter command. If you look for "setFontSize" you will find the following matching line:\\
+@@{const_cast%3cchar*>("setFontSize"), scribus_setfontsize, METH_VARARGS, tr(scribus_setfontsize__doc__)},@@\\
+This is the line which adds to the Scripter the @@setFontSize()@@ command, by attaching it to the @@scribus_setfontsize()@@ function.
+* Once you have found the name of the Scribus internal function, you can look for it in the @@.cpp@@ files in the scripter directory. In the case of setFontSize\\
+@@grep scribus_setfontsize *.cpp@@\\
+will tell you that setFontSize is defined in the @@cmdtext.cpp@@ file.
+
+In the @@cmdtext.cpp@@ file you can read how @@setFontSize()@@ works:
+(:source lang=cpp:)
+PyObject *scribus_setfontsize(PyObject* /* self */, PyObject* args)
+{
+	char *Name = const_cast%3cchar*>("");
+	double size;
+	if (!PyArg_ParseTuple(args, "d|es", &size, "utf-8", &Name))
+		return NULL;
+	if(!checkHaveDocument())
+		return NULL;
+	if ((size > 512) || (size %3c 1))
+	{
+		PyErr_SetString(PyExc_ValueError, QObject::tr("Font size out of bounds - must be 1 %3c= size %3c= 512.","python error").toLocal8Bit().constData());
+		return NULL;
+	}
+	PageItem *i = GetUniqueItem(QString::fromUtf8(Name));
+	if (i == NULL)
+		return NULL;
+
+	if (!i->asTextFrame())
+	{
+		PyErr_SetString(WrongFrameTypeError, QObject::tr("Cannot set font size on a non-text frame.","python error").toLocal8Bit().constData());
+		return NULL;
+	}
+	int Apm = ScCore->primaryMainWindow()->doc->appMode;
+	ScCore->primaryMainWindow()->doc->m_Selection->clear();
+	ScCore->primaryMainWindow()->doc->m_Selection->addItem(i);
+	if (i->HasSel)
+		ScCore->primaryMainWindow()->doc->appMode = modeEdit;
+	ScCore->primaryMainWindow()->doc->itemSelection_SetFontSize(qRound(size * 10.0));
+	ScCore->primaryMainWindow()->doc->appMode = Apm;
+	ScCore->primaryMainWindow()->view->Deselect();
+
+	Py_RETURN_NONE;
+}
+(:sourceend:)
+
+Even with just some basic knowledges of C++ (or C, Java, Python, ...) you should be able to read through that code, roughly understand what it does and maybe even do a simple fix.
+
+But if you want to do some serious work you will have to learn a bit more about how to work with that part of the Scribus code.
+
+The next step will be to learn how to add a very simple new command to the Scribus Scripter.[[#blogit_entrybodyend]]

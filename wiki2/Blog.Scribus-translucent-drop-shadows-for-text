@@ -1,0 +1,55 @@
+(:title Translucent drop shadows for text in Scribus:)
+(:title Translucent drop shadows for text in Scribus:)
+(:title Translucent drop shadows for text in Scribus:)
+(:title Translucent drop shadows for text in Scribus:)
+[[#blogit_pmmarkup]](:title Translucent drop shadows for text in Scribus:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1317106200:)
+(:entryauthor:ale:)
+(:entrytitle:Translucent drop shadows for text in Scribus:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]]You will have a hard time to convince me that drop shadows are a good idea. but -- since so many people see to be wanting them -- let's find out how to them with Scribus.
+
+First a bad news: Scribus does not have transparent drop shadows, yet! (and -- generally  speaking -- text transparencies are not well supported by Scribus).
+
+But, with a bit of work you can achieve this:
+
+Attach:{Blog.Scribus-translucent-drop-shadows-for-text$FullName}/Scribus-translucent-drop-shadows-for-text-01.png
+
+Scribus-translucent-drop-shadows-for-text-01.png
+
+There is one big constraint: you will have to wait and create the drop shadow after having finished to edit and layout your text, since it won't be editable any more.
+
+Let's go!
+
+First, type your text in a text frame and set it to the correct size and color (You will probably also want to have a picture or a solid color in the background... otherwise the transparency does not make much sense).
+
+Attach:{Blog.Scribus-translucent-drop-shadows-for-text$FullName}/Scribus-translucent-drop-shadows-for-text-02.png
+
+Scribus-translucent-drop-shadows-for-text-02.png
+
+
+Then, set an outline of a few percents for the whole frame:
+
+Attach:{Blog.Scribus-translucent-drop-shadows-for-text$FullName}/Scribus-translucent-drop-shadows-for-text-03.png
+
+Scribus-translucent-drop-shadows-for-text-03.png
+
+Make a copy of the frame and remove the outline effect.
+
+Now we have two frames with the same content and at the same place, one with the outline effect in the behind and one without in the front.
+
+Click on the one behind by holding down the "ctrl" key while clicking on the area where the frames are (clicking with the "ctrl" key pressed will cycle through the items below the cursor: try it out!) and convert it to outlines ("Item > Convert to... > Outlines").
+
+Select the group of outlines, ungroup it and without deselecting the items combine them ("Item > Combine polygons"; again, you have to press the "ctrl" key to reach the item in the background). Now you can select the combined shape, go to the Properties palette > Colors and set the opacity for the shadow's line color! (and, eventually, a different opacity for the text frame).
+
+Attach:{Blog.Scribus-translucent-drop-shadows-for-text$FullName}/Scribus-translucent-drop-shadows-for-text-04.png
+
+Scribus-translucent-drop-shadows-for-text-04.png
+
+
+I wonder if all those steps can be recorded in a script...[[#blogit_entrybodyend]]
+

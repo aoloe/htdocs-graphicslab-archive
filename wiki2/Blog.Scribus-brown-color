@@ -1,0 +1,18 @@
+(:title Getting rid of that brown frame:)
+[[#blogit_pmmarkup]][[!Scribus]](:title Getting rid of that brown frame:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1300953600:)
+(:entryauthor:ale:)
+(:entrytitle:Getting rid of that brown frame:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus:)
+[[#blogit_entrybody]]For a long time, Scribus has had an annoying bug which nobody understood how it could happen:
+
+Attach:{Blog.Scribus-brown-color$FullName}/scribus_that_brow_color.png
+
+After changing the language of the GUI, a rather disgusting brown was added to the list of the colors, was automatically used instead of the transparency and the only way to get rid of it was to delete all the preferences!
+
+Finally, Craig sorted it out and the fix will make it into the upcoming Scribus 1.4 RC3![[#blogit_entrybodyend]]
+

@@ -1,0 +1,24 @@
+(:title Using custom widgets in qt-creator:)
+(:title Using custom widgets in qt-creator:)
+(:title Using custom widgets in qt-creator:)
+[[#blogit_pmmarkup]](:title Using custom widgets in qt-creator:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1300352880:)
+(:entryauthor:ale:)
+(:entrytitle:Using custom widgets in qt-creator:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]]if you find way for add Scribus widgets (like SMScrSpinBox) into QTCreator ui
+
+new ui file.. put in a QDoubleSpinBox, then right click on it.. select Promote To, Enter in ScrSpinBox, it will auto fill the header name, adjust if necessary, click add...
+
+in fact, we have a designer directory under scribus/ but i dont believe we need those files 
+anymore.. you used to have to generate those libs and copy them into the designer plugins 
+directory.. but qt designer is a lot better now
+
+to create a ScDockPalette with qt-designer, first create a QDockWidget... and then: is it possible?
+
+mrb: but the ui file should be the base class.. i guess u need to multiple inherit in the derived class[[#blogit_entrybodyend]]
+

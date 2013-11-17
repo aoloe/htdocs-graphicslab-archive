@@ -1,0 +1,79 @@
+(:title Das Kollaborative Buch:)
+!Das Programm
+
+12 Autoren machen ein kollaboratives Buch an einem Wochenende mit eigenen Rohstoffen. Die Themen und Software sind frei. BUCHMACHEN unter kollaborativen Bedingungen jetzt anmelden unter dock18@rotefabrik.ch. Alle Teilnehmerin erhalten kostenlose Verlagsexemplare. Getränke und Apero inbegriffen. Leitung und Moderation: Alessandro Rimoldi und Mario Purkathofer.
+
+!!Freitag 5.November
+:20.00: INTRO APERO 12 Autorinnen bringen Rohstoffe (Te...xt, Bild) für je 20 Seiten. Einführung, Vorstellung des Projekts und Interviews von Mario Purkathofer und Alessandro Rimoldi.
+:20.30: PRÄSENTATIONEN MATERIALIEN & ROHSTOFFE alle Beiträge unter CREATIVE COMMONS bzw. PUBLIC DOMAIN je 5 Minuten. Parallel werden alle Inhalte ausgedruckt.
+:21.30: BRAINSTORMING 12Kapitel und 1000 Schlagworte für das kollaborative Buch, Titel, Untertitel, neue Texte mit Kreide an der Wandtafel und Open Office. PORTRAITFOTOS von allen Teilnehmerinnen Kurzbiografien.
+:22.00: FREIE LIZENZIERUNG Digitale Allmend segnet alle Rohstoffe unter eine freie Lizenz. Mit Daniel Boos im CC T-Shirt.
+:22.30: CRASHKURS FREIE SOFTWARE (Gimp, Scribus, Inkscape, Open Office) inkl. Installation mit/von Alessandro Rimoldi.
+:23.30: VERTEILUNG/KOLLABORATION Die beteiligten Autorinnen erhalten Material zur Gestaltung von je 20 Seiten aus dem Materialpool. In kollaborativen Prozessen IST JEDER ALLE. Jeder macht alles. Es gibt keine Aufteilung und keine Spezialisierung, zumindest ist diese extrem eingeschränkt. Schreib -u. Bildwerkstatt bis in die frühen Morgenstunden mit musikalischer Begleitung und COMMUNITY BROWSER.
+
+!!Bisherige Rohstoffe
+
+(je 20 Seiten):
+
+# Mario Purkathofer, Freudengärtlein
+# Michael Ludwig
+# Marlene Deuber, Lyrische Texte
+# Niklaus Mettler, illustrativ
+# Samuel Coendet, Industriedesigner/Typografie
+# Roland Wagner, Künstler
+# Aeschbacher, Niklaus
+# Marcus Möller, (froscamp) Bilder
+# Sandra Suter und Sven Hürlimann, Texte
+# Simon Trüb
+# Christoph Stähli, Community Browser
+# Daniel Boos, Creative Commons Lizenz
+
+(2), Brainstorming-Material & Keywords (12), Steckbrief/Suchprofil/Wahlwerbung über alle Beteiligten (12), kollaboratives Editorial (2), Friedrich Glauser (2), Bilder Dock18 (12), Ariane (4), Findet nicht statt (12), Mypaint (24), Olivier Marti
+12*20=240 Seiten
+
+!!Materialien und Werkzeuge:
+Drucker, Fotodrucker, Laptops, Beamer, Kaffeemaschine, Getränke, Klebeband, Tische/Stühle, USB Sticks, Papier, Scheren, Klebstoff, Digitalkamera, Strom, Netzwerkkabel,
+
+!!Samstag 6.November
+
+ab 12 Uhr gemeinsames Mittagessen und Besprechung
+
+:1400: STECKBRIEF/SUCHPROFIL mit Gimp
+:1430: FINDET NICHT STATT 12 Seiten für 12 Veranstaltungen, die nicht staffinden mit Scribus.
+:1500: MYPAINT Mit Mypaint werden 12 Doppelseiten gestaltet (für jedes Kapitel)
+:1530: FLYER Dock18 mit Gimp
+:1600: RASTER Seitennummerierung, Seitenränder, Navigationssysteme, Index
+:1630: KOLLABORATIVES EDITORIAL schreiben
+:1700: TYPO Einführung
+:1730: FLYER für zukünftige Dock18 Veranstaltungen.
+
+AM ENDE DES ABENDS WERDEN ALLE MATERIALIEN ZUR VERFÜGUNG GESTELLT, DAMIT AM NÄCHSTEN TAG JEDER AN IHREM EIGENEN KAPITEL ARBEITEN KANN.
+
+!!Sonntag 7.November
+
+ab 12 Uhr gemeinsames Mittagessen
+
+:14-18: Jeder arbeitet an einem eigenen Kapitel, ausgehend von 20 Seiten. Die Ergebnisse werden für die Publikation aufbereitet bzw. open end gut zum Druck.
+
+!!Publishing:
+On Demand, lulu.com, 224 Seiten, Verlag Wildprovider
+
+!!3.12. bzw. 5.12.
+Buchvernissage und Nachbesprechung
+
+!Die Programme
+
+* Scribus 1.3.8: Desktop Publishing\\
+  [[http://sourceforge.net/projects/scribus/files/scribus-devel/1.3.8/scribus-1.3.8-win32-install.exe/download|Windows]] / [[http://sourceforge.net/projects/scribus/files/scribus-devel/1.3.8/Scribus_1.3.8.dmg/download|Mac]] / [[http://www.scribus.net/debian|Debian/Ubuntu]] / [[http://www.scribus.net/redhat|Fedora]]
+* Inkscape 0.48: Vector Grafik\\
+[[http://inkscape.org/download/|Windows and Mac]] / For Linux use your distribution's packages (we will provide binaries for Debian testing) ([[https://bugs.launchpad.net/inkscape/+bug/482993/comments/59|Patch]] für Snow Leopard)
+* Gimp 2.6: Bildbearbeitung\\
+[[http://downloads.sourceforge.net/gimp-win/gimp-2.6.11-i686-setup-1.exe|Windows]] / [[http://gimp.lisanet.de/Website/Download.html|Mac]] / For Linux use your distribution's packages
+* Mypaint 0.9: Computermalerei\\
+[[http://download.gna.org/mypaint/mypaint-0.9.0-win32-installer.exe|Windows]] / For Linux we will try to provide binaries
+* OpenOffice.org\\
+[[http://download.openoffice.org|Windows and Mac]] / For Linux use your distribution's packages
+
+!Kollaboration
+
+[[Grafiklabor/101105KollaborativeBuchWiki|wiki]]

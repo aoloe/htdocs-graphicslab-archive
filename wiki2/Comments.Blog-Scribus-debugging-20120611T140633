@@ -1,0 +1,26 @@
+(:blogid:blog1:)
+(:entrytype:comment:)
+(:commentauthor:cezaryece:)
+(:email:czarek@oferuje.pl:)
+(:website::)
+(:commenttext:In my successful QtCreator settings I have:
+Dir "GIT/scribus" with cloned repo (Scribus is in it) and BUILD and INSTALL dirs in it.
+In QtQcreator Projects tab:
+Build dir: ~/GIT/scribus/BUILD
+* in Build Settings
+Build steps
+1. Custom Process Step:
+- command: cmake
+- working di: ~/GIT/scribus/BUILD
+- command arguments: ../Scribus -DCMAKE_INSTALL_PREFIX:PATH=../INSTALL -DWANT_DEBUG=1 -DWANT_GRAPHICSMAGICK=1
+2. make
+
+In Run Settings
+- Deployment Custom Process Step: make with "install" argument and working dir as ~/GIT/scribus/BUILD
+In Run as working dir also ~/GIT/scribus/BUILD.
+
+As you can see the key is set of working dir everywhere (in my case ~/GIT/scribus/BUILD).
+:)
+(:commentapproved:true:)
+(:commentdate:1339418673:)
+

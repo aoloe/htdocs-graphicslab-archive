@@ -1,0 +1,22 @@
+(:Summary:contains the edit page layout form:)
+!! $[Editing {*$FullName}] %25block class=wikiaction%25
+(:messages:)
+(:div id='wikiedit':)
+(:input e_form:)[[#top]](:e_guibuttons:)\\
+(:input e_title:)\\
+(:input e_savebutton:) (:input e_savedraftbutton:) (:input e_saveeditbutton:)
+(:input e_textarea:)\\
+$[Summary]: (:input e_changesummary:)\\
+$[Author]: (:input e_author:) (:input e_minorcheckbox:) $[This is a minor edit]\\
+(:input e_savebutton:) (:input e_savedraftbutton:) (:input e_saveeditbutton:) (:input e_previewbutton:) (:input e_cancelbutton:)
+(:input end:)
+(:divend:)
+(:include $[{$SiteGroup}/EditQuickReference]:)
+(:if e_preview:)
+!! $[Preview {*$FullName}]
+'''$[Page is unsaved]'''
+(:e_preview:)
+----
+'''$[End of preview -- remember to save]'''\\
+[[#top | $[Top] ]]
+(:ifend:)

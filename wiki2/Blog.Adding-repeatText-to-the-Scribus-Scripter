@@ -1,0 +1,421 @@
+(:title Adding the repeatText() command to the Scribus Scripter:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!Scribus14]], [[!Scripter]](:title Adding the repeatText() command to the Scribus Scripter:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1305266400:)
+(:entryauthor:ale:)
+(:entrytitle:Adding the repeatText() command to the Scribus Scripter:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus, Scribus14, Scripter:)
+[[#blogit_entrybody]]In the [[Blog/Adding-a-new-Command-to-the-Scribus-Scripter|previous post]] we have being laying down the foundations for the @@repeatText()@@ command  by adding the new @@repeatText()@@ command in @@scriptplugin.cpp@@, creating its signature in @@cmdtext.h@@, and adding an empty function in @@cmdtext.cpp@@.
+
+
+
+As we wrote in our [[Blog/Enhancing-the-Scribus-Scripter|first post in this series]] we will use the  existing @@setFontSize()@@ command as a reference.\\
+
+Let's skim through the structure of @@setFontSize()@@:
+
+
+
+Attach:{Blog.Adding-repeatText-to-the-Scribus-Scripter$FullName}/scribus_scripter_repeattext_01.png
+
+
+
+We can spot four steps:
+
+* Reading the parameters
+
+* Checking the parameters
+
+* Getting the frame we are going to working onto
+
+* Doing the actual work
+
+
+
+Let's get back to @@repeatText@@ in @@cmdtext.cpp@@. In the last post we have left it empty:
+
+(:source lang=cpp:)
+
+PyObject *scribus_repeattext(PyObject* /* self */, PyObject* args)
+
+{
+
+	Py_RETURN_NONE;
+
+}
+
+(:sourceend:)
+
+
+
+We can now fill it with the actual code.
+
+
+
+!Reading the parameters
+
+
+
+Our first step is reading the parameters:
+
+
+
+(:source lang=cpp:)
+
+PyObject *scribus_repeattext(PyObject* /* self */, PyObject* args)
+
+{
+
+	char *Name = const_cast%3cchar*>("");
+
+	double count;
+
+	if (!PyArg_ParseTuple(args, "d|es", &count, "utf-8", &Name))
+
+		return NULL;
+
+
+
+	Py_RETURN_NONE;
+
+}
+
+(:sourceend:)
+
+
+
+Similar to @@setFontSize@@, @@repeatText()@@ also accepts two parameters:
+
+* a number of repetitions, which are defined as digits and are stored into the @@count@@ variable
+
+* optionally, the name for the frame to be edited (if none is specified, the current selection is used).
+
+
+
+First, we define both the @@Name@@ and @@count@@ variables (don't ask me how the Scribus programmers are choosing the capitalization of the variable names!), then we use  the @@PyArg_ParseTuple@@ function to fill them:
+
+* @@args@@, the first parameter, is the list of arguments as passed to the @@scribus_repeattext()@@ function.
+
+* @@"d|es"@@ is a string defining which parameters the @@repeatText@@ command accepts. The @@d@@ represents a digit, the @@es@@ is an encoded string (encoded in the sense that it will accept non ASCII characters) and the pipe (@@|@@) separates the fields.
+
+* the remaining parameters are both used for getting the values back from @@PyArg_ParseTuple@@ (@@count@@ and @@Name@@ are passed by reference and will contain the values from @@args@@ once @@PyArg_ParseTuple@@ has been executed) and for further specifying how @@PyArg_ParseTuple@@ should be handle the parameters (@@"utf-8"@@ is the encoding to be applied to @@Name@@)\\
+
+You can [[http://docs.python.org/c-api/arg.html|read more about @@PyArg_ParseTuple@@]] in the [[http://docs.python.org/c-api/index.html|Python/C API Reference Manual]].
+
+
+
+!Checking the parameters
+
+
+
+(:source lang=cpp:)
+
+PyObject *scribus_repeattext(PyObject* /* self */, PyObject* args)
+
+{
+
+	[...]
+
+
+
+	if(!checkHaveDocument())
+
+		return NULL;
+
+	if ((count > 512) || (count %3c 1))
+
+	{
+
+		PyErr_SetString(PyExc_ValueError, QObject::tr("Repetition count out of bounds - must be 1 %3c= count %3c= 512.","python error").toLocal8Bit().constData());
+
+		return NULL;
+
+	}
+
+
+
+	Py_RETURN_NONE;
+
+}
+
+(:sourceend:)
+
+
+
+The simple tests we are doing are:
+
+* Checking that a document is open (@@checkHaveDocument()@@)
+
+* check that @@count@@ is between 1 and 512 (the upper bound is just a made up value...)
+
+If the conditions are not met, the functions stops. If @@count@@ is out of bound, an error message is produced.
+
+
+
+!Getting the frame
+
+
+
+The @@Name@@ variable we have read from @@args@@ defines the frame to be edited:
+
+* if @@Name@@ is an empty string the currently active frame will be used (if one is selected)
+
+* otherwise, the frame identified by @@Name@@ will be used (if it exists)
+
+
+
+(:source lang=cpp:)
+
+PyObject *scribus_repeattext(PyObject* /* self */, PyObject* args)
+
+{
+
+	[...]
+
+
+
+	PageItem *i = GetUniqueItem(QString::fromUtf8(Name));
+
+	if (i == NULL)
+
+		return NULL;
+
+
+
+	if (!i->asTextFrame())
+
+	{
+
+		PyErr_SetString(WrongFrameTypeError, QObject::tr("Cannot repeat text for a non-text frame.","python error").toLocal8Bit().constData());
+
+		return NULL;
+
+	}
+
+
+
+	Py_RETURN_NONE;
+
+}
+
+(:sourceend:)
+
+
+
+We are using the @@GetUniqueItem()@@ function to get the frame we will be acting upon and then check if the frame exists and if it is a text frame.
+
+
+
+!Doing the work
+
+
+
+We are now ready to actually implement our command. We will have to:
+
+* read the current content of the frame (or the current text selection)
+
+* append @@count@@ copies to the string
+
+* put the new content into the frame
+
+
+
+Before reading the text to be repeated, we make sure that the target frame is selected. This is the case when acting on the current item, but not likely when the name of the target frame is passed in the @@Name@@ parameter.\\
+
+Again, we can take @@getFontSize()@@ as the example for our implementation:
+
+
+
+(:source lang=cpp:)
+
+int Apm = ScCore->primaryMainWindow()->doc->appMode;
+
+ScCore->primaryMainWindow()->doc->m_Selection->clear();
+
+ScCore->primaryMainWindow()->doc->m_Selection->addItem(i);
+
+if (i->HasSel)
+
+    ScCore->primaryMainWindow()->doc->appMode = modeEdit;
+
+
+
+[...]
+
+
+
+ScCore->primaryMainWindow()->doc->appMode = Apm;
+
+ScCore->primaryMainWindow()->view->Deselect();
+
+(:sourceend:)
+
+
+
+* We store the current state of the Program in the @@Apm@@ variable, we set it to @@modeEdit@@ if the frame has a selection and -- at the end of this snippet -- restore the initial state as stored in @@Apm@@
+
+* We clear the current frame selection (in the case on ore more frames are selected) and set the selection to the target item (@@m_Selection->addItem(i)@@) and -- at last -- remove all selections (@@view->Deselect()@@)
+
+
+
+Now, we just to replace the @@[...]@@ with the "real" code which gets the text, repeats it and puts it back into the frame.
+
+
+
+In order to know how to read the text, we look at the @@scribus_gettext()@@ method, defined in @@cmdtext.cpp@@:
+
+
+
+(:source lang=cpp:)
+
+QString text = "";
+
+for (int a = 0; a %3c it->itemText.length(); a++)
+
+{
+
+    if (it->HasSel)
+
+    {
+
+        if (it->itemText.selected(a))
+
+            text += it->itemText.text(a);
+
+    }
+
+    else
+
+    {
+
+        text += it->itemText.text(a);
+
+    }
+
+} // for
+
+(:sourceend:)
+
+Looks exactly what we are looking for! We just have to replace the name of the @@PageItem@@ variable from @@it@@ with the @@i@@ we are using.
+
+
+
+For the next step, the Qt manual teaches us how to repeat a @@QString@@:
+
+
+
+(:source lang=cpp:)
+
+text = text.repeated(count);
+
+(:sourceend:)
+
+(http://doc.qt.nokia.com/latest/qstring.html#repeated)
+
+
+
+From the @@scribus_setboxtext()@@ method we can learn how to set the text of a frame:
+
+
+
+(:source lang=cpp:)
+
+currItem->itemText.insertChars(0, Daten);
+
+currItem->invalidateLayout();
+
+currItem->Dirty = false;
+
+(:sourceend:)
+
+
+
+Here we have to replace @@currItem->itemText@@ through @@i@@.
+
+
+
+Let's put the pieces together:
+
+(:source lang=cpp:)
+
+PyObject *scribus_repeattext(PyObject* /* self */, PyObject* args)
+
+{
+
+	[...]
+
+
+
+	int Apm = ScCore->primaryMainWindow()->doc->appMode;
+
+	ScCore->primaryMainWindow()->doc->m_Selection->clear();
+
+	ScCore->primaryMainWindow()->doc->m_Selection->addItem(i);
+
+	if (i->HasSel)
+
+		ScCore->primaryMainWindow()->doc->appMode = modeEdit;
+
+
+
+	QString text = "";
+
+	for (int a = 0; a %3c i->itemText.length(); a++)
+
+	{
+
+		if (i->HasSel)
+
+		{
+
+			if (i->itemText.selected(a))
+
+				text += i->itemText.text(a);
+
+		}
+
+		else
+
+		{
+
+			text += i->itemText.text(a);
+
+		}
+
+	} // for
+
+
+
+	text = text.repeated(count);
+
+
+
+	i->itemText.insertChars(0, text);
+
+	i->invalidateLayout();
+
+	i->Dirty = false;
+
+
+
+	ScCore->primaryMainWindow()->doc->appMode = Apm;
+
+	ScCore->primaryMainWindow()->view->Deselect();
+
+
+
+	Py_RETURN_NONE;
+
+}
+
+(:sourceend:)
+
+
+
+That's it! Now, you can start hacking on the Scribus Scripter API. As you have noticed in this artricle, when you add a new command you can probably do most of your work by looking at existing methods which do similar things.
+
+
+
+Happy hacking![[#blogit_entrybodyend]]

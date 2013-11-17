@@ -1,0 +1,20 @@
+(:title The preflight verifier now checks "underfilled" images:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!Scribus15]](:title The preflight verifier now checks "undefulled" images:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1296635100:)
+(:entryauthor:ale:)
+(:entrytitle:The preflight verifier now checks "undefulled" images:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Scribus15, Scribus:)
+[[#blogit_entrybody]]This week, Petr has slightly [[http://bugs.scribus.net/view.php?id=7563|improved the preflight verifier]]: now -- well as soon as a couple of bugs are solved -- you will be warned if you've put the image you've put in your document does not fill the frame, leaving a "dangerous" white space you might overlook on screen but you can't stop noticing once it has been printed!
+
+It's one of the useful checks the preflight verifier does for you before you get to the printing and PDF export dialogs. You can have a look in the scribus preferences or in the document settings.
+
+
+
+Attach:{Blog.The-preflight-verifier-now-checks-underfulled-images$FullName}/scribus_preflight_verifier_01.png
+
+report underfull image frames[[#blogit_entrybodyend]]
+

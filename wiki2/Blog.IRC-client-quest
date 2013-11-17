@@ -1,0 +1,41 @@
+(:title Looking for a new IRC client:)
+[[#blogit_pmmarkup]](:title Looking for a new IRC client:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1317141180:)
+(:entryauthor:ale:)
+(:entrytitle:Looking for a new IRC client:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]]I've been a Quassel user for a long time and now, after having seen the list of dependencies it pulls in, just to play a sound when a messages comes in, I'm looking for something new. If possible much simpler than Quassel...
+
+Here a list of the characteristics (you will notice that I still mostly like Quassel!)
+* a GUI (a nice and simple one; like Quassel)
+* compact message line (only the nick is shown; the nick can be shortened to n-chars (like Quassel); a tooltip will show the time of the message)
+* multiple servers and multiple channels shown in a tree (like Quassel; no tabs; context menu / button to show or hide the inactive ones; deleting and leaving should work as in Quassel; highlighting channels with activity like Quassel)
+* private messages (like Quassel)
+* have a chat monitor (similar to Quassel, but with with a tooltip on the nick showing the time, the channel and the server; make it easy to exclude channels)
+* panes layout like the quassel's default, width and height can be changed
+* list of the nicks (with some additional info in the tooltip; double clicking starts a private message)
+* backlog in a database or a flat file(s) (if possible better to search and browse the Quassel's one)
+* multiline input field (if possible autogrowing when the text gets longer and with spelling check)
+* show topic line abbreviated on one field (default one line, can grow; not editable)
+* some colors (but not too many) for message highlighting
+* text size can be configured
+* eventually a simple visual notification of direct and private messages
+* clickable urls
+* autocomplete for nicks
+* an easy way to show/hide the join/quit messages
+* connect with url, ssl, username, password; join with name, username, password; auto reconnect and rejoin of all open connections and channels
+
+And if I don't find any fitting, here some ideas for programming a new one:
+* embeddable in Scribus
+* written in python or C++, probably with Qt
+* eventually as a new client for quassel core
+
+
+Here a list of project I've found:
+* http://code.google.com/p/conviersa/ ("an awesome, breath-taking, cross-platform IRC client written in C++ using the Qt library")
+* http://www.gitorious.org/qt-irc-client ("Minimal IRC client")[[#blogit_entrybodyend]]
+

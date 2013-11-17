@@ -1,0 +1,622 @@
+(:title Scribus Weekly 47: 24.11.2010 - 1.12.2010:)
+(:#toc:)
+
+!Finding font type in Scribus
+
+In some of my older documents, the "Arab" font was originally set as the default (probably with Scribus 1.3.3.14 on an older version of Kubuntu). When I open one of those documents with 1.3.8 (Kubuntu 10.04), I always get a message saying something to the effect that some fonts -- i.e. Arab -- are not installed and asks for font substitution (I have chosen Arial). I select "make this substitution permanent". Even when I save the document, and reopen it again, I still have to go through that annoying bit about font substitution.
+
+How can I find out where it thinks I am still using Arab (not that I intentionally ever used it) so that I can get rid of it forever?
+
+%3cgreg>
+My scanning of sla documents to look for the source of this suggests that it comes from a saving of the default font inside the document.
+
+It might be worth a try to open the doc in Scribus, go to File > Document Settings, changing the default font, and then saving the doc to see if this works.
+Otherwise, you have to do a plain text search and replace on the sla file to get rid of the annoyance. 
+
+!Weekly digest?
+
+i was curious to see what a weekly digest would look like.
+
+so i took the decision to collect all the mails to the scribus mailing for one week and post it to the mailing list.
+
+you see the text (markdown) version below. i'm not sure that it can be useful to anybody.
+
+
+there is an html version
+
+http://www.graphicslab.org/index.php?n=Scribus.Weekly201046#sScribus.Weekly201046_19
+
+it's slightly better, but does it appeal to anybody?
+
+
+i have to admit that through the past week there were probably a lot more mails than usual, so i will try to keep up with the work for the next week and see what comes out.
+
+!custom dates in calendar script
+
+%3crich>
+I searched around a little on google and did not see anything. Is it possible to add holidays, birthdays, anniversaries, etc... to the calendar script. I am using a program that adds these to the calendar and allows you to color them and put in your own description. You can put in the fourth Thursday of November is Thanksgiving in the U.S.
+
+The way I do it now, I use Personal Calendar Maker and then print it to a pdf. Of course it does not embed the fonts, so I have to go back and embed the fonts. Then I place it in Scribus. If Scribus could add these already that would eliminate a bunch of steps and eliminate me doing them wrong.
+
+
+! Using symbols with Scribus
+
+%3calberto>
+I'd like to know the right way to type the symbol of "at" that is @ in the
+text editor of Scribus. In fact you can type it but you cannot see it inside
+the text window. Besides, if you type a string containing the symbol @,
+neither the symbol nor what is after it is visible in the text windows.
+
+%3cgreg>
+I just tried this with 1.3.9svn in Fedora 14 and had no problem.
+Maybe the '@' glyph is not present in your chosen font?
+
+%3calberto>
+I'm using Scribus 1.3.3.2, 29 May 2006, Build-ID: C-C-T-F-A-Mac/Aqua,
+Ghostscript 8.50 version, on my Apple Mac mini G4 PPC and I'm using Gimp
+ver. 2.6.6 and noticed that neither with Scribus nor with Gimp I am able to
+type the symbol @. Maybe its due to the particular build for Mac (?).
+
+%3cmartin>
+I would also recommend to try and type the @ symbol in TextEdit. I just made a test on MacOSX 10.4 with the Italian keyboard (which has the @ to the left of 1, where the backtick should be), and it did not work. This seems to be a bug in MacOSX 10.4 with the so-called International Keyboard.
+
+You can use the Keyboard Viewer (from the International system preference pane or the input menu if activated) and click on the @ symbol. This works for me, both in TextEdit and in Scribus. Or switch temporarily to a US keyboard, where @ is at Shift-2. Keyboard switching is very easy in MacOSX.
+
+%3cjohn>
+First step: I recommend you upgrade to a version closer to today. A 
+lot has changed since 2006! Scribus 1.3.8 is available now. It dates 
+back to July. There is a Mac OS X version available. It is stable in 
+everything but name.  At least come forward to 1.3.3.14, the official 
+stable release. 
+
+I cannot reproduce your problem with 1.3.8 nor with 1.5.0.
+
+Once again I suggest that the new 1.3.9 release  be redesignated as 
+stable, i.e, 1.4.0 now. A lot of new people are coming to Scribus and 
+are installing 1.3.3.14. It would be a kindness to them and to the 
+rest of us to designate something newer as the official "stable" 
+release. 
+
+! inconsistent quote marks
+
+%3cjerry>
+The text is set in Optima DemiBold and controlled by paragraph styles. 
+Within the same paragraph I find correct quote marks that match the 
+chosen font, but I also see quote marks that are foreign, i.e., not from 
+the same font, and looking more like a typewriter font. This happens 
+with both single quote (') and double ("). Re-applying the style  in 
+"story editor" doesn't help.
+
+%3cgreg>
+If I understand you correctly, you should know that there is no 
+automatic conversion to typographic quotes in Scribus. There is a script 
+in 1.3.9svn called AutoQuote (based on the script in the wiki page 
+below) designed to convert typewriter to typographic quotation marks. 
+You might try that on a copy of your file and see if it fixes the problem.
+
+http://wiki.scribus.net/index.php/Convert_Typewriter_Quotes_to_Typographic_Quotes
+
+%3cjerry>
+I discovered how to obtain various types of quote marks: while editing text, go to insert: quotes: {many options}.  This enables using correct left/right single or double quotes from the current font.
+!new install query
+
+%3cjerry>
+To upgrade to 1.3.9. I expect to do this soon. Unlike 1.3.3.14, which 
+exports PDF even absent Ghostscript, I expect to need to install 
+Ghostscript. How do I select correct version of Ghostscript?
+
+! Image size on A2 calendar made in Scribus
+
+%3cangela>
+I have got a bit bolder with Scribus and made an A2 calendar with an image
+that is 390mm x 290mm, so almost half the page.  The trouble is, I seem to
+be a bit out of my depth at this larger size in understanding the use of
+images and how they blow up, and also if there is something I should or
+should not be doing in Scribus itself to improve this.
+
+I have changed the preview settings to full resolution which helped and I
+purchased the stock images from www.fotolia.com at 300 dpi.  The printer
+says my images are 110 dpi on all pages.  The rough image size I purchased
+for each page was 1700 x 1117 (1.9mp)  5.7" x 3.7" but they vary a bit from
+image to image.  I could buy the next size up but I am not sure if this will
+work.
+
+%3cgreg>
+If you look at Properties > Image you can check the image DPI for 
+whatever size you have made your image frame. You would likely be 
+disappointed in 110 dpi in your final product. 150 - 300 dpi is more 
+likely to be satisfactory. There are some instances where > 300 might be 
+desirable, but not for most purposes.
+
+This may be of some help:
+
+http://wiki.scribus.net/index.php/Image_DPI_and_Scaling,_and_Resultant_File_Sizes
+
+Keep in mind that the screen shots are of highly magnified PDFs.
+
+%3cangela>
+Thanks Gregory.  It comes up with Gimp is missing.  Is that key to resizing
+the images.?  I am downloading one from www.gimp.org.  Then I look in
+external tools and locate the program?  Sorry if this all pretty basic to
+you.  I've done loads of goood, smaller projects without all this info!
+
+%3cgreg>
+If you don't have Gimp on your machine, then not finding it is normal. :D
+
+I don't think that presence/absence of Gimp is going to be your main 
+issue in a large format document, more likely a question of whether 
+there are enough pixels per inch in your image file to support a decent 
+DPI in the PDF.
+
+%3cpeter>
+It is important to understand that a digital image does NOT have a DPI
+until printed (or shown on a screen).
+
+What you always should look at is the resolution (the pixels, or
+rather megapixels).
+
+Then the DPI will depend on what size you print the image. (Very easy,
+just divide the amount of pixels for width or height with the printed
+size, 2000 pixels wide printed 10 inch wide means 200 DPI. And the
+same 2000 pixels wide image printed at 5 inch width makes 400 DPI.)
+
+Also note that when deciding how high DPI is needed, the viewing
+distance should always be considered. 300 DPI is generally needed for
+reading at "arms length" distance. But if viewing the image from 2
+meters away you most likely don't need more than 100-150 DPI.
+
+!Extra blank pages
+
+%3cthurman>
+How do I delete these blank pages.
+
+%3cchristoph>
+Use Page > Delete from the menu bar.
+
+!latest useable release?
+
+%3cjerry>
+OK, I understand that I would be better off to use 1.3.9, rather than 
+1.3.3.14. Is 1.3.9 actually available?
+
+When I go to http://www.scribus.net/taxonomy/term/36 looking for a 
+download too use on Win XP, the latest stable release offered is 1.3.3.14.
+
+Or I can get latest development release 1.3.7 from Sourceforge. There 
+also seem to be a number of "developmental snapshots."
+
+I admit: I am not a programmer, although I have a deep respect for 
+people who can create a magic cookie and stuff like that. So...can a 
+mere mortal install 1.3.7, should he, and how would I get 1.3.9? Is that 
+stable enough to use? Or should I wait longer...
+
+%3calexandre>
+1.3.9 is not yet available, but it's a matter of few days.
+
+%3cgreg>
+I wouldn't hesitate to get one of those snapshots -
+
+http://sourceforge.net/projects/scribus/files/
+
+and you might as well get the latest 1.3.9svn snapshot while you're at 
+it. It will install just as easily as the stable version.
+
+The default behavior for Scribus will be to _add_ this version, in other 
+words, you won't overwrite or delete your 1.3.3.14 automatically.
+So you can use both.
+!scaling groups
+
+%3cnikita>
+i tried to design my logo in Scribus. Its made out of simpe coloured
+text and three pictures in picture boxes.
+I then grouped the 4 Elements and saved it in Scrapebook, for reusing it
+on different pages.
+The problem I discovered is, that when i try to scale the whole group,
+just the text is being scaled, the pictures not, the remain in size and
+on the place the had within the group.
+Is there a way to scale within a text-and-picture-mixture-box both
+equally?
+
+%3cgreg>
+Here is what I find in my 1.3.9svn:
+
+If I change the size of such a group, image frames and enclosed images 
+scale, and the text _frame_ scales, but not the text. And this is with 
+all sorts of uses with modifying keys - Shift, Shift+Alt, Shift+Ctrl, 
+Ctrl ...
+
+If I work with a text frame only, holding Ctrl+Alt will not only scale 
+the frame but also the text size.
+
+I think the best advice would be to break up a combination of image and 
+text frames, and scale each kind separately.
+
+!Template problem
+
+%3cken>
+I have added a few templates from a debian package, but the problem I have
+is they have confused my install of scribus 1.3.8 on Debian linux. All the
+templates show up under Advertisements instead of All in the Create from
+template dialog. Is there a file to edit or recreate that will put things
+where they belong?
+
+%3cchristoph>
+Yes, depending on where Debian installs Scribus, either 
+/usr/share/scribus/templates or /usr/local/share/scribus/templates. The file 
+is called template.xml.
+
+If the file seems to be correct, you ran across a bug that has been fixed in 
+1.3.9.
+
+!Interactive PDF's in Scribus
+
+%3cdan>
+Is it possible to create interactive PDF's that allow the user to
+fill in data such as names, addresses etc. (basically like filling
+an online form)? If so, how do I do this? I've downloaded scribus
+and have experimented but cannot figure this out.
+
+%3ca.l.e>
+yes, it's possible. please have a look to the howtos on http://wiki.scribus.net to learn how to do it!
+
+!installing on Windows 7 64 bit
+
+%3cvictor>
+scribus version 1.33 work on windows 7 64 bit
+
+%3cgreg>
+We don't have precompiled 64-bit windows versions, but 32-bit will work just fine, at least it does on my 64-bit XP. 
+
+%3cermin>
+Just installed 1.3.9 on W7 64 bit. No immediate problems sofar. 
+
+%3csteven>
+I have been using 1.3.8 on my Windows 7 64 bit laptop with no problems so far.
+
+!Importing text from Word (XL) to Scribus
+
+I have downloaded the free trial version of Scribus 1.33.14, but when I click on Import Text from the File Menu, it will now allow me to do so. How therefore do I import text, written in Word on the XL system, into the free trial version of Scribus?
+
+%3cgeorge>
+First, Scribus is free, it is not a trial version.
+
+I always import text as a text file (.txt). Save your text as a text file, or convert it to 
+text, before importing it.
+
+%3cjohn>
+All versions of Scribus are free. And the version you use, 1.3.3.14 
+was declared stable many moons ago.  AFAIK MSWord doc file import is 
+not yet available.  You can however load your file 
+into Open Office Writer, save it in that program's native format ODT, 
+and then import that. 
+
+%3cgreg>
+I think there are some basic things you're not understanding about how Scribus works.
+
+In order to import text, you need first of all to make a text frame somewhere on the document space. After that, you can use File > Import > Get Text, or right-click on the text frame for the Context menu to Get Text from a file.
+
+Importing Word files should be no problem, but there will be no formatting (bold or italic styles, for example).
+
+Here are some wiki resources to help you get going:
+
+* http://wiki.scribus.net/index.php/Main_Page
+* http://wiki.scribus.net/index.php/Working_with_text_frames
+* http://wiki.scribus.net/index.php/Index   (ignore the strange man with the forehead tattoo)
+
+%3clorn>
+I have created a text frame and imported text. The only loss importing
+it from Word is the justification. When I go into Story Editor, the
+original line layout in terms of page size is lost and the lines become
+twice the length. How do I cope with this? Or is it better, with 20
+chapters of text to edit, to remain in the text frame and edit from
+there? Presumably I can still justify the text and have access to
+facilities such as kerning?
+
+%3cgreg>
+This is what I was alluding to. From Word files, you are just importing the text, so you need to do your formatting in Scribus.
+
+You have some reading to do, all available on the wiki, about text frames, the Story Editor, Paragraph Styles, and other things that will help you do what you want.
+
+The Story Editor is not designed to show your text as it will appear in the frame on the page, even though you can apply various settings there.
+
+!pdf-creation 
+
+%3cgerold>
+The characters in documents I exported from scribus 1.3.3.14 (Win7_64, GS9.00) to pdf have an 'angular, segmented' look.
+Forms that should be round aren't. Certain dashes and verticals (like I or L) are also too fat-looking.
+
+So I made 2 similar pages (same format, same fonts, same text), one in scribus and the other in the latest OOwriter.
+The pdfs I got look strikingly different (sadly I can't attach them here) in AcroreaderX, with the scribus output on the worse side.
+
+%3cgreg>
+It sounds like you did not embed your fonts in the PDF -- this is a setting in the PDF Export dialog.
+
+%3cpeter>
+PDFs from Scribus are targeted at printing. This means that for
+example hinting for fonts can sometimes be missing (this usually
+depends on the font used, not on Scribus), which makes the letters
+look strange when zoomed out. But if you zoom in to for example 200%25
+things should look better.
+
+And if you print, I think you will be satisified by the result.
+
+%3cgerold>
+Is therefore the solution to not use OTFs?
+
+%3cchristoph>
+They can't be embedded by by default, but you can override the setting: 
+http://wiki.scribus.net/index.php/Category:FAQ#Embedding_and.2For_outlining_fonts
+
+%3cgerold>
+Unchecking "Subset" only works with (certain) TTFs.
+Unchecking "embed" works with OTF, but they are unembedded anyway, so no joy there.
+The only way to go for now is to delete the OTFs from the "make outline" box in the pdf-creation dialogue.
+
+result: better looking pdf on my own system, but no embedded fonts (=no portable document).
+
+%3cmeho>
+I was wondering, if OpenType fonts cannot get embedded by default (?), but 
+still, if you uncheck "subset" option they do get embedded, what's the catch? 
+Why is subsetting default option when embedding is what most people would want? 
+
+The size of the .pdf file? Some other issues?
+
+
+!Spaces between words
+
+%3clorn>
+I have imported a Word file successfully into a Scribus text frame, but the 
+justification disappears on the right hand side. If I restore it through the 
+Properties file I am left with large gaps between words in the last lines of 
+paragraphs, where there are not sufficient words to achieve double 
+justification. The last line may only have eight words in it, yet they are 
+stretched across the double justification. How do I correct this? 
+
+My main use of Scribus will be to edit a 20 chapter novel imported from Word. 
+Has anyone a list of steps or general guidance to offer me?
+
+%3cchristoph>
+There two options for justified text, and it seems you selected "forced 
+justified". Use "justified" instead, which is the button to the left of 
+"forced justified".
+
+!Transferring .sla file from Windows 7 to Vista Gives Error 
+
+%3crussel>
+I have created a .sla file on a friend's machine in Windows 7 on 1.3.3.14
+
+I would like to be able to carry on editing it on my Windows Vista machine, but when I copy the file across and try to open it on Vista it says that the format is invalid. I searched on that error message and it says that normally this happens when you try and open a file in an older version of the program, but we both have the same version.
+
+Could this be a mismatch between a 64bit and a 32 bit machine?
+
+If so, is there any way to rescue the content so I can still edit it (eg. I have been playing with the Collect for Output option in the file menu)? 
+
+%3cgreg>
+There is no difference between a Scribus file from a 32-bit or 64-bit computer (there isn't really a version of Scribus compiled for 64-bit anyway).
+
+Open the file with Notepad or similar and look at the second line for the version number for the file.
+
+!Replicating Styles
+
+%3cjohn>
+Having finished my first 60 page magazine publication recently, I have come
+to realize that I have a lot invested in the various styles I created for
+the first issue under Scribus.  Now, I want to replicate those styles in the
+next issue's .sla file in order to maintain the same look for the magazine
+from issue to issue.
+
+My question, therefore, is there a simple way to copy styles from one .sla
+file to another, new .sla file as I start the next issue's composition
+without having to manually recreate each style for every issue henceforth?
+
+If there is not such a method or feature, maybe it would be a worthwhile
+addition to Scribus as it would seem reasonable that other folks might have
+the same need, as well.
+
+%3cgreg>
+Go to Edit > Styles, and you will see an option to import styles from another document. 
+
+%3ccezary>
+Very good manner is also saving clean file (without vary content, but with 
+static and repeatable) as template for use in the future issues.
+
+!Include images when sharing SLA file
+
+%3csallie>
+I'm new to Scribus.  I created a document with images but when I e-mail the document the images do not display for the recipient.  I added the images to the Scrapbook, but that didn't help.  Can someone tell me how to embed the images so they go along for the ride when I share the file?
+
+%3cjohn jason>
+The feature you need is File > Collect for Output.
+
+%3cgreg>
+Oops! A basic misunderstanding. There are no images inside the SLA file, only references to files on your system.
+
+If you want to share the document with its images, use File > Collect for Output, which asks for the name of a _directory_ (and you can create a new one), into which the SLA file and all its images will go.
+
+You would then need to send this directory and its contents to your recipient. If you're using Linux you can use tar to do this, but I have a hunch that this may be beyond your knowledge, or that you're not using Linux.
+
+Otherwise, you'll need to send all those files inside that directory in your email.
+
+%3cjoe>
+You can always put everything in a zip file.  Windows now provides that right out of the box, so you don't have to install anything first. 
+
+%3csallie>
+Thanks everyone for your help.  It was just what I needed.  I knew there had to be a way.  I zipped the output directory and sent it to the recipient.  Thanks for the warm welcome! 
+
+!Announcement: Scribus 1.3.9 released
+
+%3cchristoph>
+http://www.scribus.net/node/233
+
+%3crob>
+Any word if a Mac OS X bundle will be posted?  The only .dmg that pops up for me is the 1.3.8 version.
+
+%3cpeter>
+
+We were working on it until late in the evening, but some unrelated build issues on the Mac build machines necessitated recompiling a lot of dependencies.
+
+Stay tuned.. we will get them out as soon as we can.
+
+%3cdan>
+I have submitted 1.3.9 to the Fedora updates system, see
+https://admin.fedoraproject.org/updates/scribus-1.3.9-1.fc14 for F-14
+update, F-13 will get it too.
+
+%3cgerard>
+Am I missing something blindingly obvious, or is 1.3.9 not available for
+Ubuntu 10.10/meerkat (32bit, if that makes any difference)
+
+%3cjohn>
+The answer depends on what you consider available.  The Linux 32 bit
+versions will run fine on 64 bit distros.  Plus, there are no 64 bit Scribus
+versions for Linux.  The other thing that I believe most Ubuntu users (I am
+one, also using 10.10) are reticent to install unstable versions.  Ubuntu
+will seldom put unstable versions in their repositories and since anything
+later than 1.3.3.14 for Linux is labeled unstable, we must install with
+apt-get.  However, I did find 1.3.8 available as Scribus-ng (meaning
+unstable) and installed it through the Ubuntu Software Center.  I have yet
+to find 1.3.9 as it was only released in the last few days and Ubuntu is
+notoriously slow in updating the Software Center list.
+
+%3cken>
+I assumed when we added the scribus.net repositories to our apt
+sources.list, that the new version would be downloaded during apt-get update
+(or aptitude update, or whatever) I've looked in synaptic package manager,
+and 1.3.9 is not there yet, even though I have added the scribus
+repositories.
+
+%3cjohn jason>
+It has been supplied it to the distros to put in their repositories.
+But each distro has to decide that it's OK to add it to their
+repositories. That can take several days sometimes.
+
+I'm still waiting for it to appear in the Fedora repositories as well.
+But it will get there. I can be patient.
+
+%3cgreg>
+I know that Fedora will indeed have a 64-bit update, and probably soon. 
+Ubuntu was supposed to be helping us get Scribus into the mainstream 
+repos for the various *buntus, but I don't know the status of that.
+!Printer Profiles?
+
+%3cjim>
+Is there any way that I can use printer profiles with Scribus?
+
+If I export a file to pdf and print it, the image colours are 'off',
+because my printer profile isn't used. Is there a 'workaround' for this?
+It would be useful for printing cards or calendars.
+
+%3cjohn>
+The use of ICC profiles is explained in full on page 158 and following 
+of the Scribus Manual.
+
+%3cjim>
+Ermm - not in my copy of the Scribus manual. It's 'The Action History'
+on page 159 on. Is it a later manual than the 'Official Manual'
+published by 'FLES Books' that you're referring to?
+
+%3cjohn>
+Hit the wrong key. The correct page reference is 258: "Color 
+Management."
+
+%3cjim>
+The problem is that Scribus colour management won't use profiles for
+inkjet printers, and only shows the standard professional printers - not
+a lot of good for us amateurs that don't have offset litho printers in
+our bedrooms where we operate!
+
+Is this fixed for 1.3.9, or is there a 'workaround'? It seems to be a
+major drawback for people like me that only want a few copies, rather
+than 1000 off from a print shop!
+
+%3cjoe>
+I think the devs may be thinking in terms of making Scribus a major 
+player in the professional field and ignoring the fact that much of the 
+user base is amateur.
+
+%3cpeter>
+It is on the roadmap for the future. However, it takes some major 
+reworking of the color management code inside Scribus. Those kinds of 
+things need serious testing on all 4 platforms we support, so this is 
+not something we would try to bring into 1.3.9/1.4
+
+The upside is next gen Scribus will have a much more flexible color 
+management architecture and it will allow exactly the kind of color 
+managed printing for a wider range of printers than we support now.
+
+%3cgerard>
+No harm in aiming for professional standards. I've used Scribus
+professionally, and I recommend it to others (though with caveats about
+its limitations). I'm in favour of anything that raises the bar and
+improves quality.
+
+%3cjim>
+Yes. It's a great product and getting better, but as you say "much"
+(probably most) "of the user base is amateur". And as that user base
+usually will want to print small quantities of their work on their home
+printer, the absence of colour management for their printers is a very
+serious drawback.
+
+I might try a convoluted workaround by exporting from Scribus to pdf and
+then loading the pdf into Photoshop and printing from there. It'll be
+messy and I'm not keen on the idea, though!
+
+%3cjohn>
+I suggest loading the pdf into Acrobat Reader. In fact I do all my 
+Scribus printing from AR. It just works for me, no hassles. 
+!Ensuring CMYK ouptput of jpg images.
+
+%3cjohn>
+I want to use jpg photos etc. in pdf output files. What steps must I 
+take to ensure that they are converted to CMYK on output?
+
+%3csilvestru>
+export to pdf-x3 work excelent for me. Color management is on, output cmyk profile set to one cmyk profile.
+
+%3cjohn>
+Thanks. Because of my printer I must use PDF X/1-a format. 
+
+! Suggestions for 1.4.0
+
+%3cjohn>
+1. The PDF format PDF x/1-a has worked fine for me for months now. Is 
+it possible to backport it to PDF 1.4.0?
+
+2. When in the Story Editor the icon with the green check mark (write 
+the text and exit) is hidden behind another icon.  I use this feature 
+all the time of course.  Can it be put on the icon bar of SE by 
+default? It would save me time. 
+
+%3cjoe>
+^W works fine for me.
+
+%3cchristoph>
+No, and I think your question has already been answered several times ;)
+
+We want to release 1.4 as quickly as possible, and adding PDF/X-1a would 
+require a major surgery. There's simply not enough developer time to ensure 
+that X-1a will work without hassles and that it doesn't break anything else.
+
+!Scripter and Preferences
+
+%3ccontinues from previous week>
+
+%3cgreg>
+We actually would love to, but some communications with Pantone have 
+resulted in what I would characterized as having a barking-dog-lawyer 
+flavor that has been more than sufficient to keep us from including 
+Pantone palettes with Scribus.
+
+If you have a strong need for Pantone, here is the route:
+
+http://wiki.scribus.net/index.php/How_to_legally_obtain_spot_colour_palettes_for_use_in_Scribus_1.3.3.x_and_later_versions
+
+So far we have not been challenged by our assessment that this is a 
+valid/legal way of incorporating Pantone in your color choices.
+
+%3colivier>
+I know exactly how to do it (see SwatchBooker). That's why I'm proposing
+to write a script that would download Pantone's online data into
+Scribus. But these data are in CIE-Lab so I need to convert them to RGB
+or CMYK. I could simply convert them to sRGB but since Scribus is color
+managed, it would be a pity.

@@ -1,0 +1,142 @@
+(:title The Scribus bugs and features Hit Parade:)
+A set of hit parades of the most wanted features are sent once a week to the scribus-dev mailing list.
+
+! The top ten of the small bugs or features
+
+Christmas has kept me busy... and we decided to try to give the Hit parade an monthly scheduling... let's see if it works good that way.
+
+We can start with three very good news:
+* Andreas' patch for the dead keys has made into trunk! And it works! ([[http://bugs.scribus.net/view.php?id=1908|#1908]])
+* Cezary has worked hard on his patch and now we have a solution for the undo for the text frames. This good proposal is being tested by Craig and Andreas and the chances are good that it will make into Scribus 1.4beta! ([[http://bugs.scribus.net/view.php?id=9568|9568]])
+* Flowing around groups has been fixed by Franz ([[http://bugs.scribus.net/view.php?id=9065|#9065]]). He has also refactored the Group handling in 1.5svn and this opens some more possibilities for the future!
+
+||  ||                                         ||Weeks ||
+||1 ||  ||1 || ||
+||2 ||Fix the growth of the contour line ([[http://bugs.scribus.net/view.php?id=9392|#9392]]) ||3 ||3 week at the second place ||
+||3 || ||1 || ||
+||4 ||Simplify the growth of the contour line ([[http://bugs.scribus.net/view.php?id=8275|#8275]]) ||3 ||
+||5 ||Avoid copy of copy of copy of style ([[http://bugs.scribus.net/view.php?id=7779|#7779]]) ||2 ||
+||6 ||Transform the unlink tool in a unlink command ([[http://bugs.scribus.net/view.php?id=9545|#9545]]) ||3 ||
+||7 ||Allow unlinking without reflowing the text ([[http://bugs.scribus.net/view.php?id=5750|#5750]]) ||3 ||
+||8 ||Don't silently discard bad fonts, but show them as non selectable ([[http://bugs.scribus.net/view.php?id=9546|#9546]]) ||3 ||
+||9 || ||1 ||
+||0 ||Test and comment the patch for style based TOC ([[http://bugs.scribus.net/view.php?id=8796|#8796]]) ||3 ||the 0th bug is choose on the first page of bugs.scribus,net ||
+
+! The top three big bugs or features
+
+# ...
+# Replace Scripter by Scripter 2 (3 weeks)
+# Implement a new Style Manager / Editor (2 week)
+
+
+!Archive
+
+!!8.12.2010
+
+
+||  ||                                         ||Weeks ||
+||1 ||Get dead keys to work across all systems ([[http://bugs.scribus.net/view.php?id=1908|#1908]]) ||3 ||3 weeks at the first place / Work in progress ||
+||2 ||Fix the growth of the contour line ([[http://bugs.scribus.net/view.php?id=9392|#9392]]) ||3 ||3 week at the second place ||
+||3 ||In 1.4 disable undo command while editing text ([[http://bugs.scribus.net/view.php?id=3301|#3301]]) ||3 ||3 week at the third place / Work in progress ||
+||4 ||Simplify the growth of the contour line ([[http://bugs.scribus.net/view.php?id=8275|#8275]]) ||3 ||
+||5 ||Avoid copy of copy of copy of style ([[http://bugs.scribus.net/view.php?id=7779|#7779]]) ||2 ||
+||6 ||Transform the unlink tool in a unlink command ([[http://bugs.scribus.net/view.php?id=9545|#9545]]) ||3 ||
+||7 ||Allow unlinking without reflowing the text ([[http://bugs.scribus.net/view.php?id=5750|#5750]]) ||3 ||
+||8 ||Don't silently discard bad fonts, but show them as non selectable ([[http://bugs.scribus.net/view.php?id=9546|#9546]]) ||3 ||
+||9 ||Flow around groups ([[http://bugs.scribus.net/view.php?id=9065|#9065]]) ||3 ||
+||0 ||Test and comment the patch for style based TOC ([[http://bugs.scribus.net/view.php?id=8796|#8796]]) ||3 ||the 0th bug is choose on the first page of bugs.scribus,net ||
+
+! The top three big bugs or features
+
+# Undo for text (3 weeks)
+# Replace Scripter by Scripter 2 (3 weeks)
+# Implement a new Style Manager / Editor (2 week)
+
+!!1.12.2010
+
+||  ||                                         ||Weeks ||
+||1 ||Get dead keys to work across all systems ([[http://bugs.scribus.net/view.php?id=1908|#1908]]) ||2 ||2 weeks at the first place / Work in progress ||
+||2 ||Fix the growth of the contour line ([[http://bugs.scribus.net/view.php?id=9392|#9392]]) ||2 ||2 week at the second place ||
+||3 ||In 1.4 disable undo command while editing text ([[http://bugs.scribus.net/view.php?id=3301|#3301]]) ||2 ||2 week at the third place / Work in progress ||
+||4 ||Simplify the growth of the contour line ([[http://bugs.scribus.net/view.php?id=8275|#8275]]) ||2 ||
+||5 ||Avoid copy of copy of copy of style ([[http://bugs.scribus.net/view.php?id=7779|#7779]]) ||1 ||
+||6 ||Transform the unlink tool in a unlink command ([[http://bugs.scribus.net/view.php?id=9545|#9545]]) ||2 ||
+||7 ||Allow unlinking without reflowing the text ([[http://bugs.scribus.net/view.php?id=5750|#5750]]) ||2 ||
+||8 ||Don't silently discard bad fonts, but show them as non selectable ([[http://bugs.scribus.net/view.php?id=9546|#9546]]) ||2 ||
+||9 ||Flow around groups ([[http://bugs.scribus.net/view.php?id=9065|#9065]]) ||2 ||
+||0 ||Test and comment the patch for style based TOC ([[http://bugs.scribus.net/view.php?id=8796|#8796]]) ||2 ||the 0th bug is choose on the first page of bugs.scribus,net ||
+
+The top three big bugs or features
+# Undo for text (2 weeks)
+# Replace Scripter by Scripter 2 (2 weeks)
+# Implement a new Style Manager / Editor (1 week)
+
+Let's start with the good news:
+* One bug has been resolved: now the guides don't get scrambled any more!
+* Cezary has started to work on a workaround for the lack of Undo while editing text. He has some working code, but it has to be cleaned up a bit and has to take care of some performance issues. Hands up for Cezary!
+* Andreas has announced that he has a patch for the dead keys issue: it has already been commited to the OIF branch. As soon as we have some feedback that it works, we will have to look for a new number one in our Hit Parade!
+
+And now, some notes about the Hit Parade itself:
+* We have attached a reference to the bug tracker for each entry in the Hit Parade.
+* You can see the Hit Parade as an HTML table here:\\
+http://www.graphicslab.org/index.php?n=Scribus.HitParade\\
+The page is not ready yet for prime time (and was even less pleasant to view last week...) but, if you want to have a look you can.
+* We want to add a third list which would be fully controlled by the community (proposing bugs / features, voting on them) but it will take time
+!! 24.11.2010
+
+!!! The top ten of the small bugs or features
+||  ||                                         ||Weeks ||
+||1 ||Get dead keys to work across all systems ||1 ||1 week at first place ||
+||2 ||Fix the growth of the contour line||1 ||1 week at second place ||
+||3 ||In 1.4 disable undo command while editing text||1 ||1 week at third place ||
+||4 ||Simplify the growth of the contour line||1 ||
+||5 ||Fix the column guides in the master pages ||1 ||
+||6 ||Transform the unlink tool in a unlink command||1 ||
+||7 ||Allow unlinking without reflowing the text||1 ||
+||8 ||Don't silently discard bad fonts, but show them as non selectable ||1 ||
+||9 ||Flow around groups ||1 ||
+||0 ||Test and comment the patch for style based TOC ||1 ||the 0th bug is choose on the first page of bugs.scribus,net ||
+
+
+!!! The top three big bug or features needed
+
+# Undo for text (1 week)
+# Replace Scripter by Scripter 2 (1 week)
+
+!Runner ups
+
+!! Small items
+
+* avoid copy of copy of copy of style
+* manage images should fix path in a recursive way for all missing images 
+* plaidrab's external conversion to ODF" pass through functionality
+* add a "grow contour line" button to the PP
+* pressing ctrl while creating an item, should create a square (or a circle, ...)
+* restore scratch page ([[http://bugs.scribus.net/view.php?id=5743|#5743]])
+
+!! Big items
+
+
+* rewrite the story editor
+
+!Ideas
+
+!! Vlada
+
+* vertical alignement for text (will pierre's work solve it?)
+* import of blur filter from svg (rasterized)
+* a lot of of-by-one rendering errors
+
+!cezary
+
+* [Preflight Verifier] widows/orphans check  1.4.1 + 1.5
+* [Preflight Verifier] RGB text check  1.4.1 + 1.5
+* [Preflight Verifier] progress bar indication during checking  1.5
+* [Preflight Verifier] placing text cursor at CPos related to selected error item and automatically select whole paragraph for better visualition region of problem  1.4.1 + 1.5
+* [ODT import] feature for omit whole paragraphs style information (any new styles are created, all text has Default Paragraph Style), but saving local character formatting  1.4.1 + 1.5
+* [Status Bar] add information about selected item - kind of item,frame name, filename for image frames, dimensions  (ale: we should have a good solution for showing information and avoid cluttering the status bar... imo...)
+* [Search/Replace] search and replace in whole document  1.4 / 1.4.1 + 1.5 (depending on how invasive it is)
+* [Style Manager] set default style for replacing during deleting styles to "Deafult Paragraph Style" instead No Style  1.4
+* [Properties Palette] tabs switching automaticaly related to selected item  1.4.1? (will not be needed anymore in 1.5, since there won't probably be tabs anymore)
+* [Properties Palette] applying Paragraph Style dont clear local character formatting (need some fix for proper behaviour while opening old SLA files)  1.4.1, if it's possible to make it work with old SLAs
+

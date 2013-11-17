@@ -1,0 +1,44 @@
+(:title Scribus Icons Contest 2011:)
+(:title Scribus Icons Contest 2011:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!UI]](:title Scribus Icons Contest 2011:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1318073100:)
+(:entryauthor:ale:)
+(:entrytitle:Scribus Icons Contest 2011:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus, UI:)
+[[#blogit_entrybody]]Attach:{Blog.Scribus-Icons-Contest-2011$FullName}/Scribus-Icons-Contest-2011.png
+
+Many of you have probably noticed that the Scribus' icons set could
+need some care!
+
+If you are skilled in icons design and want to do a substantial
+contribution to the Scribus project, you're kindly invited to get your
+hands dirty and create a new icon theme.
+
+We ask you to submit a proposal with 10 to 30 icons in one single PNG
+file in the "Development > UI" board in the [[http://forums.scribus.net/index.php/board,22.0.html|Scribus forums]].\\
+You will probably want to add a description of your work.
+
+The deadline for submitting your proposal is October 31 2011.
+
+Members of the Scribus team and of the Scribus UI group will then
+choose one proposal and ask its author to work on the full set.
+
+Here some general considerations:
+* The new icons will be for Scribus 1.5svn.
+* You can get all the current icons by checking out the Scribus sources
+from our subversion repository and going to the
+scribus/resources/icons/ directory.
+* You should create icons in different states (on, off, hovered) and at
+different sizes (16, 22, 32 pixel)
+* In the spirit of free software, we also welcome designers who are
+open to a cooperation with other  participants of the contest and
+achieve a full set of icons for Scribus.
+
+For questions and general comments, please ask in the
+[[http://lists.scribus.info/mailman/listinfo/scribus|Scribus mailing list]]  or in [[http://forums.scribus.net/index.php/board,22.0.html|this post]] in the Scribus forums.
+[[#blogit_entrybodyend]]
+

@@ -1,0 +1,14 @@
+(:blogid:blog1:)
+(:entrytype:comment:)
+(:commentauthor:MarkC:)
+(:email:mark.crutch@gmail.com:)
+(:website:http://www.peppertop.com:)
+(:commenttext:Instead of using Path>Intersection, an alternative that can be useful sometimes is to use a clipping path it instead.
+
+Put all three ovals into roughly their final position, but don't do the Difference or Intersection steps. Copy the large oval to the clipboard, then select all three ovals and group them. Edit>Paste In Place to put the large oval back on top of the group, then select both the oval and the group. Right click and choose "Set Clip".
+
+This has the advantage that you can still double-click to enter the group to move the iris and pupil around, which is useful for fine tuning, or if you're trying to produce a series of images for an animation.
+:)
+(:commentapproved:true:)
+(:commentdate:1313564744:)
+

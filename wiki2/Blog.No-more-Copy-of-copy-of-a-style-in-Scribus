@@ -1,0 +1,24 @@
+(:title No more Copy of copy of a style in Scribus:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!Scribus14]](:title No more Copy of copy of a style in Scribus:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1305388800:)
+(:entryauthor:ale:)
+(:entrytitle:No more Copy of copy of a style in Scribus:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus, Scribus14:)
+[[#blogit_entrybody]]Many years ago, I used to layout a student magazine with Page Maker. One of the nastiest bugs I was experiencing at that time, was triggered by deleting in "a non carefully" way on of the several copy of copy of styles "automatically" created by the software: the application crashed and the file was not readable anymore! Yes, this means I had to restart the job from zero (or grab a backup: I've learned to do backups every two hours the hard way...)
+
+It was funny to see Scribus developing the same illness and we were lucky that it didn't get to the point of corrupting my files (in the contrary, the Scribus file format being some sort of XML, it was easy to suppress them with a text editor... but that's another story).
+
+Attach:{Blog.No-more-Copy-of-copy-of-a-style-in-Scribus$FullName}/scribus_copy_of_copy_of_a_style.png
+
+I'll try to avoid to get sentimental, now.
+
+Actually, I have a good news for you: you won't get any copy of copy any more!
+
+Well, it may not be 100%25 correct: Jean has just fixed a corner case where styles with tabs would duplicate on copying a frame containing them (https://bugs.scribus.net/view.php?id=9979)! Crazy, isn't it? I'm still wondering if there is any other such hitch hiding somewhere in the Scribus code? We can't be sure, but it's really comforting to see these remaining bugs being fixed that fast!
+
+I'm awaiting the times without copy of copy of nightmares and start dreaming of a sunny world with Scribus 1.4![[#blogit_entrybodyend]]
+

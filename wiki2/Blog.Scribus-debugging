@@ -1,0 +1,78 @@
+(:title Debugging Scribus:)
+[[#blogit_pmmarkup]][[!Scribus]](:title Debugging Scribus:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1297357200:)
+(:entryauthor:ale:)
+(:entrytitle:Debugging Scribus:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus:)
+[[#blogit_entrybody]]While working with Scribus, you may run into bugs and you may be tempted to write bug reports and get them fixed by the Scribus developers. If you have limited debugging experiences you probably will be surprised, how easy it is, to produce a backtrace which will help the programmers to easily fix "your" bug. If Scribus does not work correctly but does not crash, it is a bit harder to collect the information but after having read this article, you will have a rough idea how a debugger works.
+
+The first thing you will need is the Scribus source code. By reading the [[http://wiki.scribus.net|Scribus wiki]] you can find out [[http://wiki.scribus.net/canvas/Building_SVN_versions_with_CMake#Introduction:_don.27t_let_it_scare_you_off|how to compile Scribus on Linux]].
+
+It's pretty straightforward and we can summarize it in a few commands you will have to type in your terminal:
+
+(:source lang=bash:)
+mkdir ~/bin/
+mkdir ~/src/
+cd ~/src/
+svn co svn://scribus.net/trunk/Scribus scribus
+cd ./scribus/
+mkdir build/
+cd build
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/home/yourusername/bin/scribus -DWANT_DEBUG=1 -DWANT_NOOSG=1 ..
+make
+make install
+~/bin/scribus/bin/scribus
+(:sourceend:)
+
+It may not look very friendly to you, but you have to admit that it's pretty compact (if it's the first you compile Scribus, you may have also have to install quite a few dependencies, if it's the first time you compile Scribus... but this is not the topic of today's post).
+
+Now, we are ready to debug the Scribus code: getting a [[http://en.wikipedia.org/wiki/Stack_trace|backtrace]], [[http://en.wikipedia.org/wiki/Breakpoint|setting a break point]] and inspecting the state of variables while Scribus is running
+
+If you are experiencing a crash and want to post a full backtrace to the [[http://bugs.scribus.net|Scribus' bug tracker]] @@gdb@@ (the GNU Deugger) is probably enough:
+
+(:source lang=bash:)
+$ gdb ~/bin/scribus/bin/scribus
+(gdb) run
+... working in scribus and waiting for scribus to crash...
+(gdb) bt
+... full backtracking informations you will post to the bug tracker
+(gdb) exit
+$
+(:sourceend:)
+
+But i don't think that you will want to go through the @@gdb@@ man pages and its cryptic commands in order to set a break point and then have a look at the state of the variables.
+
+There is a more friendly alternative: Scribus being based on QT, you can try out the [[http://en.wikipedia.org/wiki/Integrated_development_environment|IDE]] provided by the QT project: "QT Creator".
+
+After having installed "QT Creator" (in debian the package is called @@qtcreator@@...) you can start it and import the Scribus project:
+* @@File > Open File or Project@@.
+* Browse to the directory where you have stored the Scribus source code (in our example above @@/home/yourusername/src/scribus/@@).
+* Open the @@CMakeList.txt@@ file.
+* The "CMake Wizard" will ask you for a build directory: you should use the same @@build/@@ directory we have defined above (you just have to remove "qtcreator" from the location QT Creator is suggesting you).
+* In the next step, QT Creator will ask your for the command line arguments to pass to @@cmake@@; the following string is probably a good default:\\
+@@-DCMAKE_INSTALL_PREFIX:PATH=/home/yourusername/bin/scribus -DWANT_DEBUG=1 -DWANT_NOOSG=1 ..@@
+* Click on the "Run CMake" button and watch the output scrolling. If you have already compiled scribus before, there should be no error and you can finally click on the "Finish" button at the bottom of the dialog.
+
+Now, you can browse through Scribus source files (if you don't see the pane in the screenshot below, you have to click on the "Show sidebar" button in the bottom toolbar):
+
+Attach:{Blog.Scribus-debugging$FullName}/scribus_debugging_01.png
+
+You can open the files and read their content. Once you have found a place you want to test, you can set a breakpoint by clicking on the gray area left of the line number...
+
+Attach:{Blog.Scribus-debugging$FullName}/scribus_debugging_02.png
+
+and then click on the "Debug" button in the bottom left corner:
+
+Attach:{Blog.Scribus-debugging$FullName}/scribus_debugging_03.png
+
+Once Scribus will have reached the breakpoint it will stop and you will be able to check the state of the memory:
+
+Attach:{Blog.Scribus-debugging$FullName}/scribus_debugging_04.png
+
+The buttons in the "Output pane" let you continue the execution of scribus, stop it, or run it step by step.
+
+And if you have further questions, you're welcome to join our IRC channel (#scribus@irc.freenode.net) or our [[http://lists.scribus.info/mailman/listinfo/scribus|Mailing list]][[#blogit_entrybodyend]]

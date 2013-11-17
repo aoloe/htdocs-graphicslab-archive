@@ -1,0 +1,17 @@
+(:title Scribus on Mac OS X:)
+(:title Scribus on Mac OS X:)
+[[#blogit_pmmarkup]][[!Scribus]](:title Scribus on Mac OS X:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1308208200:)
+(:entryauthor:ale:)
+(:entrytitle:Scribus on Mac OS X:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Scribus:)
+[[#blogit_entrybody]]* announce that the bug for launching from the finder has been fixed
+* that on intel you can install it from the dmg (> Tiger / 10.4)
+* that you can install it from fink or ...
+* what are the limits?
+* http://wiki.scribus.net/canvas/Installing_from_SVN_on_Mac_OS_X[[#blogit_entrybodyend]]
+

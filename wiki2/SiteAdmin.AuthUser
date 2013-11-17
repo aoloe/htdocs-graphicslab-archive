@@ -1,0 +1,48 @@
+(:Summary: Configuration of identity based authorisations:)(:nolinkwikiwords:)
+This is the default configuration page for PmWiki's identity-based authorizations (aka "authuser.php").  See [[PmWiki.AuthUser]] for instructions.
+
+(:if enabled EnableAuthUser:)
+This site appears to have the [[PmWiki/AuthUser]] extensions enabled.
+(:if !enabled EnableAuthUser:)
+At present this site doesn't appear to have the [[PmWiki/AuthUser]] extensions enabled.  To enable them, add the line [@include_once("$FarmD/scripts/authuser.php");@] to your ''local/config.php'' file.  (See [[PmWiki.LocalCustomizations]].)
+(:ifend:)
+
+!! Login accounts
+
+Specify login accounts in the form "@@[=username: (:=]encrypt ''password'':)@@" at the beginning of a line:
+
+-> # Examples:
+-> alice: [=(:=]encrypt wonderland:)
+-> bob: [=(:=]encrypt builder:)
+
+Note that the passwords will be encrypted when the page is saved, so that the result will look something like:
+
+-> alice: $1$0gcdAN1a$HTdEAXyYYo8Hc9/Xv30Yz1
+-> bob: $1$wSP2R80i$sJ593ERCmTtjm3Fk26HCV1
+
+To authorize specific login accounts for pages and groups, use "[@id:username@]" as a password in [@?action=attr@] or $DefaultPasswords (see [[PmWiki.Passwords]]).  Use "[@id:*@]" to mean "any logged-in user".
+
+ale: $1$UE6r/7V0$rE0I6E8BkY/0MK5snws9u0
+!! Authorization groups
+
+Authorization groups are specified with a leading "@" sign.  Define either the login accounts belonging to a group or the groups for a login account:
+
+-> @writers: alice, bob  
+-> carol: @editors, @writers
+-> @admins: alice, dave
+
+Then use "[@@group@]" as a password in [@?action=attr@] or $DefaultPasswords.
+
+@blogs: ale
+!! Login accounts from external sources
+
+Obtaining login accounts from external sources (to enable a source, place it at the beginning of a line):
+
+-> htpasswd: /filesystem/path/to/.htpasswd
+-> ldap: ldap://ldap.example.com/ou=People,o=example?uid?sub
+-> mysql: mysql://[username:password]@localhost/db/table?user,passwd
+
+!! Generate encrypted passwords
+
+To generate an encrypted string from your cleartext password so that the cleartext doesn't appear in the config file, go right to
+pmwiki.php?n=PasswordsAdmin?action=crypt

@@ -1,0 +1,52 @@
+(:title Drawing a simple eye with Inkscape:)
+[[#blogit_pmmarkup]][[!Clipart]], [[!Eye]], [[!Inkscape]](:title Drawing a simple eye with Inkscape:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1307561100:)
+(:entryauthor:ale:)
+(:entrytitle:Drawing a simple eye with Inkscape:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Inkscape,Clipart,Eye:)
+[[#blogit_entrybody]]Do you want to draw a simple clipart-like eye with Inkscape?
+
+First, let's see how the final result will look like:
+
+Attach:{Blog.Inkscape-clipart-eye$FullName}/Inkscape-clipart-eye-00.png
+
+The first step is quite simple: draw three ellipses, one black and two white ones
+
+Attach:{Blog.Inkscape-clipart-eye$FullName}/Inkscape-clipart-eye-01.png
+
+You will probably want to rotate at least some of the elipses: click twice with the "Select and transform" tool on the ellipse to enable the "rotation" arrows.
+
+Attach:{Blog.Inkscape-clipart-eye$FullName}/Inkscape-clipart-eye-02.png
+
+You can set the color of the ellipse by clicking on the color toolbar at the bottom of the window.
+
+Put the small white ellipse on top of the black one, select both ellipses and combine them with @@Path > Difference@@ to make one single shape out of them.
+
+Attach:{Blog.Inkscape-clipart-eye$FullName}/Inkscape-clipart-eye-03.png
+
+Put the irid / pupil on top of the big white ellipse ("the eye")...
+
+Attach:{Blog.Inkscape-clipart-eye$FullName}/Inkscape-clipart-eye-04.png
+
+Click on the white ellipse, duplicate it (@@Edit > Duplicate@@), add the irid to the selection by clicking on it while the shift and alt key are pressed (the shift key extends the selection and the alt one allows select an object below another one covering it).
+
+If everything is correctly selected, @@Path > Intersection@@ will remove the "overflowing" part of the irid, delete the duplicated big ellipse and let the original big ellipse show up again, below the irid). If you get a "wrong" result, you can use the undo function (ctrl+z) to go back to the previous shapes.
+
+Finally, since you want two eyes, duplicate the result, mirror it (@@Object > Flip horizontal@@) and move it to the right with the right arrow key.
+
+Attach:{Blog.Inkscape-clipart-eye$FullName}/Inkscape-clipart-eye-05.png
+
+Ah, no, that was not my final goal... I wanted to draw a turtle!
+
+Attach:{Blog.Inkscape-clipart-eye$FullName}/Inkscape-clipart-eye-06.png
+
+Isn't it cute?
+
+P.S.: if you prefer it as a video, here it is!
+
+(:youtube 3we-cWz2RIg:)[[#blogit_entrybodyend]]
+

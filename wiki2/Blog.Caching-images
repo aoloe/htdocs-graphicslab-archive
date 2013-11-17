@@ -1,0 +1,22 @@
+(:title Caching images:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!Scribus15]](:title Caching images:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1295972760:)
+(:entryauthor:ale:)
+(:entrytitle:Caching images:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Scribus15, Scribus:)
+[[#blogit_entrybody]]it is integrated into 1.5.0svn, there is even a preferences entry to switch it on or off
+
+even if it's on the same computer, if you move the .sla, it won't find the (not embedded) images...
+
+in 1.5svn scribus can embed images... but i'm not sure it's a feature i want the people to use...
+
+btw, if you want to move or mail a .sla, you can collect it for output and use the generated folder...
+
+%3c cpasmoi> Scribus used 74Mo without images instead of 700Mio or more :)
+
+creating an art book thanks to different kind of pictures (modified with Gimp). Scribus became kind of annoying today, since the book is more than 50 pages long[[#blogit_entrybodyend]]
+

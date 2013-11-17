@@ -1,0 +1,113 @@
+[[#blogit_pmmarkup]](:title Scribus and the cloud:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1322164440:)
+(:entryauthor:ale:)
+(:entrytitle:Scribus and the cloud:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]]Is it possible to set up Scribus as a cloud app? Would it require some 
+sort of VM to allow someone with whatever sort of OS to use?
+
+While I realize it bends the concept of DTP a bit, it might allow one to 
+do what we might call 'phone or tablet DTP' -- is this an oxymoron?
+
+Define cloud app? Name another cloud app?
+
+I guess what I am referring to is running Scribus remotely, let's say 
+from a tablet, where one might also have templates, etc. remotely 
+stored, and allowing for customization using the tablet.
+
+mrb: Scribus would need a pretty big rewrite for that, at a guess.
+
+avox:
+
+I see 4 possible scenarios:
+
+A) Scribus running locally but storing documents and images in the cloud
+
+B) Scribus running in a VM on a server and exporting the VM's screen as remote desktop (eg. NX)
+
+C) Scribus running on the server but exporting only commandline-like operations via web (apply template, change stories or images, export pdf etc.)
+
+D) Rewriting Scribus as a webapp.
+
+Of this B) is already possible. I'd like to see a combination of A) and C) which could be achieved with little effort. The challenge is to find a clever organization of texts, images and document templates on the server and build a collaborative workflow + webapp around it.
+
+D) is possible but unlikely. The decisive word here is "rewrite".
+
+stefan:
+
+You do not need a virtual machine, it works with xvfb.
+
+That. A future scribusd and the complete scribus python api exposed as
+a http GET api (?) would be more than enough for my usecase.
+
+I would suggest that A can be handled via applications like Jungledisk 
+right now - though I suspect the idea to handle it natively isn't bad, 
+but I don't know if there is a cloud agnostic api for that at this time.
+
+Might be a fun side project. libcurl plus some logic should be enough 
+top pull it off. I'll see what I can do.
+
+I am inclined to think C would be a great deal more difficult because 
+that requires some rethinking of how documents are assembled. Something 
+akin to the way Quark's workflow system worked?  I dunno.
+
+New here but thought id express an opinion.
+
+It really depends what you mean by cloud app. I assume you mean
+something running on a server with a web/app based front end/ui. ala
+Google docs etc.
+
+I can only really see the value of that in a DTP enviroment if you
+also have some form of community management.
+
+Think SVN/GIT style management for large documents allowing multiple
+contributers to place work within the document.
+
+I had a couple of friends who ran a independent Mobile Phone shop. The
+used to advertise in these little local money off magazines that get
+posted. The process of buying a slot forwarding the required adverts
+changing editing etc. Not quick and simple.
+
+Such a process I can see finding real value in a DTP suite that
+allowed the sales person to.
+
+* Provisionally book a slot in the next release.
+* Load a document in multiple formats to display to the customer.
+* or Create and edit a basic layout of the advert to be finished later
+by more skilled artist.
+* Cancel or confirm the space.
+
+If a salesperson had a tool that allowed all this on a local laptop /
+tablet I could see that software having value to 1000s of small
+publishers around the world.
+
+I can even see value for it in a small scale for an author creating
+books etc as the travel or work.
+
+If scribus is the right platform to build this on that I am far to new
+here to have an opinion on.
+
+stefan:
+
+Scribus can be made to work on a headless server. With an Xwindows
+tool named Xvfb (x windows frame buffer) it renders all its UI-stuff
+in that framebuffer.
+
+You could then run a custom scribus script, which starts a http-Server
+waiting for commands.
+
+I have a working script with the server part, has to be expanded with commands.
+
+I'm currently hacking on sth. like this, for a webbased publishing
+tool. Users could select a template from a gallery, change some text /
+images, and get a redy-to-print pdf and/or scribus file.
+
+http://wiki.piratenzeitung.de/?title=Kompass:2011.3
+
+
+http://www.itworld.com/it-managementstrategy/213373/libreoffice-sees-new-platforms-more-users[[#blogit_entrybodyend]]
+

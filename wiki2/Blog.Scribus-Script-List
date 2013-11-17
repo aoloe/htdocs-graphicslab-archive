@@ -1,0 +1,45 @@
+(:title Creating lists with Scribus:)
+(:title Creating lists with Scribus:)
+(:title Creating lists with Scribus:)
+(:title Creating lists with Scribus:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!Scripter]](:title Creating lists with Scribus:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1295200680:)
+(:entryauthor:ale:)
+(:entrytitle:Creating lists with Scribus:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Scribus, Scripter:)
+[[#blogit_entrybody]]* http://wiki.scribus.net/canvas/Bullets_and_numbered_lists
+* http://wiki.scribus.net/canvas/Bullets
+
+* "*" will create bulleted list.
+* A number (up 3 digit) will create a numbered list begining with such
+number. Ex.: "1)"
+* One or two letters, uppper or lower case, will create a lettered list
+begining with such letters with same case. Ex.: "a)"
+* "/" will clear all marks.
+* An optional character after numbers or letters will be used as separator.
+Default: dot.
+
+
+In order to scripts appear in "Scripts > Scribus scripts..." menu,
+put it in:
+
+* Windows folder "x:\Program files\Scribus 1.3.9\share\scripts\" or in
+* Linux directory (copy as root) "/usr/share/scribus-nt/scripts/" (I gess).
+
+But this folders is for official scripts and could be overwritting when
+Scribus reinstalls.
+
+Would be great if Scribus had custom tools pallets with buttons tied to
+scripts.
+
+
+If you set the directory for Scripts in File > Preferences > General:Scripts, this is where Scribus will look when you choose Script > Execute Script.., and then once you have run it, then your script shows up in Script > Recent Scripts 
+
+Some fonts can have different encodings depending operational system.
+Bullets glyphs *can't appear* if a publication made in Linux is opened in
+Windows, and vice-versa. This is true for "Dingbats" font from URW foundry.[[#blogit_entrybodyend]]
+

@@ -1,0 +1,133 @@
+(:title Documenting the Scribus Scripter API:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!Scripter]][[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1312214880:)
+(:entryauthor:ale:)
+(:entrytitle:Documenting the Scribus Scripter API:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Scribus, Scripter:)
+[[#blogit_entrybody]]For the GSOC 2011, Jain has worked on completing the Scripter engine for Scribus which has been started by Henning in 2008.
+
+One of the issues which still had do be tackled is API documentation.
+
+Having been paying my bills as a PHP-developer for the last few years, I'm used to struggle with all those PHP's idiosyncrasies. But there is one thing that I've learned to love, the one reason why PHP is so widely used: its documentation!
+
+I've digged a bit deeper in its workings and this is what i've found:
+* The core of the documentation is written as docbook documents, shared through SVN
+* Some "elected" users -- the maintainers -- have write access to the core.
+* The documentation does not get generated from the code
+* A set of PHP scripts converts the docbook sources into the target formats (HTML, PDF, ...)
+* Each page in the HTML version has comments are stored in a MySQL database.
+* Everybody can write comments
+* The comments can be integrated by the maintainers into the core documentation.
+
+Looks convincing! We want this for the Scribus Scriter API, too!
+
+!!Putting the pieces together
+
+The PHP's documentation framework is open sourced, but its use for anything else than documenting PHP itself is &ndash; well ... &ndash; not well documenteted. So: let's try to find the fil rouge!
+
+If you don't want to invent everything from zero, you'd better get the basic files of the english PHP documentation and start adapting them for your use.
+
+The first step is to create a directory where you will put the source files for the documentation of your software. We will call this base directory: "doc_src". This is the directory you will be sharing with the people contributing to the documentation.
+
+Create a "en" directory in "doc_src" and copy in there the basic files from the PHP documentation:
+* bookinfo.xml
+* contributors.ent
+* contributors.xml
+* extensions.ent
+* language-defs.ent
+* language-snippets.ent
+* preface.xml
+It's better not to get those files through SVN but to copy them from the repository's website: https://svn.php.net/repository/phpdoc/en/trunk/\\
+You will be sharing this directory with your crew: better not to have the many .svies hidden directory from the PHP server in there!
+
+You can have a look at the content of those file and try to make a few changes: just take care not to modify the structure and not to add new variables (for now!).
+
+in the "doc_src/en" directory, create a "chapters" directory and copy the two following files from the server:
+* intro.xml
+* tutorial.xml
+
+Edit "manual.xml.in" to match the chapter and section you have kept in your documentation.
+
+Now, we are ready to download the "doc-base" application into the "doc_src" directory:\\
+@@doc_src $svn checkout https://svn.php.net/repository/phpdoc/doc-base/trunk doc-base@@\\
+You will need @@doc-base/configure.php@@ to turn all the XML files you create into one monolithic XML file
+
+You can run the "doc_src/doc-base" and run:\\
+@@php configure.php --enable-xml-details@@
+
+You will probably see lot of warnings: it's time to go through the xml files you've downloaded (have a look at how they're built) and delete all dead references (you can delete the reference or delete most of the text to avoid errors).
+
+You will have to edit the "doc_src/doc-base/manual.xml" file to match the chapters of your documentation.\\
+For the beginning, you should leave only the following chapters with their sections:
+* manual
+* getting-started
+* funcref
+* faq (with the section faq.general)
+* appendices (with the sections: appendices.about, appendices.license, global.function-index)
+
+Now, you will have to add in the "doc_src/en" the directories and files corresponding to the chapters and sections as you find them in [[https://svn.php.net/repository/phpdoc/en/trunk/]].
+* "refererence/"
+* "faq/general.xml"
+* "appendices/about.xml", "appendices/license.xml"
+
+After having removed all dead references, we finally have all the (dummy) documentation in one "manual.xml" file!
+
+The next step is to get and run the @@phd@@ application, process the XML file and produce the target files.
+
+"phd" is a separate project which can be found at:\\
+https://wiki.php.net/doc/phd
+
+We will put the sources we get from svn in the "doc_src" directory:\\
+@@doc_src $ svn checkout http://svn.php.net/repository/phd/trunk phd@@
+
+On Debian Wheezy In order to install it through pear you need:
+* php5-sqlite
+* pear
+
+go into the "phpdoc/phd" directory and install phd with the command:\\
+@@pear install -R /home/ale/docs/bin/pear/ --alldeps  package.xml package_generic.xml@@
+
+go to the "phpdoc/doc-base" and run the "phd" command which will create a "phpdoc/doc-base/output/" directory with all the generated files (by default in xhtml format; please read the [[http://svn.php.net/viewvc/phd/trunk/README?view=markup|phd documentation]] to know more about phd)
+
+!!Adding new chapters
+
+* add the docbook file to the ''en/chapters/''
+* add the chapters in...
+
+
+!!Adding new classes
+
+* add the docbook file to the ''en/reference/''
+* add the new files in the ''manual.xml.in'' file in the section ''funcref''
+* go to ''doc-base'' and run @@php configure.php --enable-xml-details@@ (and debug all possible errors)
+* run @@/home/username/docs/bin/pear/usr/bin/phd@@
+
+!!Adapting for your project
+
+In ''doc-base/manual.xml.in'' you probably want to customize the title:
+
+[@%3ctitle>&PHPManual;%3c/title>@]
+
+should become
+
+[@%3ctitle>&YourProjectManual;%3c/title>@]
+
+and you replace the the corresponding entity in
+
+[@doc-base/entities/global.ent@]
+
+
+''en/bookinfo.xm'' contains what you see in the ''chunked-xhtml/copyright.html'' page. You can edit it to match the copyright rules for your own project. You will want to replace the email address defined by @@&email.php.doc.license@@: you should rename it to @@email.yourproject.mailinglist@@ (if you're reading this lines you won't probably have an email address specific to the license of your documentation!) and add the entity and your address (probably the address of your mailing list) in ''doc-base/entities/global.ent'' (you can probably safely remove the whole entity pointing to the PHP address! Eventually, you will have to replace it at other places in the documentation, too).
+
+
+!!Notes
+
+* https://wiki.php.net/doc/howto/gettingstarted
+* https://wiki.php.net/doc/howto/structure
+
+!!Todo?
+* change the license in bookinfo.xml to cc.by.sa?[[#blogit_entrybodyend]]

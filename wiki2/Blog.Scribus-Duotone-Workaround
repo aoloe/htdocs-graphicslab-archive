@@ -1,0 +1,227 @@
+(:title Scribus and Duotone images: a workaround:)
+[[#blogit_pmmarkup]](:title Scribus and Duotone images: a workaround:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1296748260:)
+(:entryauthor:ale:)
+(:entrytitle:Scribus and Duotone images: a workaround:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]]we will probably start with a bitmap in gimp with two layers in grayscales and than save them as two separated files
+
+[@
+2.2.2011
+16:32 %3c SimAV> mrdocs, and mention that duotone is now possible via a workaround ;)
+16:32 %3c SimAV> *true
+16:34 %3c@mrdocs> SimAV: will do :)
+16:34 -!- jimjo_ [~quassel@wise-laka.xs4all.nl] has quit [Remote host closed the connection]
+16:34 %3c SimAV> good... :D
+16:38 %3c a_l_e> i also like brussels... but i wouldn't go there during fosdem, in order to see it :-)
+16:38 %3c a_l_e> SimAV: which workaround?
+16:41 -!- yakup [~yakup@85.103.111.54] has joined #scribus
+16:42 -!- artista_frustrad [~artista_f@189-11-98-187.ctaje701.dsl.brasiltelecom.net.br] has joined #scribus
+16:43 -!- yakup [~yakup@85.103.111.54] has quit [Client Quit]
+16:45 -!- pisk [~skip@dsl081-169-034.sea1.dsl.speakeasy.net] has joined #scribus
+16:45 -!- pisk [~skip@dsl081-169-034.sea1.dsl.speakeasy.net] has left #scribus []
+16:46 %3c SimAV> by putting the image in an EPS
+16:47 %3c SimAV> the EPS can use the DeviceN colorspace as well for bitmaps
+@]
+
+i will have to look for the rest of the discussion in the irc archives (sunday to monday evening)
+
+http://intern.sfz-bw.de/~simeon.voelkel/.scribus/duotoner.py.20110131193405
+
+[@
+16:56 %3cSimAV> well, you create two grayscale images
+16:57 %3cSimAV> and the script uses them as source for the duotone eps
+16:57 %3cSimAV> so your images do not have to know anything about spot colors, just use a grayscale png
+16:58 %3cSimAV> yes, but please copy the .py
+16:58 %3cSimAV> (instead of linking to the url i gave you)
+17:01 %3cSimAV> and improvements are always welcome...
+17:01 %3cSimAV> atm it's still hardcoded when it comes to the colors to be used
+17:02 %3cSimAV> and you have to tell scribus to embed the EPS, otherwise you'll have only the CMYK simulation 
+              in your pdf
+17:02 %3cSimAV> and as the tooltip already tells you, you have to ensure that the colors are correct
+17:03 %3cSimAV> e.g. you should create first such an eps
+17:03 %3cSimAV> and import the color in scribus
+17:04 %3cSimAV> otherwise (if the colors have slightly different names) your PDF will say Acrobat to ask for 
+              more than two plates
+it's not too fast, as it's just python :D
+17:19 %3cSimAV> just try to convert two 12 Mpix images..
+17:19 %3cSimAV> it takes noticeable time here :)
+@]
+
+(:source lang=python:)
+#!/usr/bin/python
+
+# Copyright (C) 2011: Simeon Voelkel %3csimeon_voelkel@arcor.de>
+#
+# Redistribution and use in source and binary forms, with or without 
+# modification, are permitted provided that the following conditions are 
+# met:
+#
+# 1. Redistributions of source code must retain the above copyright 
+#    notice, this list of conditions and the following disclaimer.
+#
+# 2. The name of the author may not be used to endorse or promote 
+#    products derived from this software without specific prior written 
+#    permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR 
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+# DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, 
+# INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) 
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
+# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
+# IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+# POSSIBILITY OF SUCH DAMAGE.
+
+import Image
+import sys
+from optparse import OptionParser
+#import optparse
+
+epsprolog_text="""%25%25Creator: duotoner.py
+%25%25LanguageLevel: 3
+%25%25DocumentProcessColors: Black
+"""
+HKS43K_text="""%25%25DocumentCustomColors: 
+%25%25+ (HKS 43 K)
+%25%25CMYKCustomColor: 
+%25%25+ 0.94902 0.8 0 0 (HKS 43 K)
+"""
+
+HKS15K_text="""%25%25DocumentCustomColors: 
+%25%25+ (HKS 15 K)
+%25%25CMYKCustomColor: 
+%25%25+ 0.05 1.0 0.8 0 (HKS 15 K)
+"""
+
+HKS43K_colorspace="""
+[ /DeviceN
+  [ (HKS 43 K) /Black ]
+  /DeviceCMYK
+    {
+      exch
+      dup 0.94902 mul exch
+      dup 0.8 mul exch
+      dup 0.0 mul exch
+      0.0 mul
+      5 -1 roll
+      add
+   }
+] setcolorspace
+"""
+
+HKS15K_colorspace="""
+[ /DeviceN
+  [ (HKS 15 K) /Black ]
+  /DeviceCMYK
+    {
+      exch
+      dup 0.05 mul exch
+      dup 1.0 mul exch
+      dup 0.8 mul exch
+      0.0 mul
+      5 -1 roll
+      add
+   }
+] setcolorspace
+"""
+
+def epsprolog(ofile, width, height):
+	ofile.write( '%25!PS-Adobe-3.0 EPSF-3.0\n' )
+        # one point (1/72 inch, unit of coord.sys) contains 25/6 dots at 300 dpi:
+	ofile.write( '%25%25BoundingBox: 0 0 {0:f} {1:f}\n'.format((width*6)/25+1, ((height+1)*6)/25+1) )
+	ofile.write( '%25%25HiResBoundingBox: 0 0 {0:f} {1:f}\n'.format((width*6.0)/25.0, ((height+1)*6.0)/25.0) )
+	ofile.write( epsprolog_text )
+	ofile.write( HKS15K_text )
+	ofile.write( '%25%25EndComments\n' )
+	ofile.write( HKS15K_colorspace )
+	ofile.write( '0 0 translate\n' ) 
+        ofile.write( '{0:f} {1:f} scale\n'.format((width*6.0)/25.0, (height*6.0)/25.0) )
+        ofile.write( '%3c%3c\n' )
+        ofile.write( '    /ImageType 1\n' )
+        ofile.write( '    /Width {0:d}\n'.format(width) )
+        ofile.write( '    /Height {0:d}\n'.format(height) )
+        ofile.write( '    /BitsPerComponent 8\n' )
+        ofile.write( '    /Decode [ 1 0  1 0 ]\n' )
+	ofile.write( '    /ImageMatrix [ {0:d} 0 0  -{1:d} 0 {1:d} ]\n'.format(width,height) )
+        ofile.write( '    /DataSource currentfile /ASCIIHexDecode filter \n' )
+        ofile.write( '>>\n' )
+        ofile.write( 'image\n' )
+
+def heximageoutput(ofile,bpixel,spixel,width,height):
+	for y in range(height) :
+		linelength = 16;
+		for x in range(width) :
+			ofile.write( '{0:02X}'.format(spixel[x,y]) )
+			ofile.write( '{0:02X}'.format(bpixel[x,y]) )
+			linelength -= 1;
+			if linelength == 0 :
+				ofile.write( '\n' )
+				linelength = 16
+	ofile.write( '\n>\n' )
+
+
+def epsepilog(ofile):
+	ofile.write( '\n' )
+	ofile.write( 'showpage\n' )
+	ofile.write( '%25%25EOF\n' )
+
+def do_duotone(grayimage, spotimage, epsout):
+	imblack = Image.open(grayimage)
+	imspot = Image.open(spotimage)
+	bpixel = imblack.load()
+	spixel = imspot.load()
+
+	bwidth = imblack.size[0]
+	swidth = imspot.size[0]
+	bheight = imblack.size[1]
+	sheight = imspot.size[1]
+
+	bmode = imblack.mode
+	smode = imspot.mode
+
+	if bmode != 'L' :
+		print 'Grayscale(L) image required, but received {0:s} for black ink'.format(bmode)
+		exit (-1)
+	if smode != 'L' :
+		print 'Grayscale(L) image required, but received {0:s} for spot color'.format(smode)
+		exit (-2)
+	if bwidth != swidth or bheight != sheight :
+		print 'Image dimensions do not match!: Black: {0:d}x{1:d} vs. Spot: {2:d}x{3:d}'.format(bwidth,bheight,swidth,sheight)
+		exit (-3)
+	print 'Image dimensions are: Black: {0:d}x{1:d} vs. Spot: {2:d}x{3:d}'.format(bwidth,bheight,swidth,sheight)
+
+	ofile = open(epsout, 'wb')
+
+	epsprolog(ofile,bwidth,bheight)
+	heximageoutput(ofile,bpixel,spixel,bwidth,bheight)
+	epsepilog(ofile)
+
+def process_args():
+	parser = OptionParser()
+	parser.add_option("-b", "--black", 
+			action="store", type="string", dest="grayinfilename", default="/dev/stdin", 
+			help="image for black ink")
+	parser.add_option("-s", "--spot", 
+			action="store", type="string", dest="spotinfilename", default="/dev/stdin", 
+			help="image for spot color")
+	parser.add_option("-o", "--output", 
+			action="store", type="string", dest="epsoutfilename", default="/dev/stdout", 
+			help="epsfile for output")
+	(options, args) = parser.parse_args()
+
+	do_duotone(options.grayinfilename, options.spotinfilename, options.epsoutfilename)
+
+if __name__ == "__main__":
+	process_args()
+(:sourceend:)
+
+
+You will have to use the experimental pdf/eps embedding feature when exporting to PDF to get the correct result: otherwise Scribus will convert all images with spot colors to cmyk.[[#blogit_entrybodyend]]

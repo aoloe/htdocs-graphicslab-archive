@@ -1,0 +1,59 @@
+[[#blogit_pmmarkup]][[!Scribus]](:title Mastering the Scribus bug tracker:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1308641760:)
+(:entryauthor:ale:)
+(:entrytitle:Mastering the Scribus bug tracker:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Scribus:)
+[[#blogit_entrybody]]i can also give my point of view on the way the scribus bug tracker works.\\
+it's only my subjective view on it.
+
+* every ticket is looked at, none is ignored.
+* in most cases a comment is made in the first 24 hours
+* three kinds of bugs tend to be fixed very quickly:
+** bugs which affect the PDF output or the own file reading,
+** bugs affecting people with a deadline,
+** bugs on features which have been implemented very recently;
+  all those bugs tend to be fixed in a few hours, maximum overnight.
+  mostly, without the need to directly address one of the main developers.
+* bugs and feature requests which tend to sit around for a long time:
+** (subjective) usability issues
+** ideas for new features inspired by other packages
+** patches for non important tickets
+* the programmers do have a look at the bug tracker. some of them every day.
+* a programmer aggressively tracks duplicated reports. 2-3 other programmers and some other developers also track dups.
+* a few programmers and developers track bugs where the submitter could not provide the information needed to reproduce the bug (and close them)
+* once or twice a year somebody goes through all the bugs and cleans up (this seems to somehow magically happen...)
+* we have our own bug tracker, we manage it through the web platform and we get mails for specific events. afaict mantis does not have any fancy features but no terrible drawbacks, either.
+* all in all the status is:
+** 850 new reports (all of them have been looked at, but no action is planned)
+** 900 reports "accepted" (this means that somebody has defined in which version the issues will be worked upon, not that it will get fixed soon)
+** 8000 resolved issues
+>>  can we really manage 2000 open issues?
+
+
+
+at the end my sight on it is:
+
+* important issues are correctly handled and timely fixed.
+* problems and wishes from the community don't get lost (never), but there many requests sitting around for too long.
+* the entries in the bug tracker are indeed used to inspire the actual programming work.
+* we could find solutions to complex issues by using a mix of bug tracker, mailing list and wiki.
+* we have big backlog of less important issues (and this is clearly not optimal).
+* patches uploaded by "external" contributors to the bug tracker risk to be ignored.
+
+
+
+so, here are the points where i'd like to act in the near future:
+
+while i'm happy with the way our bug tracker works, i'd like to find a way to improve the flow of "external" contributions. it's painful to skim through such a long unordered list and it's not clear enough that everybody is welcome to look at it and provide patches!
+
+it's also not always easy to convince the users to write a bug report (many think that "please write a bug report" is a polite form for "shut up". they tend to be surprised by the fact that most of the bugs reported in this way are closed/fixed in a few hours). i agree with you that using another name instead of "bug tracker" could help in giving to the whole system a better acceptance.
+
+
+voilà, personally, my conclusion is that the tool used is not so important and what most count is the way people work with it...
+
+[[#blogit_entrybodyend]]
+

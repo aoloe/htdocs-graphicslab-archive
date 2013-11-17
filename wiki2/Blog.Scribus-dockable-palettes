@@ -1,0 +1,22 @@
+(:title Scribus and the dockable palettes:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!UI]](:title Scribus and the dockable palettes:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1326311820:)
+(:entryauthor:ale:)
+(:entrytitle:Scribus and the dockable palettes:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus, UI:)
+[[#blogit_entrybody]]If the new year has brought us the shiny new Scribus 1.4 we all have been waiting for for so long, we shouldn't forget the bigger and smaller improvements we already had at the end of 2011 in Scribus 1.5.
+
+Franz has built upon Jean's efforts and has checked that all palettes can be docked to the side of the window!
+
+Attach:{Blog.Scribus-dockable$FullName}/Scribus-dockable.png
+
+I'm still not 100%25 that this is a useful feature, but who cares: now, one can stack the palettes in docked tabs! Hurrah!
+
+Now, we only have to wait that the code of the Properties palettes is ready for the long awaited redesign!
+
+[[#blogit_entrybodyend]]
+

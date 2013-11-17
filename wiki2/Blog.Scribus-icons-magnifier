@@ -1,0 +1,30 @@
+(:title Does anybody have a magnifying glass at home?:)
+(:title Does anybody have a magnifying glass at home?:)
+(:title Does anybody have a magnifying glass at home?:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!UI]](:title Does anybody have a magnifying glass at home?:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1317300300:)
+(:entryauthor:ale:)
+(:entrytitle:Does anybody have a magnifying glass at home?:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus,UI:)
+[[#blogit_entrybody]]Today, I was looking for an icon for switching the page previews in the "arrange pages" dialog. An eye? A magnifying glass?
+
+Well, it's not really about making the item visible. And it has not much to do with a magnifying glass... Yes, I know: the magnifying glass is THE icon for zooming, for previewing and for searching. Wait: is it not a bit too much?
+
+Let's have closer look at how Scribus is using the magnifying glass:
+
+Attach:{Blog.Scribus-icons-magnifier$FullName}/Scribus-icons-magnifier.png
+
+May I give my opinion?
+* I like the magnifier for the zoom buttons.
+* We probably don't need an icon for the search and replace menu item.
+* We should use the same symbol for both the print and the on canvas previews. Is the magnifier the right one?
+* The same for the preflight verifier.
+
+I still don't have an icon for the "arrange pages" dialog (no, I really don't think that a magnifying glass is a good idea...), but I'm open to your suggestions!
+
+But, really: does anybody &ndash; still &ndash; use magnifying glasses for looking at her DTP work?[[#blogit_entrybodyend]]
+

@@ -1,0 +1,139 @@
+(:title Gimp January 2011:)
+(:title Gimp January 2011:)
+(:title Gimp January 2011:)
+[[#blogit_pmmarkup]](:title Gimp January 2011:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1294754940:)
+(:entryauthor:ale:)
+(:entrytitle:Gimp January 2011:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]]* http://lwn.net/Articles/422412/
+* http://troy-sobotka.blogspot.com/2011/01/why-gimp-is-inadequate.html
+* http://lwn.net/Articles/422412/
+
+Indeed. And having progress per se is what proprietary software like Photoshop has to do in order to sell more licenses. Why would you buy the most recent CS version if Photoshop 6 was certainly good enough?
+
+The logic is different. GIMP does not have to evolve in order to survive. It's open and if you need it doing something it doesn't, you can hire a developer to do it. The fact nobody does it is because it's good enough for what it's used for.
+
++1, although, to be correct, economically "the fact nobody does it" means the cost is higher than the benefit. You could purchase a copy of photoshop for much cheaper than the cost of hiring a good developer for a week.
+
+Open source economics are tricky.
+
+True. That's why pooling resources is such a good idea. If you need a feature that's missing from Photoshop, you can find other people who need that feature (or would like to have it) and pool resources to hire someone to do it in GIMP. If you have a company with 10 seats using Photoshop, it may start to become cheaper to hire a GIMP developer than providing all employees with a Photoshop license (and Adobe must have corporate licenses exactly to counter that reasoning)
+
+Besides from all this pro features that GIMP lacks, in my opinion its biggest flaw its the UI. Its poor and raw, and makes sense if you are a programmer... Mainly this is what keeps it far from the regular users I know.
+
+And the fact of the matter is that Photoshop has far from the world's greatest UI either (for one of the usual reasons--so much stuff has been incrementally added over time) so saying a UI is bad compared to Photoshop really is pretty damning. Contrast with Lightroom which, although I disagree with one or two of the fundamental design decisions, was coherently designed from the ground up.
+
+I honestly don't see what the big deal is. Comparing GIMP usability to Photoshop usability only makes sense if you have no experience with either. Many people say GIMP is difficult yet forget they had a hard time learning Photoshop to begin with.
+
+I'm talking about more specific but anoying things, like for example:
+* When using the Move tool, Instead of moving the selected layer by default, the option checked is "pick a layer automatically" which never does the job.
+* Text editing its a pain compared to photoshop.
+* Lots of filters dont have a real-time preview, which make applying them a futile exercise of guessing
+* Layers have bounds that doesnt correspond with the content of the layer (maybe somebody finds this useful, I hate it)
+* The plugins for Layer effects are all a mess and its easier to do it by hand
+* Its impossible to select a group of layers, and I dont mean to apply some filter or edit them, I mean to organize the layers. Move up a group, etc. There is no way to create folders of layers... There is no way to hide/show a group of layers...
+All this kind of quirks make the program anoying to use for big projects, and I hate it because its completely capable of getting the same results (at my level) than PS, it just takes a lot of time because the UI...
+
+* The Toolbox isn't dockable, but "brushes" is both a dropdown button on the toolbox and a dockable window. "Show Grid" and "Snap to Grid" are in the View menu, while "Configure Grid" is in the Image menu. The Color Tools are in both the Tools menu and Colors menu.
+*  a lot of common tasks, like copy-paste-moveSelection, have at least one extra click compared to PS or PSP, and it all adds up to have a dramatic effect on productivity.
+
+	
+4 points by T-R 1 day ago | link
+
+I've been using GIMP for prototyping instead of Paint Shop Pro lately, and while it works well enough and I've gotten used to it, I have to say, there are dozens of small issues that add up to a UX disaster.
+
+The Toolbox isn't dockable, but "brushes" is both a dropdown button on the toolbox and a dockable window. "Show Grid" and "Snap to Grid" are in the View menu, while "Configure Grid" is in the Image menu. The Color Tools are in both the Tools menu and Colors menu.
+
+It just seems convoluted at first because there's so much duplication and so many areas where the wrong UI element was chosen - it's just a mess. On top of this, a lot of common tasks, like copy-paste-moveSelection, have at least one extra click compared to PS or PSP, and it all adds up to have a dramatic effect on productivity.
+
+I don't think Gimp will die, but I'm guessing that, at least for hobbyists, it'll probably be dethroned by whichever web-based solution gets to the head of the pack.
+
+There are several good alternatives to GIMP depending on what you're doing. GIMP is probably the best for traditional photo editing, but there seems to be more programs oriented toward illustration. In particular, I like Krita.
+
+I also think that the extremely long development cycle of GEGL, which was necessary for the most commonly requested features like increased bit depth, CMYK, etc., may have turned developers off.
+
+I've used GIMP exclusively for many years (but I'm not a graphic designer, so my use of image editing software was never terribly heavy) and I used photoshop for the first time last summer. My transition to photoshop was a very pleasant one as, IMHO, photoshop has a much simpler and more productive interface (buttons are easy to access, convenient keyboard shortcuts, interface is not too cluttered); it has a larger range of (more advanced, generally) filters and tools; and it seems a lot faster to me too (definitely when applying filters to a large image. This can be, in my experience, quite slow in GIMP, but in photoshop most filters are almost instantaneus for me).
+
+This article brings my experience with OSS full circle. It was the Gimp and GTK that first drew my attention to OSS in about 1997. At the time it was tempting to believe that OSS was inherently a better development model but after almost fifteen years it's clear that it's been wildly successful in some domains but a washout in others.
+
+Important progress towards high bit-depth and non-destructive editing in GIMP has been made. Most color operations in GIMP are now ported to the powerful graph based image processing framework GEGL, meaning that the internal processing is being done in 32bit floating point linear light RGBA. By default the legacy 8bit code paths are still used, but a curious user can turn on the use of GEGL for the color operations with Colors / Use GEGL." http://www.gimp.org/release-notes/gimp-2.6.html
+
+I think you're illustrating the point of the author: such an option should be the default. The user shouldn't have to go looking for it.
+
+GEGL is not fully baked yet, using it reduces stability and the operations you can perform. Reviewing the default, non-GEGL GIMP was the right decision.
+
+As a (now part-time) professional photographer, I have evaluated GIMP; and as a FOSS advocate I really wanted it to work. The performance issues the article mentions are with reasonable sized images at only 8 bits, but editing a 16bit, 25MP image wasn't just slow, it was unusable. Photoshop however, runs in near real time at these image sizes. Even automating a GEGL filter to run on a series of a few hundred images would take long enough that I couldn't maintain a usable workflow.
+
+Not really. The nice folks at Adobe would have you believe otherwise, but at low color depths, low image sizes, low skill levels; the difference isn't worth 5$, much less (googles) 999$ (before 100$ rebate. Unless you are making a lot of images, _and_ relying on them to make money, gimp is more than enough.
+
+I think Photoshop, like Windows, is a beneficiary of piracy in this respect: if there were no way to get Photoshop for less than $999, there would be a lot more people using alternatives for a lot of niches where Photoshop isn't absolutely necessary. But students, people starting out, small-time freelancers, and even some random home users editing their Christmas photos just pirate Photoshop. Although, Paint.NET is gaining some market share in the home-user category.
+
+Photoshop Elements is reasonably priced at £58 on Amazon as of right now. The people you're talking about do not NEED the full $1000 package.
+
+They don't NEED it, but they WANT it.
+
+In my opinion there is. In Photoshop you can attach dropshadows (layer styles) to layers. This will save you a lot of time when something changes. I used Photoshop and Gimp. I can create the same images in Gimp but it just takes a lot more time. For hobby that's ok, but for work it's not. Thats why people are willing to pay a lot for Photoshop. One thing that is bothering me in Gimp is that there is a layer size. Seems like a minor thing. But these are the little things that get in the way of working quick.
+
+A more interesting question is, to me: is The GIMP an adequate replacement for Photoshop Elements? I believe they have the same target market—people who are "adding drop shadows, doing minor logo work, etc."
+
+Purely feature wise they might might be comparable, but features isn't where PSE's strength lies. Photoshop Elements has done a lot of UI work to make common tasks really easy. Someone who has never done any photo editing before can probably sit down with PSE and quickly get pretty great results without any major problems. The same can definitely not be said about The Gimp.
+
+as far as gimps usefulness to profesionals the movie version fork cinepaint, is good enough for making Harry Potter and other movies I question authors knowledge of / authority to speak for artistic professionals.
+
+Uhm, Cinepaint is a point in favor of the author's conclusions about GIMP. One of the reasons for Cinepaint is to fix the color depth problem the author wrote about.
+
+As if GEGL wasn't started to do what FimGIMP team did, but properly.
+
+Blender has four paid developers (2 part time/1 full time/1 almost full time) because of projects that are not at all possible with 2D programs like GIMP and Inkscape, namely the open game and open movie projects.
+
+By itself Gimp is a really great and very capable FOSS software. But the second you compare it with another non-FOSS project (*cough*Photoshop*cough*), it's like you are comparing a Ford Fiesta with a Jaguar.
+
+I believe that a part of GIMP's non-acceptance is the fact that it fails to deliver a smooth UI on the Mac. The necessity to use the X11 window manager makes the software virtually unusable.
+
+One is an industry standard app with decades of use and development based on feedback from those working in the industry, tons of useful plugins, supports the workflows of professional users, and the other is some toy written by some academics that think it's better to spend 11 years on reimplementing their base graphics library than just accept some patches that add the features that people who would actually love to have used the Gimp wanted.
+
+"And yet freetards far and wide portray it like it's a Photoshop killer."
+
+Actually, the exact opposite is the case. Actual FOSS users have been saying that the Gimp is the Gimp. Period. Phototards are the ones who want to pee in Gimp so it tastes more like Adobe and then they'll like the flavor. (http://developer.gimp.org/gimpcon/2006/index.html)
+
+In a day where Disney and Google can fund Wine with a crap ton of cash to get certain versions of Photoshop working, it's a shame none of that dough is making its way to improving open source offerings to take Photoshop's place. We're not that far off!
+
+GIMP works for me and it works for millions of other folks too. Millions? Yes, probably tens of millions actually. Does it work for some high end graphic artists like the one that wrote this article? I guess not. That is why there are multiple applications to choose from... to meet different sets of needs.
+
+Being someone who is responsible for software licensing in my job.. I simply won't chance it. If we don't have a license available, the user gets GIMP... and that actually works for the vast majority of our users who have basic to medium needs. A few people do choose to cough up the funds for Photoshop and that's fine too. Just think how much money we are saving using GIMP for the people whose needs it meets just fine. 
+
+As an open source developer (not on Gimp, but on something completely unrelated in KDE) blog posts titled "why the piece of software you spent ages of your own time working on sucks" really helps no-one.\\
+How you (yes, you personally) can help the GIMP: Every time I post on my site about "some shiny new feature we're working on" I get 2 or 3 new developers show up in IRC the next day wanting to help out. You clearly know what you're talking about, praise the gimp for what it does well (which compared with anyone starting from scratch is a /lot/), and market what's coming up.
+
+Plans for 2.8 and beyond2011-01-11 
+
+In the face of all sorts of rumours and interpretations about the future of the project there is a call for clarification regarding development of GIMP.
+
+Currently GIMP team is working on finalizing the new stable v2.8 with many improvements such as layer groups, improved brush dynamics, a new unique transformation tool, optional single-window mode and more. There are two big obstacles in our way right now: missing specification on the last change in user interface and broken graphic tablets support in GTK+.
+
+We have already invested a lot of time into UI changes and brush dynamics, we treasure your continuous support for the project and thus we are determined to release v2.8 only when it's working out of box as expected for everybody.
+
+After releasing v2.8 the focus of development will shift to deep integration of GEGL — our new non-destructive image processing core. Results of this work will enable many features considered critical for use of GIMP in professional environment which is part of GIMP's product vision. It's a lot of work, and currently we don't have enough developers to make this change happen very fast. If you want to help us to get there faster, we encourage you to join gimp-developer mailing list and/or the IRC channel to discuss how you could contribute.
+[[#blogit_entrybodyend]]
+
+Why would you think they would WANT to replace Photoshop? Their entire workflows are built around it. The replace workflows such as ones in place at Disney requires HUGE infrastructure changes and retraining costs to move to another suite. That is why they will pay the comparable pittance to get it working in Wine over replacing their entireworkflow infrastructure.
+
+Darktable for RAW, Krita for HQ-digital Painting, Inkscape for Vectorgraphics, Scribus as Quarks alternative in the future, OpenRaster as Exchangeformat for LibreGraphics, OpenColour to replace Pantone as a libre standard to be used by libregraphics... and much more to come!\\
+Just wait; and yes GEGL is being worked from 2001, and within GIT "SingleWindow", "LayerGroups", "TextEditingImproved" already implemented!.
+
+Death said...
+
+Well, as a Gimp Developer and someone that has put a lot of work into GIMP brush performance for last stable and current development version, all I can say that I personally am deeply offended and saddened by the hurtful words. I spend my free time trying to make GIMP better for everybody and this is what I get. Thanks a lot, guys.
+
+Here's a HINT, we are working on these issues. Yes, we do care. A lot of people are donating their free moments to GIMP because they care. Please understand, GIMP is not PS. It's not trying to be. It's trying to be best open source image editor it can. Currently it is inferior to PS in some aspects. I'm sure it has aspects where its superior, even if only in the small niche of portability. This inferiority may not be the state in the future. It evolves slowly because it depends on our free time but it does evolve. A bunch of people calling us names over the way we spend our free time doesn't help. 
+
+Gimp is good enough for all the uses where otherwise a pirated copy of PS would be used for simple tasks. It isn't PRO grade yet. It's trying to get there. NONE of the developers Ive met have claimed that it is there NOW. Only the silly people who sell stupid software mashup CD-s claim GIMP is photoshop replacement... 
+
+Death has said.
+
+i personally like that i can apply a filter or image transformation on a large image and let it process as i work on another image .. something u will possibly never be able to do in photoshop i feature the GIMP has since .. for ever

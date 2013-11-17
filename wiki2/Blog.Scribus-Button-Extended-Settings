@@ -1,0 +1,17 @@
+(:title Scribus Button Extended Settings:)
+[[#blogit_pmmarkup]](:title Scribus Button Extended Settings:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1294818600:)
+(:entryauthor:ale:)
+(:entrytitle:Scribus Button Extended Settings:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]]In Scribus we probably need a standard button which fires up a dialog where one can set some related settings:
+- edit colors near the colors selector
+- manage styles near the paragraph and character styles selector
+- list of possible page format near the page size selector
+- shape and contour line editor near the flowing settings
+- activating fonts near the font selector[[#blogit_entrybodyend]]
+

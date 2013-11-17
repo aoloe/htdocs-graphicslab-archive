@@ -1,0 +1,30 @@
+(:title Spell checking with Scribus:)
+[[#blogit_pmmarkup]](:title Spell checking with Scribus:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1294383120:)
+(:entryauthor:ale:)
+(:entrytitle:Spell checking with Scribus:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]]item > spell checker
+
+On Windows, the spell checker libraries have a problem we have not yet
+sorted out, so on Windows we cannot provide it in the installer yet.
+
+On linux, if the packager/distribution follows our packaging
+guidelines it will get installed automatically - if you are using 1.3.5
+or newer. I know for certain it is included in all openSUSE rpms and the
+ones I provide for Fedora and Mandriva.
+
+On OSX, we provide the spell check functionality in our provided
+bundles, but for some reason we have not solved some cosmetic issues in
+the way it displays the words to the users.
+
+On OS/2, I do not know at all if the spell checker works.
+
+an empty error with an empty suggestion when there is an obvious error in the text frame.
+
+also, after having changed from english (the default language) to italian (the language of the lorem impsum i've used), the spell checker kept in telling me that "Quel" is not a correct word and wanted to replace it with "Quell" ("Quel" is the first word of the italian lorem ipsum and *is* correct).[[#blogit_entrybodyend]]
+

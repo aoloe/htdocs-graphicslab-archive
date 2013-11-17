@@ -1,0 +1,26 @@
+(:if false:)Parameters: blogid (restricts the information in the sidebar to a single blog)(:if:)
+(:blogid:blog1:) 
+* [[Blog/|Blog]]
+(:div class="list-post":)
+(:includesection "#blog-summary-list-pagelist-navigation blogid={(bi_ifnull '{$$blogid}' '{$:blogid}')} count=8 status=publish":)
+(:divend:)
+
+(:if1 group Blog :)
+(:div class="list-cat":)
+$[Blog Categories]
+(:includesection "#tag-list-pagelist":)
+(:divend:)
+
+(:div class="list-comments":)
+$[Recent Comments]
+(:includesection "#comment-summary-list-pagelist blogid={(bi_ifnull '{$$blogid}' '{$:blogid}')} count=8":)
+(:divend:)
+
+
+(:if2 bi_auth sidebar:)
+(:div class="list-admin":)
+$[Blog Admin]
+(:includesection "#control-panel blogid={(bi_ifnull '{$$blogid}' '{$:blogid}')}":)
+(:divend:)
+(:if2:)
+(:if1:)

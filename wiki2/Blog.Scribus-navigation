@@ -1,0 +1,126 @@
+(:title Shifting around the Scribus navigation items:)
+(:title Shifting around the Scribus navigation items:)
+(:title Shifting around the Scribus navigation items:)
+[[#blogit_pmmarkup]][[!Scribus]](:title Shuffling around the Scribus navigation items:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1313324460:)
+(:entryauthor:ale:)
+(:entrytitle:Shuffling around the Scribus navigation items:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags:Scribus:)
+[[#blogit_entrybody]](:table border=0 width=600px cellpadding=20px:)
+(:head:)
+(:cellnr width=200px:)
+''File''
+* New...
+* New >
+** Advanced...
+** From template...
+* Open...
+* Open >
+** Recent >
+*** ...
+* Save...
+* Save >
+** Save as...
+** Save as Template...
+* Revert to saved
+* Windows >
+** Cascade
+** Tile
+** ----
+** Document 1
+** Document 2
+* Quit
+(:cell width=200px:)
+''Edit''
+* Undo
+* Redo
+* Item action mode
+* Cut
+* Copy
+* Paste
+* Paste recent >
+** ...
+* Content
+** Copy
+** Paste
+** Paste absolute
+** Clear
+* Select >
+** Select all
+** Advanced select...
+** Deselect all
+(:cell width=200px:)
+''Insert''
+* Text frame
+* Image frame
+* Table
+* Vector graphics >
+** Basic shape
+*** ...
+** Complex Shape
+*** ...
+** Polygon >
+*** ...
+** Arc
+** Spiral
+** Line
+** Bezier curve
+** Freehand line
+** Calligraphic Line >
+*** ...
+* ----
+* Frames...
+* ----
+* Sticky tools
+(:cellnr:)
+''Item''
+
+depends on context (needs further specification)
+(:cell:)
+''Setup''
+* Preview mode
+* Show / Hide >
+** Margins
+** ...
+** Move/Resize Value Indicator
+* ----
+* Palettes >
+** Properties
+** ...
+** Symbols
+** Guides
+** Master pages
+** Zoom
+** Styles
+* Manage >
+** Colors...
+** Master page
+** Javascript
+* ----
+* Toolbar >
+** File
+** Edit
+** Tools
+** Pdf
+* ----
+* Document setup...
+* Preferences...
+(:cell:)
+''Output''
+* to PDF...
+* Export >
+** to EPS
+** to Image...
+** to SVG
+** to Text...
+* Print...
+* Print preview...
+* Collect for sharing...
+(:cellnr:)
+''Help''
+* ...
+(:tableend:)[[#blogit_entrybodyend]]

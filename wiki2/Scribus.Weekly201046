@@ -1,0 +1,1171 @@
+(:title Scribus Weekly 46: 17.11.2010 – 24.11.2010:)
+(:title Scribus Weekly 46: 17.11.2010 – 24.11.2010:)
+(:title Scribus Weekly 46: 17.11.2010 – 24.11.2010:)
+(:#toc:)
+
+!!Weekly digest?
+
+%3cflos>
+Is a weekly digest (rather than daily) available?
+
+%3cale>
+no...\\
+but i'd love to have a manual edited summary of what is going on
+in the scribus community...
+
+!!Resizing a document
+
+%3cken>
+If I start a project in "letter" size, can I somehow simply resize it if I need a smaller card stock size?
+
+%3cgreg>
+Actually, you can.
+ 
+Go to File > Document Setup, make your change, then check the box for Apply Settings to:  All Document Pages. Click Apply at the bottom.
+
+Your content will not be resized.  
+
+%3ca.l.e>
+actually, scribus is not that far from being able to do it:
+* you can shrink a an image or a text frame's content by holding down the alt+ctrl keys when resizing its frame
+* you can shrink a group
+* what we're missing is to enable the content scaling also when several items are selected (or a group is selected).
+
+it still wouldn't allow an automatic scaling of the page and i would never suggest it as a "good way of doing"... but why not implement it?
+
+!!String freeze for Scribus 1.3.9
+
+%3cchristoph> We plan to release version 1.3.9 within about a week, so if you have the time to update the UI translation, we'd be grateful for your contributions.
+
+Please note that as of v.1.3.9 it's no longer necessary to upload qm files to the bugtracker. Simple ts files will do.
+
+For those who are interested in translating other parts of Scribus, I have updated the translation HOWTO in the Help Browser. The update is available in 1.3.9svn and 1.5.0svn.
+
+!!Importing character formatting and styles
+
+%3cjoe>
+I create a contribution to a weekly APA (Think of it as a small 
+newsletter.) by doing my composition in OpenOffice then bringing the 
+text into Scribus for page layout.  Right now, I have to use the story 
+editor for any italics, bold or other effects.  Is there any way to
+set Scribus to bring in those effects when it imports the text?  Doing
+it in OpenOffice and having the italics and so-on brought over would
+be much simpler.
+
+%3cjohn>
+When importing an OOo Writer document Scribus will recognize and bring
+in paragraph styles. However, it cannot yet bring in character styles.
+However, if you apply direct formatting in OOo the direct formatting
+will be retained in the Scribus import.
+
+Let me clarify. Suppose you have created in OOo "Paragraph_style_1." You
+have also created a character style "Italic." You apply
+Paragraph_style_1 to a paragraph. Then you apply Italic to a few words
+in the paragraph. When you import the text into Scribus it will bring
+in Paragraph_style_1 and apply it to the text. But the character style
+Italic will be stripped. The words to which Italic was applied will be
+in regular text.
+
+Now repeat the above, except instead of applying the character style
+Italic to some of the words in the paragraph, just select them and apply
+italic by clicking on the italic icon or hitting Ctrl-i. Save the
+document again and import it into Scribus. This time Scribus will
+import Paragraph_style_1 as before, and the italic override that you
+applied in OOo will be retained as well.
+
+I wish that Scribus could also bring in character styles from OOo, but
+if wishes were horses. We'll get there someday. There are other things
+that Scribus needs more urgently.
+
+%3cchristoph>
+There at least two exceptions, though. 1) Since Scribus doesn't support the 
+"background colour" formatting. This information will be lost 2) Scribus 
+doesn't support "faux" italics and bolds, so if OO.o creates a "faux" font and 
+there's no real italic/bold font slant available, you will be asked for a replacement.
+
+!!Template for business cards
+
+%3cjohn>
+Does anybody have any thoughts on the best template for business cards ?  
+
+%3calexandre>
+http://glabels.org/
+
+%3cgreg>Especially with the way that Multiple Duplicate works now, this is 
+pretty close to a trivial matter.
+
+I wouldn't even bother with a template, or at least a fully fleshed out 
+one. All your template requires is one business card space in the left 
+upper corner of an A4 sheet. Make your card to your liking, then use 
+Multiple Duplicate to instantly make the needed rows and columns with 
+any necessary gap (or none).
+
+There is some homework: get the necessary measurements and distances 
+from a blank sheet. Once you have done this, put the needed information 
+right on your template, in a visible but nonprinting frame.
+
+Plan B:
+Let's say you want some fancy graphics that is repetitive, and all that 
+changes is the text content.  In this case, your template can include 
+all of that on a Master Page, with a multiple-duplicated text frame on top.
+
+So if you want, you can get a collection of software programs to do some 
+specialized layout, but for the most part it isn't really necessary.
+
+%3cvictor>IMHO its a wrong approach to use multiple duplicates with business cards.
+I always set the page size to 9x5cm (with bleeds if needed).
+And I do compose the card in this paper size.
+Then, i print to postscript and do imposition using pstops and convert to
+pdf with ghostscript for printing.
+I tried the multiple duplicate once, but with complicated cards (several
+layers of bg images, etc) it leads to very big files with reduced
+performance. Also, as mentioned above you cannot use master pages and layers
+in this case - or you should multiple duplicate each layer separately.
+
+On the other hand, making imposition with pstops you have flexibility and
+its easy to impose several kinds of cards on one A4 page. (In this case each kind is on a separate 9x5cm page in one scribus document).
+
+I use the following script with the ps file produced by
+scribus:
+
+[@
+call pstops -w50mm -h90mm "1:0R(0,1w)" 1.ps _11.ps
+call pstops -w90mm -h50mm
+"12:0+0(1w,0)+0(2w,0)+0(0,1h)+0(1w,1h)+0(2w,1h)+0(0,2h)+\\
+0(1w,2h)+0(2w,2h)+0(0,3h)+0(1w,3h)+0(2w,3h)+"
+_11.ps _1.ps
+call pstops -w270mm -h200mm "1:0L(205mm,13mm)" _1.ps _2.ps
+call ps2pdf -sPAPERSIZE#a4 -dAutoRotatePages#/None\\
+-dPDFSETTINGS#/prepress _
+2.ps ready-imposed-cards.pdf
+@]
+
+This script puts 12 cards per an A4 landscape page.
+
+%3cowen>I am not sure if you are into building your own Scribus, but the recent versions have a zillion templates, a million of which are under the "Business Card" section
+
+!!As if you’re not already sick of indexing
+
+%3cjohn jason>First, let me say that I agree fully with everything that John Culleton
+has written about what constitutes a good index. For me, the secret to
+success has always been to try to place myself in the shoes of the
+reader who is trying to find something. Even if I am the author of the
+book it is hard to think of all the terms that a reader will use to
+look something up. Yet I must do so, lest the reader become frustrated.
+And therefore, occasionally I need a term in the index that doesn’t
+even appear in the book. 
+
+My first efforts at indexing were for books that I had written myself
+and laid out in an old version of PageMaker – too old to have an
+indexing feature. Much as John does with tyro.tcl, I created the index
+with a paper copy of the book next to me, leafing through page by page.
+Except that instead of a separate program like tyro.tcl I just used
+Word. I even remember having figured out that for sub-items I needed to
+do Shift-Enter to create a new line, so that when I alphabetized the
+index on the “paragraph” Word would keep the sub-items with the head
+item.
+
+Much later I created a series of books using Adobe InDesign CS. By the
+time of the CS version InDesign had a built-in indexing utility.
+Although the user interface needed some work, I found it delightful to
+be able to page through the document with InDesign and add index
+entries electronically. 
+
+Now I am using Scribus, and sooner or later I am going to have to index
+a book. I could always go back to the word processor approach, or I
+could use John’s tyro.tcl utility, but I think I have a different
+approach that I like better. Mind you, tyro.tcl is a wonderful tool,
+but it still requires working with a paper copy of the book. I’d like
+to be able to select a term on a page on screen and add it to the index.
+
+While reading all the recent comments about indexing I was struck by
+one fact that John mentioned, that is, if you open a PDF of your book
+in Adobe Reader and export as text, Reader will put a page marker at
+the end of each page of the PDF. I was unaware of this. In fact, I just
+tried it with each of the eight PDF viewers that I have installed, and
+Adobe Reader is the only one that will put page markers in the text.
+Okular and PDFEdit will export as text, but do not put page markers in
+the file. GSView will also export as text, but when I opened the file I
+discovered that the encoding was so messed up that the text was
+unreadable. The rest of them – Cabaret, Foxit, Evince, jPDF-Tweak –
+couldn’t even export as text, although perhaps you could select the
+text and copy and paste.
+
+For the above experiments I used tyro.pdf, just because it was handy,
+small, yet its 11 pages was enough to see if things worked. 
+
+Now, after exporting the PDF to text from Adobe Reader is where I
+diverged from John’s workflow. He opens the text file in Gvim and
+replaces the page markers with code so TeX will understand the page
+break. I wanted to avoid TeX. I also wanted a GUI that was as good as I
+could get. And it turns out I have a GUI text editor right here at my
+fingertips – OOo Writer. Not only that, but it has a fairly usable
+index utility. All that remained was to see if Writer would recognize
+the page breaks in the text file exported from Reader. And sure enough,
+it does recognize the page breaks. The only difficulty was that
+sometimes a page in the PDF became longer than one page in Writer. When
+I opened the text file that I created by exporting tyro.pdf to text
+from Adobe Reader, the Writer document became 14 pages. Pages 1, 3 and
+6 slopped over and Writer created an extra page. I solved this problem
+by changing the page size in Writer from the US letter default (8.5 x
+11 inches) to “User size” where I specified 8.5 by 16 inches.
+
+Now I can create an index all on the screen without needing a paper
+copy.* When all the entries have been marked I can generate the index.
+Then I can copy and paste into Scribus, or save as a Writer file and
+import into Scribus (which saves styles). I haven’t fully tested the
+Writer indexing utility but it appears to be able to index one word
+under multiple terms in the index. E.g., suppose I want to index the
+word “flier” as “flier” in the index, but also as “brochure.” It can
+also create “See” and “See also” entries. 
+
+*There is one flaw in my method. What if there is a graphic on a page
+in the PDF, and you want an index entry that points to that graphic?
+Exporting as text from the PDF will strip the graphic. Ditto for
+anytext in the Scribus document that has been converted to outlines. You
+can still create an index entry on the page; you just have to apply it
+to a word on the page. I figured I’d just type in “graphic” on the page
+and apply the entry to that word. The problem is knowing that there is a
+graphic or outlined text on the page. Using a paper copy would solve the
+problem. But I can do it by paging through the PDF in Reader and make
+note of the location of any graphics that I want to reference in my
+index. Outlined text would be harder to spot, but I hardly ever do that.
+
+Until Scribus gets its own built-in indexing tool I have a workaround
+that works for me.
+
+%3ca.l.e>there is a script to export the text content of a scribus document. it should be easy to modify it to get a simple rtf file out of it (with page breaks) and have the flowed content split in the pages where it appears (currently the text is put in the page where the flow starts)
+
+%3ccraig>I have absolutely no intention of making a user use any other program than Scribus for indexing. Of course, others may do what they want in the meantime.
+
+%3ca.l.e>i fully agree with your statement in the sense that a user should not be forced to use external tools for indexing.
+
+but i hope that you don't want to forbid them to use other tools! it would make sense that scribus can interface with dedicated indexing tools by both providing a PDF (already working wonderfully) and a text output.
+
+and my suggestion to output RTF text was only meant as a workaround for the current state and would simply allow our users to use OO.org/index.html without having to convert the PDF to text and then figuring out where the page breaks are. 
+!!Idea: MacGuffin
+
+%3cbruce>
+Just a thought.
+
+As I get used to Scribus, my wish list includes something I never saw added to Publisher in all the years I used it.  I've no idea what to call the solution I propose, so I've used the Alfred Hitchcock term for an element that looks relevant but isn't.
+
+Here's the problem:
+
+Often I find myself working on a publication where some text will refer to some other element, which may conceivably change its location before print time.  Perhaps the number of pages in the publication will go up or down, or a last minute layout change will move things around, or something else will happen during production that changes the location of the item referred to.
+
+When I suspect this might happen, I type ???, as in "...you can find the results of this event on page ???"
+
+As you may suspect, my batting average in converting the ??? to an actual page number is not as high as I would like it to be.  I do most of my Scribus work at bridge tournaments on an overnight turnaround, but that's not completely relevant since it can happen wherever there are deadlines...
+
+So my suggestion is to create a new type of text element called the MacGuffin, which expects to be changed before printing.  So when you try to print, or convert to pdf, Scribus would list unconverted MacGuffins first, perhaps giving the option to ignore them.
+
+Useful idea?  Is there a workaround I don't know about?
+
+%3crolf-werner>
+That's really a good one - I'd see a list of undone tasks to be handled prior to printing, offering the possibility of jumping through the document to the places where they live.
+
+Another idea: On the page, they might appear as Post-Its, or as a coloured area underneath the spot they are pointing to. A crucial thing would be that they could be invoked by a simple keystroke or key+mouse combination. (If you had to call a menu item it would'nt be handy enough and seldomly used.) A small dialog could appear offering a textfield to place a comment which may be used or not. One OK/Return would close it and add it to the list. 
+
+%3ccezaryece>
+* anchor is for link frame with some place in text, so it flow if text flow 
+thrugh pages
+* cros-reference is "magic code" which is calculated to position in text 
+structure (page, chapter, section) and referenced to frame or marker
+* marker is place in text for cross-referencing just places in text, not 
+objects
+* variable marker is definition of some variable (eg issue data, current issue 
+number) which is placed where variable marker is in text.
+
+All these features we would like to see in Scribus, as well as indexing, 
+autonumbering, foot- and endnotes.
+
+%3ca.l.e>
+you can mark any place in the document where you want to be warned, that it's not ready for production:
+* untranslated words
+* bad pictures (you may even mark an area of the picture as a MacGuffin... am i dreaming)
+* a sentence you're not sure of
+* a missing title for an article
+* a quote you want to check
+* a bibliographic entry you have to check
+* a text you have to set in the correct color for the corporate identify of you client
+* an url you have to set.
+* a text you have to shorten
+
+anything you know now that it's wrong at the time you put in n your document but you may forget about it when producing the final PDF.
+
+the MacGuffin will show up as an error in the preflight verifier when you print your document or are exporting it to PDF and you will have a chance to fix it. 
+!!Feedback - on File Size Reduction
+
+%3cian>I've been using Scribus for a year now - and love it. I do have a few problems here and there but nothing major. My one BIG complaint however is file size. I produce a monthly Journal that goes out via eMail only and my file size has been around 4 to 6Mb!
+
+I picked-up reference to a file size reduction method on the list here and was pointed to it on the Scribus Wiki. It uses pdftops and ps2pdf13 as the way to reduce the size of the file of Web or eMail documents. The link is http://wiki.scribus.net/index.php/Reduce_the_size_of_Scribus_generated_PDFs
+
+The two step reduction process I'm using is -
+
+# Export from Scribus as PDF (1.3 or 1.4), embedding all fonts, no font subsetting, no image subsampling &#8594; PDF File [approx 6 MB]
+#Convert to PS using `pdftops -level3' &#8594; PDF File.ps [huge – about 50Mb]\\
+     @@cd to directory then pdftops -level3 PDF File Name.pdf New File Name.ps@@
+# Convert back to PDF with 'ps2pdf13 ' and 'Ghostscript' (subsetting fonts, subsampling images) &#8594; PDF File_compact.pdf [approx 1.5MB].\\
+     @@ps2pdf13 New File Name.ps Reduced PDF File.pdf@@
+
+(Change file names as you need to)
+
+It works like a charm!!! My file sizes are now all down around 1.5Mb and the only changes I see are the odd font change which maybe due to not embedding some fonts on my side. I will fine-tune this as we go on. But a reduction of 75%25 in the finished size with no noticable loss in quality is amazing!! IMHO this should be an option in Scribus itself!!
+
+So bottom line - if you don't need the "High Definition" PDF File for a printer and are only producing documents for the Web or distribution via
+eMail - GIVE THIS A TRY. 
+
+%3cjulian>
+The original compress-newsletter script that a poster mentioned on here many many years back, I've been successfully using since about 2006. I think I added the initial wiki page about the script as I felt it was an oft queried subject that needed something written up where people could find it.
+
+The other little known fact about that script is that it makes a Scribus derived PDF indexable, ie text is properly formatted and the words are forms correctly after parsing with the script. This helps with PDf's indexability on a website for example.
+
+Whether it should be included in Scribus itself is another matter. It doesnt have to be, but for Windows users in particular, running scripts is pretty alien, and installing psutils etc, and amending the script not an easy job. So an inbuilt mean to compress PDF files may be useful in that context as an option ... 
+
+!!Scribus template for photo book
+
+%3cdavid>
+I'm interested in using Scribis foe a photo book and would be interested in seeing any templates from others who have done this successfully. I'll probably print through Amazon and will get their dimensions, but as this is my first DTP venture having a template to star that includes things like spine and jacket text as well as cover art would be a great help. 
+
+%3ca.l.e>
+here is a very interesting work...
+
+http://www.blurb.com/bookstore/detail/1168184
+
+it has also been presented at this year's LGM
+
+http://libregraphicsmeeting.org/2010/index.php?p=en/talk/new_zealand_book
+
+%3cgreg>
+Here is a collection of scripts I wrote some years ago for creating something like a photo album.
+
+http://wiki.scribus.net/index.php/Automatic_import_of_images:_Versions_not_requiring_Tkinter
+
+What I was trying to do was to deal with the chore of individually loading a large number of photos into a Scribus document. The idea was to identify a directory full of images, after which the script creates pages with a particular layout and loads the images in alphabetical order according to the file name.
+
+I have made options to simply cram as many photos as possible on a page, and others with a staggered layout so that text frames could be inserted for various descriptions and annotations. The relative dimensions were according the the first digital camera I had, so when I upgraded my camera I needed to alter those parameters.
+
+The scripts are mainly meant as a starting point for the idea to show how it can be done, and leave plenty of room for customization by others.
+
+
+
+
+!!Compiling scribus
+
+Sometimes it helps to have more than one OS on your computer. For Open 
+Source projects the Windows version is often late in coming and harder 
+to install. For example on Slackware Linux all the bits and pieces 
+needed for compiling Scribus come with the system, the compiler, the 
+linker, the QT4 libraries and so on. It is a fair amount of work to 
+assemble and install these on other Linux flavors, and even more work 
+on MSWIn and OS X.  So those who live on the bleeding edge, like me, 
+find that Linux is a more comfortable way to go.
+
+%3crob>I'll second this.  If you're doing a lot with OpenSource, the only operating system to use is Linux. My work toolchain includes:
+
+* Scribus
+* LaTeX
+* LyX
+* R / ggplot2 / RKWard
+* ImageMagick
+* Python
+* Spyder
+* numpy
+* ITK
+* PyQt / Qt
+
+(and probably others I've overlooked).
+
+To install these applications on a Windows or Mac is a multi-day affair.  Longer if I have to compile anything from source.  On a Linux computer (I use Ubuntu, mostly), I install the OS and run a simple shell script.  Nearly everything is available from the repositories and it takes maybe an hour or so to download and install.  During that time, I can work on other stuff.
+
+The more invested I become in open source solutions, the more sense that Linux makes.  I prefer to run it natively, but there are a few places where I'm not able to do that.  In those cases a virtual machine works quite well.  I even get decent performance when running models and compiling large LyX/LaTeX documents (true monsters with several hundred pages of text and many thousands of images).
+
+If it's not feasible to partition and multiboot, a virtual machine can save a lot of time.
+
+!!Italics and Scripting
+
+%3chenry>
+One of my primary uses of Scribus is to print catalogs of photographs (I'm an amateur photographer). I use the album_letter_2.py script that I modified from Gregory Pittman's original (http://wiki.scribus.net/index.php/Automatic_import_of_images:_Versions_not_requiring_Tkinter#album_letter_2.py), sometimes with minor changes such as so it starts numbering pages with something other than 1 and I have a few more sets of "images per page" set up. For most of what I do, this is more than adequate and gives me very good reasults.
+ 
+I have recently made a version of that script so that instead of simply importing every image in a directory, and putting them into the document in order by their file names, I provide an array with file names and descriptions so that I can 1) put them in any order I like and 2) print the provided descriptions under the images instead of their file names.
+
+I have two questions:
+
+1) Is there any way I can tag my description text so that I can then make portions of it italic? If I was making those descriptions either all italic or not, I could simply add a third element to my two-dimentional array and then turn italic on or off accordingly but what I want to do is have just a portion of the text italic. An example should help. I have a picture with a description of "Tradescantia virginiana (Virginia Spiderwort)". I'd like the first two words, the Latin name for the plant, to be italic. The rest should be regular. Is there some way I can tag the text ahead of time and then script that style change? I'm guessing not but it would sure save me time. Currently I'm making them italic by hand after importing. It works, of course, but it would be easier if I could get all the text right and then just make the file.
+
+2) The other thing I'd like is to replace the "hard page numbering" that the script provides with tags that get the current page number regardless of where they are. Then, I could insert a page into a document later and the numbering would adjust. This isn't a big deal and I might even remove the page numbers from this particular document completely. Still, I'm curious if a "page number" tag can be put in a scripted document.
+
+!!Bringing in Italics
+
+%3cjoe>
+I tried putting the italics in when composing my contribution today in
+OpenOffice. Yes, when I brought the text into Scribus, they were carried
+over. Alas, I do all of my paragraph styles in Scribus and when I
+applied those styles, the italics went away.  
+
+%3cgreg>
+Any character styles like this will be overridden by a paragraph style, 
+since each paragraph style has its own character style.
+
+%3cjohn jason>
+The only way to do what you want is to apply paragraph styles in OOo,
+apply local formatting for italic in OOo (as direct formatting, not as
+a character style), then import the text into Scribus. Then Scribus
+will import the OOo paragraph styles, and preserve the italics
+overrides.
+
+Once the text is in Scribus the OOo styles will be renamed by
+appending the OOo document name to the beginning, but you can rename
+them if you insist on keeping the same names.
+
+Having said that, don't reapply the paragraph style in Scribus. Doing
+so will reassert the paragraph style to the entire paragraph, including
+the parts with italic overrides.
+
+However, there is a way to reapply the paragraph style without losing
+the italics. First, (in Scribus) create a character style and set it to
+the italic version of the font. Apply the Italic character style to all
+the text with italic override formatting. Now, when you reapply the
+paragraph style (or any other paragraph style) the italic character
+style will be retained.
+
+%3ccezaryece>
+In Story Editor (Ctrl-T) applying paragraph styles is safe for local character 
+formatting.
+
+!!PDF spreads
+
+%3cMichael>
+I am trying to lay out a book for PDF publication. It contains pictures which spread across double page spreads.In the past I have used InDesign and used master spreads for the double pages. When these were exported into PDF documents they appeared as reader's spreads - no gap in the middle. Scribus exports my double pages as two pages side by side with a small gap in-between; I have tried every export option for PDFs but nothing gets rid of these gaps. Is there a solution?
+
+%3cjohn>
+Remember that unless your book is saddle stitched a small amount of 
+paper will be used in the middle for binding. I suggest you discuss 
+with your printer this allowance.
+
+!!Strange clipping in printing
+
+%3clatege>
+I've just created a 2 page document with nine small images on the second
+page, most of them rotated to differnet angles. The images appear fine
+on screen, including in print preview but when I actually print them
+four of them get two corners each cropped off. This isn't a page margin
+issue because the cropping is occurring on interior corners and well
+away from the edges, There's also no other image, text box or object
+overlapping with them. Anyone any ideas how to stop this happening?
+(Bizzarely (to me) the images print fine if I save the document as .pdf
+and print that (they're just not such good quality colour))
+
+%3cgreg>
+It still could be a margins issue, if you have the settings in Scribus so that it clips at the margins.
+
+Check in File > Preferences > Printer to make sure you're not clipping at the margins, and to play it safe, shrink your margin size.
+
+%3cgreg>
+If you want to print to your own local printer (even from a PDF), use the screen/web setting in PDF Export. Output Intended For: Printer is generally speaking for using a commercial printer.
+
+!!Font oddities
+
+%3cjohn jason>
+Scribus finds the following fonts, which do not exist on the computer, as far as I can tell:
+
+Hershey-Gothic-English\\
+Hershey-Gothic-German\\
+Hershey-Gothic-Italian\\
+Hershey-Plain-Duplex\\
+Hershey-Plain-Duplex-Italic\\
+Hershey-Plain-Triplex\\
+Hershey-Plain-Triplex-Italic\\
+Hershey-Script-Complex\\
+Hershey-Script-Simplex
+
+A filesystem search on Hershey turned up nothing, although the file
+name could be something else. More interestingly, Fontmatrix does not
+find them. Note: Fontmatrix crashes if any fonts are modified or
+deleted while it is running. And it does not refresh the font list
+when it is launched unless you manually delete the .Fontmatrix folder
+to force it to rebuild its list of fonts. I deleted the .Fontmatrix
+folder, but Fontmatrix still does not see any fonts named Hershey.
+
+Even more interesting, applying any of the Hershey fonts to text in
+Scribus causes the text to appear as all underscores in the canvas.
+
+Google turned up a website which lists even more Hershey fonts and says
+they are "fonts converted from Hershey outlines." Apparently the site
+lists Type 1 fonts to be used with Ghostscript.
+
+%3cjohn jason>
+They are all .pfa files
+in /usr/share/fonts/default/ghostscript/. 
+
+The only question is why they suddenly appear in Scribus. They never
+used to. And no other application sees them.
+
+They are also singularly hideous.
+
+I went into Preferences > Fonts and unchecked them all so Scribus will
+not use them.
+
+%3cfranz>
+It seems that Fontmatrix includes them in the search path for Scribus.
+But Scribus shouldn't use them at all because these fonts are very strange.
+They are so called "Stroked Fonts" where the outlines in the font are stroked
+not filled as usual.
+
+Because of that unusual behaviour of the Hershey fonts, Scribus shouldn't
+use them, and there should be code to prevent that. Let me look into that issue.
+
+%3cjohn jason>
+My workhorse font is Junicode, a free open source font that is
+completely unrestricted. Scribus refuses to embed it when exporting as
+PDF, listing it in fonts to be outlined instead. In Preferences > Fonts
+it is checked that it can be embedded. Outlining it is not acceptable
+because my PDFs need to be searchable.
+
+%3cfranz>
+The Junicode can't be embedded because it contains too much glyphs, there
+is a hardcoded limit of 2048 glyhps. Above that limit the font is always
+outlined to prevent the resulting PDF being too large.
+
+%3cjohn jason>
+Thanks for the clarification. However, it renders Scribus unusable for
+me. In fact, it renders Scribus seriously impaired for anyone using
+Asian languages or scientific work where we need lots of special
+glyphs. Wasn't the whole purpose of creating the Unicode standard so
+that we would not be limited by the few glyphs we could get into fonts? 
+
+It reminds me of "640K ought to be enough for anyone."
+
+Couldn't we at least offer the user the choice of subsetting the font?
+OpenOffice.org automatically subsets the Junicode fonts. Better yet, let
+the user embed the font, but give the user a warning about file size.
+
+I left Windows and Adobe because I was tired of software that decided
+things for me. 
+
+%3cjohn jason>
+I filed a feature request a couple days ago. Just now I received notice
+that it had been marked closed and resolved.
+
+It turns out that if you go into File > Preferences > Fonts and uncheck
+the Subset box, Scribus will embed the fonts. I just tried it and it
+works. So now I'm doing a happy dance again. :)
+
+However, there are some things I don't understand. The check box for
+Subset was marked for all my fonts, yet the export as PDF dialog box
+did not offer an option to subset; the only choices are embed or
+outline. Also, why would unchecking the Subset box make Scribus embed
+the fonts? There are some things here that don't make any sense to me.
+!!Printing alignmenterror 
+
+%3cpaul>
+I recently upgraded from Linux Mint 6 Felicia to Mint 8 Helena. After installing Scribus from the synaptic manager and running it, I found that many of my pre-saved templates cannot print correctly.
+Specifically the top 2-3 cm are missing and the print starts and ends "high".
+As most of my printing is for A4 "16 sticky Labels sheet" labels and double CD sticky labels this is obviously a problem I don't need.
+As a trial, I dl'd the latest version, by adding the preferred repository, and updated to v. 1.3.3.14 Jan 2010 build. Same error.
+All other programs and applications print fine.
+These labels were printing fine withe older version of Mint, bt I don't know if it is the Ubuntu Karmic Koala build that is the prob or Mint or Scribus.
+
+%3cjoe>
+When you Export to PDF, go into the options, select Font and tell it to embed the fonts.
+
+%3cjohn>
+AFAIK a type 1 font can have either pfa or pfb files and either afm or 
+pfm files.
+
+%3cfranz>
+pfa and afm are the ASCII equivalents to the pfb and pfm pair.
+
+%3cjudy>
+A .pfa file is a PostScript Type III font. Back when Adobe kept its
+proprietary Type 1 font format specs tightly held, it also issued a
+Type III specification. Other type foundries were limited to
+producing Type III PostScript fonts. Type 1 is more efficient and
+Type III fonts tend to be larger. Type III fonts cannot be hinted.
+They can have decorative elements like shadings that Type 1 fonts
+cannot. Once Adobe released the Type 1 standard, Type III fonts fell
+out of favor.
+
+A .pfm file is a Windows font metrics file. What are needed for Type
+1 fonts are a .pfb (outlines) and an .afm file (metrics, glyph
+names, kerning information). I don't know whether Linux uses a
+Windows pfm file at all. I think Linux can fake an afm file, but for
+the best quality you need the .afm that goes with the font.
+
+%3cjohn jason>
+A feature request has been entered:
+
+http://bugs.scribus.net/view.php?id=9510
+
+
+!!Margins and printing
+
+%3cgreg>
+If things were printing Ok before with the same version of Scribus, the problem may lie outside of Scribus, perhaps with CUPS. Check your settings in CUPS for you printer(s).
+
+Are you printing directly from Scribus or from a PDF viewer?
+
+I presume you've checked Print Preview to make sure that looks Ok.
+
+You also might try using an alternative printer command:
+
+lpr -Pyourprintername
+
+There has been a problem in Fedora for the last several versions in which I have to use the alternative printer command, and I believe you can add offsets as needed. This doesn't apply to Adobe Reader.
+
+A final thing to try might be the scribus-ng version to see if it does the same thing.
+
+!!Setting the margings correctly
+
+%3cjane>
+I cannot get the margins to set up properly with Scribus.  I have already posted this problem and was advised to print via PDF.  This worked with my old printer, now I have a new HP C4680, and when making/printing greeting cards, no matter how far I put my illustrations to the right hand margin, they still print off center, way to the left, even with PDF.  I now have my illustrations completely off the page, in order to try to print properly, and have to do dozens of fast drafts before I can get this to print right., solely by trial and error.
+
+%3cgreg>
+It sounds like you're printing directly from Scribus. Try making a PDF and printing from Adobe Reader or other PDF viewer. 
+
+%3cjane>
+Thanks for the response.  I am printing from PDF and not from Scribus.
+I have been playing around with settings for X,Y in properties panel,
+and I think that the problem arises from my settings there.  I am doing
+greeting cards (a real newbie) and the cards are laid out on right hand
+side of landscape, A4.  When I set the basepoint to the right side of
+the paper, it seems to print (in PDF) more accurately and in accordance
+with what the monitor is showing.  So I think that I need to understand
+the X and Y properties better.
+
+!!Scribus Templates
+
+%3cken>
+Someone said that recent versions of Scribus have "a zillion" templates. Can
+someone tell me where they are hiding?
+
+%3cgreg>
+The templates are happening in 1.3.9svn, soon to be released as 1.3.9-not-svn, so you won't have long to wait.
+
+%3cken>
+I am also wondering if the Scribus book will be updated in the near future
+to reflect the newer versions.
+
+%3cgreg>
+There is a new version planned some time after the release of 1.4. In the meantime, you should notice some updates in the online manual to reflect new capabilities and other changes. 
+
+%3cdenise>
+I'm new to Scribus as of last week.  I did the download (version 1.3.3 .4 or
+something like that) and ordered the manual.  Does someone know how out of
+date this manual is?
+
+%3cchristoph>
+In terms of reflecting the capabilities of the stable version (1.3.3.14) it's 
+completely up to date.
+
+
+!!Feature Request
+
+%3cian>
+I'm having problems with Story Editor crashing Scribus all the time (Ver 1.3.8) - and have reported this on this list. The reply was to rather work in an external editor (ie OpenOffice Word). I have been doing this and for general editing there are some benefits I find.
+
+Then a thought occurred to me.
+
+When working with Graphics in your document you can link the "Edit Graphic" option, from a right-click, to whatever Editor you want. And this works VERY well!! Why not do the same for "Editing Text"? I'm not meaning to get rid of Story Editor completely, although it might be an option, but I feel that a link like this would prove very useful to a lot of users. Right-click on Text Box, select Edit and you are in your WP. Do your text complete with all fonts, and other attributes and Save and it's all in the Text Box!!
+
+%3ca.l.e>
+external edition of images and text are very different beasts...
+
+on the one side, an image is just linked as is in the scribus document. reloading it from an external file is an easy task.
+
+on the other side, text is included in the scribus file itself and gets transformed by scribus. some of the formatting applied by scribus are not supported by the word processors, so a round trip scribus - oo.org - scribus (as an example) is a hard task to support.
+
+... what we need, probably, is a new story editor... if possible, one which can work indipendently from scribus itself.
+
+!!"Edit Image..." for vector graphics
+
+%3cjan>
+My question: The function "Edit image..." is working with GIMP and
+Scribus very well.
+Is their any possibility, to implement a similar function for vector graphics?
+A connection to e. g. Inkscape would be very useful.
+
+%3cgreg>
+One thing to be aware of is that you can do at least some vector editing 
+inside of Scribus. Click on your graphic, go to Properties > Shape, and 
+click the edit button. Typically, a complex vector graphic is a 
+collection of individual items which are grouped.
+
+%3cchristoph>This is a bit complicated from a technical perspective. If you import a vector 
+file, the vector data will be converted to native Scribus objects, losing 
+every relation to the original file.
+
+This approach, obviously, has some advantages, the major ones being 1) the 
+ability to edit an imported drawing inside Scribus and 2) the import of all 
+colours used in the original.
+
+Of course there are also downsides, and you mentioned one of them: the 
+impossiblity to synchronise a vector drawing with the original. Another 
+disadvantage is that vector drawings are imported as groups of objects 
+(because that's what they are), which means text flow around them won't work 
+directly.
+
+A solution might be to import vector drawings as images into image frames, 
+i.e. rasterise them, as we already do with EPS and PDF files. Since 1.5svn can 
+be compiled against GraphicsMagick, this might be an option for some vector 
+formats in the future (SVG, WMF). Unfortunately, Scribus (especially 1.5svn) 
+also provides import filters for many other formats, which are not supported 
+by GraphicsMagick, so someone would have to write a rasteriser for these 
+formats (e.g., AI, XAR, WPG, DRW). Any help would be welcome, but since there 
+are so many other tasks with higher priorities, someone from outside the core 
+development team would have to tackle this. Such a feature would also have to 
+deal with various colour models, colour spaces and spot colours in a drawing, 
+so this isn't really trivial.
+
+
+!!X and Y and basepoint
+
+%3cjane>
+I am having trouble with Scribus printing.  I am doing greeting cards, 
+and find that the margins and spacing I see on my display do not convert 
+properly to my printer.  I have had this issue for some time, and have 
+learned to export and print only from PDF, etc.  When playing around 
+with this some more, I notice that the setting of the basepoint changes 
+the way the cards are printed, even though I see no change to position 
+of graphics or text on my screen.  Can someone explain exactly what 
+basepoint does?  For example, when I am doing greeting cards, I am using 
+my own template for printing on the right side of A4 set to landscape.  
+As long as basepoint is clicked for the right side (right top or right 
+bottom does not seem to make a difference) it appears that my printing 
+is closer to what I see on the screem.  If basepoint is clicked for the 
+left side (or centre) then I lose half the graphic off the right side of 
+the paper.  As it is, I have to print a number of drafts in order to get 
+the position of the graphics correct.  I would like to be able to do 
+this more accurately.
+
+%3cgreg>
+The basepoint is simply the reference location for the information in 
+X,Y,Z in Properties. Changing the basepoint should not change the 
+position of the frame itself, so something is not right. Since I've 
+never seen such behavior, it's hard to know what is going on.
+
+You might try uploading the file to bugs.scribus.net to see if others 
+see the same issue with it.
+
+%3cbill>
+I also occasionally do US letter size cards, two up in landscape view and
+have had the same problem with what I set-up on the screen not printing
+accurately, either directly from Scribus or a PDF. The entire design was
+shifted to one side approximately 1/4 inch when printed.
+The solution I found was to Export the file as an Image, which Scribus saves
+as a PNG. (File/Export/Save as Image). This gives me very good
+screen-to-paper reproduction and accurate color reproduction. I do still
+have to make minor adjustments, but nothing as drastic as before. I'm using
+Scribus 1.3.7 on a Mac running 10.5.8. The cardstock I use is Avery 8315
+with my own "template".
+
+!!editing master page & display of page #
+
+%3cjerry>
+I can create and edit a master page. But I can't leave the master page 
+to see the effect on a regular page, i.e., there is no command I have 
+found that allows me to go from the master page back to the regular 
+page.  The workaround I use is to save; exit the file; reopen the file. 
+Needless to say, this is not fun when I am trying to adjust something 
+and check the results.
+
+The specific problem--I have page number set in the lower right of the 
+right-hand pages, and can only see the leftmost digit, i.e., the number 
+33 displays as "3". Trying to figure out the tabs etc. to correct.
+
+%3cjohn jason>
+I am guessing you are using version 1.3.3.14. I say that because in
+that version and earlier versions you had to put two page numbers on
+the master page if your pages were going to be greater than 9. In later
+versions this was fixed so it needs only one page number field on the
+master page, regardless of how many pages your document has.
+
+%3cjohn jason>
+Are you aware that you can install 1.3.8 and run it alongside 1.3.3.14?
+Installing 1.3.8 does not remove 1.3.3.14, so you can launch either one
+independently. I recommend you install 1.3.8 and take it for a spin. It
+has lots of new features and might solve your problems. 
+
+But, because 1.3.8 is still not officially a stable version, save often.
+Also, use Windows Explorer to make a copy of the files you created in
+1.3.3.14 before opening them in 1.3.8. Version 1.3.8 can open 1.3.3.14
+files, but not the other way around. And 1.3.8 has an autosave feature
+that might overwrite your 1.3.3.14 file, making it impossible to open
+it in 1.3.3.14. So make a copy of the 1.3.3.14 file and open the copy
+in 1.3.8, just to be safe.
+
+!!"is not in an acceptable format"
+
+%3callen>
+been working on a magazine for two weeks
+
+went to open it and now I get a warning that says "magazine file.sla is not  
+in an acceptable format" fatal error
+
+I used scribus 1.3.8
+
+%3cgreg>
+We need some clarification, Allen.
+You say "I used scribus 1.3.8" but the info below says 1.3.3.13
+
+You will not be able to load a file saved with 1.3.8 into 1.3.3.13, but 
+you can load a 1.3.3.13 file into 1.3.8...
+
+Load your file into Notepad and check the second line of the file, that 
+starts with %3cSCRIBUSUTF8NEW Version="">, which should have the version 
+number of the file between the quotes.
+
+%3chenry>
+If you have both versions on your computer, it's probably a matter of you double clicking on your sla file and Windows thinking that's associated with the older version. Either change the association, or right click on the sla file and use Open with... to select the correct scribus version, or open scribus 1.3.8 from the start menu and then open your file from there.
+
+%3cgreg>
+I checked the file you uploaded to bugs.scribus.net, and it's not a 
+plain text file, but some sort of binary file...
+
+!!A new stable edition
+
+%3cjohn>
+Many of our newbie users are using 1.3.3.14 and also 1.3.8.   They are 
+getting caught in the format change that took place months ago. 1.3.8 
+is pretty stable. Heck 1.5.0 is pretty stable. But people continue 
+with 1.3.3.14 because it is the latest officially "stable" edition. 
+
+Therefore I suggest the following renumbering:
+When 1.3.9 comes out maybe next week designate it as 1.4.0 instead and 
+declare it to be stable. Get the major distributions, Debian etc. to 
+offer it instead of 1.3.3.14. When the "real" 1.4.0 is finished next 
+year name it 1.4.1.
+
+This way we can all be using the same version. Newbies won't be 
+misdirected to an antique version that  knowledgeable Scribus users 
+don't bother with any more.  And the issues that only arise from use 
+of 1.3.3.14 won't be with us.
+
+%3crob>
+I think that this is an excellent suggestion.  Many conservative system administrators won't use a dot-o release anyway as they view it as "unstable" (regardless of what the developers say).
+
+Renumbering might also help to reduce confusion amongst regular users.  By renumbering 1.3.9 to 1.4.0, you could differentiate it from the 1.3 series.  This would leave you with:\\
+1.3: Stable, Deprecated\\
+1.4.0: Release Candidate\\
+1.4.1: Stable\\
+1.5: Development
+
+Still not ideal, but easier to wrap your head around than the current scheme.
+
+!!Verifying CMYK
+
+If I set up Scribus with a CMYK palette,
+activate color management, 
+insert an RGB format jpg  file in a graphics frame, 
+export the file to PDF using a SWOP icc file,
+ will the jpg image in the output PDF still be in RPG format or will 
+it be converted to CMYK equivalent?
+
+%3ccalcyum>
+This is the job of offset ICC profiles to convert in CMYK, so don't worry.
+Nevertheless, you need to have a strong color management, i.e activating 
+the output preview in both Gimp and Scribus, both set on your SWOP 
+profile. Be careful with this profile too: it's made to print on US 
+printers, and doesn't manage a good TAC.
+!!can't install scribus: get error message: not valid win32 application
+
+%3craj>
+Hi, I'm trying to install scribus on windows vista, using the latest version  
+1.3.3.1.4 but get the error message "...is not a valid Win32 application" I  
+tried to install the latest ghost script aswell and got the same error  
+message. Is there a newer version for vista and why is it not installing,  
+please.
+
+%3cfrank>
+What is the exact name of the program that you downloaded?
+
+Scribus is available for several different operating systems.  Be sure you have
+downloaded the right one for what you're using.
+
+%3craj>
+Hi Frank, I think i did download the correct type. I downloaded 
+"scribus-1.3.3.14-win32-install.exe" for windows vista. I have the home premium 
+edition. Is this the right one, can you give me a link to the right one if this 
+is not it, please.
+
+!! Date Insertion
+
+%3cdavid>
+I need to insert the current date into the newsletter I am editing.  I
+would preface it with "Printed on" then the current date is inserted.
+I am usually up until the early morning and would like to have this
+done automatically.  Is there a feature similar to "Page Numbering"
+that would insert the current date.  I have checked the Wiki to no
+avail.
+
+%3cgreg>
+I think this is at least an intellectually interesting question, even 
+though many if not most would wonder how much bother manually entering 
+the date might be. But let's assume you want to do this many times, and 
+you're not such a good typist.
+
+Here are a couple of ideas, only the first of which could be used with 
+1.3.3.x Scribus.
+
+1. In your .bashrc file, create an alias, ie, a custom command you can 
+use in bash:
+
+alias datefile='date +"Printed on %25B %25d, %25Y" > date.txt'
+
+so then, if I type in a terminal 'datefile' (without the quotes), today 
+this puts into the file date.txt the following string:\\
+Printed on November 22, 2010
+
+Now, in Scribus, inside some text frame I can either Get Text or Append 
+Text and load this file.
+
+2. If you were using 1.3.8, you might put in your Scrapbook a render 
+frame for LaTeX, containing either of the following 2 lines:
+
+\bf{Printed on \today}
+
+or
+
+\sffamily{\bfseries{Printed on \today}}
+
+This puts today's date in a bold serif font (first choice) or bold sans 
+font (second choice). The nice thing about this one is that it will 
+always have today's date when you make the PDF. The downside is that if 
+you pull up the SLA file later it will have the date you load the file 
+again, not the day you made it.
+
+!!Scripter and Preferences
+
+%3colivier>
+Is it possible to get the preferences through the scripter?
+Like the default unit when you want to create a new document, or the
+color profiles if you want to do color conversions.
+
+%3cowen>
+Under Document Commands there is;
+
+getUnit(...)       getUnit() -> integer (Scribus unit constant)
+
+Returns the measurement units of the document. The returned value will
+be one of the UNIT_* constants: UNIT_INCHES, UNIT_MILLIMETERS,
+UNIT_PICAS, UNIT_POINTS.
+
+Under Printing there is useICC which might be of interest to you.
+
+The scripter API is very extensive and worth perusing.
+
+%3colivier>
+The thing is I'd like to create a new document with the user's default
+unit. getUnit() is available only when the document is already created.
+
+And for the profile question, I want to import CIE-Lab colors as RGB or
+CMYK in the user's color space (or it doesn't really make sense...).
+
+%3cgreg>
+Since changing the units after document creation is trivial, it's hard 
+to see a strong need for this.
+
+Furthermore, in any script which performs a number of operations with 
+position and size of items, the python would be more complex to allow 
+for the various units which might exist in the document created.
+
+You could always get the user's feedback with a valueDialog to choose 
+the units when the document is made, with the default being the most 
+likely possibility in your estimation.
+
+%3colivier>
+If it's that trivial, then there's no point in having that preference at
+all...
+
+Since extension scripts are supposed to work inside the application, it
+seems rather obvious to me they need to take in account the preferences
+that lead all other parts of the application... Or maybe I just didn't
+get the point...
+
+%3cgreg>
+I don't know, maybe you don't.
+If you look at various generic scripts, several will begin with an 
+existing document, record the units, switch to whatever units are needed 
+for the various dimensions of the script and then at the end switch back 
+to the original units.
+
+So make a one-page doc with your units, then run a script using haveDoc, 
+etc, switching units as needed, make more pages as needed, then switch 
+units back if needed.
+
+Plan B: make the doc with some arbitrary units, then either let the user 
+switch units after the script runs, or give them a dialog to choose and 
+switch for them.
+
+In the end, you may wish that this item of the preferences was 
+accessible, but it's not. If that is some sort of show-stopper or upsets 
+you a great deal, we're sorry.
+
+%3ca.l.e>
+personally, i agree that there should be a way to create a document in
+the users units.
+
+i would say more: each document created should be in the users preferred
+unit.
+
+if the script wants to have a control on the current unit it has to
+change it and set it back when it's finished.
+
+imo, it's a bug if the unit set the in the preferences is not used when
+creating a new document by the scripter.
+
+i'm not sure whether the values set in the preferences should be read by
+the scripter. but the scripter should use those values by
+default when creating new elements, be able to get the current
+value, change it and set it back to the value preferred by the user.
+
+%3ca.l.e>
+may i ask you then which unit should the script use if the programmer has not specified one?
+
+must the programmer specify the unit if no document is open? does it crash otherwise?
+
+%3cgreg>
+yes, you must specify this item in the newDocument command -- there is 
+no UNIT_DEFAULT value.
+
+afaik, your script will crash if you leave this out.
+
+%3ccraig>
+Scribus should default to points unless the user specifies ( should, not sure if it requires that paramete now)
+
+%3colivier>
+let's go back to the original subject ;-)
+
+Question 1:\\
+I'm thinking of something like configurable templates where the users
+could adjust some measurements. It would be more efficient if the user
+was presented these measures in its favorite unit... isn't it?\\
+Is there a way to currently achieve this?
+
+Question 2:\\
+I'd like to allow users to import swatches through SwatchBooker. Many
+spot colors are defined in the Lab color space, which isn't available in
+Scribus (yet). So I need to convert them to RGB or CMYK. Since Scribus
+supports color management, it would be stupid not to take that in
+account when converting...\\
+Is this currently in the field of possible things through the scripter?
+
+%3cgreg>
+Answer 1-1:
+
+There is no current value such as UNITS_DEFAULT in scripter, so you must 
+work around this.
+
+Answer 1-2:
+
+Possible work arounds:
+# use some arbitrary unit, let the user switch later (and give him a 
+messageBox to remind him that the units are ...)
+# set up a valueDialog to let the user choose units
+# tell the user how to change the script to his liking to indicate his 
+favorite units, then the rest of the script takes it from there, and he 
+has his own customized script.
+# create a family of scripts, such as template_points.py, 
+template_mm.py, each of which does this for the user.
+
+Again, if you are going to make a script which can handle a variety of 
+page units, these other tweaks are rather trivial by comparison.
+
+!!Scripter and Translations
+
+%3colivier>
+Is it possible to use Scribus' translations ?
+
+2 use cases :
+* Making Rob's DockWidgets script
+%3chttp://www.oak-tree.us/2010/08/25/scribus-dockwidgets/> working in
+languages other than English. Henning's solution
+%3chttp://www.opensubscriber.com/message/scribus@lists.scribus.info/14488156.html>
+doesn't seem to work...
+* Creating a dialog using strings commonly used in Scribus, like
+"Height", "Width"
+
+
+!!Scribus and Gimp 2
+
+%3cMårten>
+I have downloaded Gimp 2 for use with my Scribus. But when I try to edit  
+images I get the message: Gimp 2 is missing! Are there any default settings I  
+hav to do in any of the programs or both to make Gimp 2 work i Scribus?
+
+   About your Scribus program:\\
+     Version: 1.3.3.14\\
+    Your operating system and CPU:\\
+     Type: Windows\\
+     Version: Win 7 64 bit
+
+%3chenry>
+File => Preferences\\
+External Tools (on left about 2/3 down)\\
+Image Processing Tool, Name of Executable,\\
+C:/Program Files/GIMP-2.0/bin/gimp-2.6.exe (or whatever is correct on your system)
+
+!!Please publish Scribus 1.3.9 too for MacOS X, 10.4 + G4 processor
+
+%3cgunter>
+it's great news that version 1.3.9 will be published shortly !
+
+Please publish a .dmg file for MacOS X, 10.4, and a G4 processor, too !
+
+Giving the info on compiling Scribus for 1.3.9 from the sources were most helpful too, especially, if no .dmg file could be made available :
+
+See for an example :
+
+http://docs.scribus.net/index.php?lang=en&page=install5 .
+
+!!What kind of file can I edit in Scibus
+
+%3cMichael>
+Hi there. I'm brand new to Both Scribus and desktop publishing. (so
+I apologize for the newbie Questions)\\
+My question/ situation is this: I have a newsletter layout thats essentially
+ready for printing in a MS .pub file format. I got reading as far as finding
+out Scribus doesn't, and likely will never be compatible with these files,
+however, Ive found some nifty online file converters which as far as I can
+see, work pretty good with perhaps no big strings attached.
+
+I managed to convert it to a number of different formats, including Open
+office draw and even a .tiff file. Still though Scribus doesn't seem to want
+to open either of the files. I'm sure I'm not doing this right.
+
+Essentially I would like to make these files editable in Scribus and save
+them in a format that they can be continually edited and updated using
+Scribus so that we no longer have to worry about proprietary software (like
+MS pub.)
+
+All I really need to edit in the files are some text (updating a few dates)
+as well as perhaps adding or moving an image or two. Any suggestions would
+be greatly appreciated. In the meantime Ill start by checking out some
+tutorials and getting started with what looks to be a very powerful (a bit
+intimidating) program.
+
+%3cjohn jason>
+You didn't mention what version of Scribus you are using or what
+platform you are using it on. That will help in getting accurate
+answers to questions.
+
+You also didn't say how big the existing document is. If it is small (a
+few pages) I have found that it is easier just to recreate it in
+Scribus, especially if I have the original created in some other
+program. I can always copy and paste the text in from the other
+program, and I can re-insert the graphics. Conversion to other formats
+usually requires so much cleanup that it is no more work just to do it
+over. 
+
+Regarding the formats you converted to, I have never had a TIFF that
+Scribus would not open, but there are lots of variations in the TIFF
+format. Also, a TIFF file will not be editable, as it is a raster
+image, so maybe TIFF is not what you want. If you got it into OOo Draw,
+is the text still editable? Graphics intact? Then try to save it as an
+EPS and import the EPS into Scribus.
+
+Learning Scribus will take a while. I usually find that I learn a
+program best by creating small projects at the beginning. This gives me
+a sense of accomplishment, and it also ensures that I will learn the
+parts of the program that are most important to me first.

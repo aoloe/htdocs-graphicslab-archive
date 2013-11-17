@@ -1,0 +1,25 @@
+(:title Scribus Arcs:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!Scribus15]](:title Scribus Arcs:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1294588800:)
+(:entryauthor:ale:)
+(:entrytitle:Scribus Arcs:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus, Scribus15:)
+[[#blogit_entrybody]]After the [[http://ospublish.constantvzw.org/news/scribus-re-loaded|Paris meeting]] last November, the development of Scribus has shown lot of fresh energy. Several long standing bugs have been fixed, long waited features have been implemented, a new [[http://www.scribus.net|Website]] is being set up (already online, but lot of details still to clean up), the Wiki is being recategorized... and -- finally -- the team seems to come closer and closer to release Scribus 1.4.
+
+One example? This week Franz has added a [[http://bugs.scribus.net/view.php?id=4717|feature request]] Christoph has filled four years ago: Arcs.
+
+Attach:{Blog.Scribus-Arcs$FullName}/scribus15_arcs.png
+
+The new tool is still a bit rough, but it's already usable!
+
+Now, we only have to wait for somebody coming up with a script to play Pacman inside of Scribus...
+
+Attach:{Blog.Scribus-Arcs$FullName}/scribus15_arcs_pacman.png
+
+... and we certainly will get one to draw Pies!
+
+Attach:{Blog.Scribus-Arcs$FullName}/scribus15_arcs_cake.png[[#blogit_entrybodyend]]

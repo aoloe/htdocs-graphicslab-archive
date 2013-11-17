@@ -1,0 +1,67 @@
+(:title Export all text:)
+(:title Export all text:)
+(:title Export all text:)
+(:title Export all text:)
+(:title Export all text:)
+(:title Export all text:)
+(:title Export all text:)
+(:title Export all text:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!Scribus14]], [[!Scripter]](:title Export all text:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1295086020:)
+(:entryauthor:ale:)
+(:entrytitle:Export all text:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus14, Scripter, Scribus:)
+[[#blogit_entrybody]]Peter just added Greg's [[http://wiki.scribus.net/canvas/Export_all_text|Export all text]] script to the repository of the official Scribus scripts: this means that the script will be distributed with the Scribus code and you won't have to look for it in the [[http://wiki.scribus.net/canvas/Category:Scripts|Wiki]] anymore.
+
+This is very good news since it's a function many people keep asking for in the Scribus IRC channel (irc://irc.freenode.net/scribus|) and on the [[http://lists.scribus.info/mailman/listinfo/scribus|mailing list]].
+
+But there is another reason why, this script deserves to to be more popular: It teaches the basics to everybody wanting to automate specific editing and formatting task in a Scribus document.
+
+Two snippets are particularly interesting. The first one shows how to go through each page of the document and get each item out of it:
+(:source lang=python:)
+page = 1
+pagenum = scribus.pageCount()
+content = []
+while (page %3c= pagenum):
+    scribus.gotoPage(page)
+    d = scribus.getPageItems()
+    for item in d:
+        // do something
+    page += 1
+(:sourceend:)
+
+The second snippet illustrates how to discriminate among different types of frame and how to get the content from text and image frames:
+(:source lang=python:)
+content = []
+d = scribus.getPageItems()
+for item in d:
+    if (item[1] == 4):
+        contents = scribus.getAllText(item[0])
+        if (contents in content):
+            contents = 'Duplication, perhaps linked-to frame'
+            content.append(contents)
+        elif (item[1] == 2):
+            imgname = scribus.getImageFile(item[0])
+(:sourceend:)
+
+By the way, the numbers behind each type seem no to be well documented and are hidden in [[http://scribus.net/websvn/filedetails.php?repname=Scribus&path=%252Fbranches%252FVersion135%252FScribus%252Fscribus%252Fpageitem.h|@@scribus/pageitem.h@@]]... here they are:
+(:source lang=cpp:)
+enum ItemType {
+    ItemType1 = 1,
+    ImageFrame = 2,
+    ItemType3 = 3,
+    TextFrame = 4,
+    Line = 5,
+    Polygon = 6,
+    PolyLine = 7,
+    PathText = 8,
+    LatexFrame = 9,
+    Multiple = 99
+};
+(:sourceend:)
+
+Finally a short example showing how useful this script can be: last week, Jim came to the [[irc://irc.freenode.net/#scribus|Scribus IRC channel]], asked how he could add legends to each picture in his document, was told to look at the "export all" script and tweak it. He probably shook his head, but despite having no experience in programming he tried it out. With the help of the folks in the IRC channel and by reading the [[http://docs.scribus.net/index.php?lang=en&page=scripterapi|Scripter API documentation]], he came up with a Script that he will soon be sharing in the [[http://wiki.scribus.net|Scribus Wiki]] (currently, his biggest concern is which license to choose...)[[#blogit_entrybodyend]]

@@ -1,0 +1,48 @@
+#single-entry-view
+(:notitle:)
+(:if false:)[[#single-entry-view]](:if:)
+(:div9990 class="blogit-post":)
+(:div9999 class="blogit-meta-data-head":)
+!!!!! (:blogit-skin author pre_text='$[By] ' post_text=', $[on] ':){*$:entryauthor}(:blogit-skinend:)\
+%25blogit-date%25(:blogit-skin date fmt='long':){*$:entrydate}(:blogit-skinend:)%25%25(:if:) \
+(:blogit-skin edit pre_text='%25blogit-edit-link%25%25item accesskey="$[ak_edit]"%25' post_text='%25%25' page='{*$FullName}':)$[edit](:blogit-skinend:)
+(:div9999end:)
+(:div9991 class="blogit-post-body":)
+{*$:entrybody}
+(:div9991end:)
+(:div9999 class="blogit-meta-data-footer":)
+(:blogit-skin tags pre_text='!!!!!%25block blogit-tags%25$[Tags:] ' post_text='%25%25':){*$:entrytags}(:blogit-skinend:)
+(:blogit-skin commentcount status='{*$:entrycomments}' pre_text='!!!!!%25block blogit-comment-count%25' post_text='%25%25' group='{*$Group}' name='{*$Name}':) $[comment(s)](:blogit-skinend:)
+(:div9999end:)
+(:div9990end:)
+(:includesection "#comments-pagelist pagename={*$Name} group={*$Group} entrycomments={*$:entrycomments} divid=commentblock":)
+[[#single-entry-viewend]]
+
+#blog-summary-list-navigation
+
+Simple bullet list of blog titles.
+Parameters: more, blogid
+
+(:if false:)[[#blog-summary-list-navigation]](:if:)
+(:template each:)
+** [[{=$FullName} | {=$Title}]]%25%25
+(:template last:)
+(:if !equal "{$$more}" false:)** %25apply item class="no-dash"%25 [[Site.BlogList?blogid={$$blogid} | $[more...]]]
+(:if:)
+[[#blog-summary-list-navigationend]]
+
+
+#blog-summary-list-pagelist-navigation
+Parameters: blogid, count, status, more (include more link)
+
+(:if false:)[[#blog-summary-list-pagelist-navigation]](:if:)
+(:pagelist list="blogit" wrap=none fmt=#blog-summary-list-navigation {(bi_param count "{$$count}")}\
+  order=-$:entrydate\
+  $:entrytype=blog\
+  {(bi_param $:blogid "{$$blogid}")}\
+  {(bi_param $:entrystatus "{$$status}")}\
+  (:if equal {$bi_DisplayFuture} false:)if='date ..@{$Now} @{=$:entrydate}'(:if:)\
+  {(bi_param blogid "{$$blogid}")}\
+  {(bi_param more "{$$more}")}\
+:)
+[[#blog-summary-list-pagelist-navigationend]]

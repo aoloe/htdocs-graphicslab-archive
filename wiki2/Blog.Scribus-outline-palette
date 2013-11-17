@@ -1,0 +1,23 @@
+[[#blogit_pmmarkup]](:title Scribus: fine tuning complex pages with the outline palette:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1318537680:)
+(:entryauthor:ale:)
+(:entrytitle:Scribus: fine tuning complex pages with the outline palette:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]]The outline palette lets you browse through the items on a page, in a group and inside an imported the paths of an imported SVN picture.
+
+In normal cases clicking on a frame is the best way to edit it. But when the elements get very small, huge or are stacked on top of each other hitting the right one may be a hard task.
+
+you may also want to edit parts of a group (maybe a complex imported SVG) without having to first ungroup it. While you can press the alt key to select single parts of a group, this is not really practical for repeated tasks on a complex group!
+
+The outline palette has been there for a long time and was a tool real hackers have learnt to love! Jean-Luc &ndash; one of its most devoted user &ndash; asked for some improvements and Franz has had a ear for him and voilà:
+* the items are now grouped by layer
+* and when hovering an object you can get a preview of the element which can let you find much more faster.
+
+while there is a time out before the first preview popups, the other ones are almost instantaneous.
+
+one side effect is that while looking a this new feature i realized that there must be somewhere a method to get a bitmap preview of any item! (i checked: it's called...) We have to make it accessible through the scripter![[#blogit_entrybodyend]]
+

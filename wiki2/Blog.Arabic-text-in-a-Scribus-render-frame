@@ -1,0 +1,44 @@
+(:title Arabic text in a Scribus render frame:)
+[[#blogit_pmmarkup]][[!Arabic]], [[!Render frames]], [[!Scribus]][[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1317215700:)
+(:entryauthor:ale:)
+(:entrytitle:Arabic text in a Scribus render frame:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus,Render frames, Arabic:)
+[[#blogit_entrybody]]Despite some big efforts Scribus still does not support Arabic text... this could change soon, but -- as it often happens -- it will be there when it's ready... whatever that means.
+
+But, if you need to put some Arabic text into Scribus, there is a workaround: use a "render frame" and Latex.\\
+This won't allow you to create full books, since you can't link render frames, but it could help in some cases!
+
+First you will have to get the necessary packages. On a Debian system you will need to install:
+* Scribus 1.4RC5
+* texlive and textlive-lang-arabic
+
+Now, you can follow this thread in the Q&A site for TeX and Latex:\\
+http://tex.stackexchange.com/questions/8476/scribus-arabic
+
+The steps are quite easy:
+
+First add the support for Arabic text to the document embedded by typing the following command in the Fonts/Headers tab
+[@
+\usepackage{arabtex}
+\usepackage{utf8}
+@]
+
+Then put the Arabic text in the "Code" field. Since i have no -- really no! -- knowledge of Arabic, I took a post from another thread about this same topic (I checked with an automatic translator: it should be something related to this topic!):
+[@
+\begin{arabtex}
+\setcode{utf8}
+\setarab
+\RL{ ... put your text here ... }
+\end{arabtex}
+@]
+
+And this is what it will look like:
+
+Attach:{Blog.Arabic-text-in-a-Scribus-render-frame$FullName}/Arabic-text-in-a-Scribus-render-frame.png
+
+I can only hope that the result is somehow correct... and i hope that the space at the top right corner is an indent and not a rendering error![[#blogit_entrybodyend]]

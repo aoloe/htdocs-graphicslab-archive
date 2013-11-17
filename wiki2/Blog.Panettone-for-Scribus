@@ -1,0 +1,23 @@
+(:title Panettone for Scribus:)
+[[#blogit_pmmarkup]](:title Panettone for Scribus:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1294326900:)
+(:entryauthor:ale:)
+(:entrytitle:Panettone for Scribus:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]]One of the additions to Scribus 1.4 will be a lot of new Color Palettes... but one will be missing.
+
+While Christmas was getting closer and closer, I was wondering if we shouldn't at least have a Panettone Color Palette:
+
+Attach:{Blog.Panettone-for-Scribus$FullName}/panettone.png
+
+Somebody was faster than me: Olivier Berten has announced his new script @@Pantone.py@@, which runs inside of Scribus, has a nice interface and downloads the Colors directly from the Pantone website. [[http://www.selapa.net/scribus/|Check it out!]]
+
+Attach:{$FullName}/pantone_py.png
+
+Let's see who will be first to sue us: [[http://www.bauli.it/en|Bauli]] or [[http://www.pantone.com|Pantone]]?
+
+Buona Befana![[#blogit_entrybodyend]]

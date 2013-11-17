@@ -1,0 +1,19 @@
+version=pmwiki-2.2.18 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1.13) Gecko/20100916 Iceweasel/3.5.13 (like Firefox/3.5.13)
+author=
+charset=ISO-8859-1
+csum=
+ctime=1288993375
+host=95.152.70.43
+name=Grafiklabor.KollaborativeBuchWikiniKlaus
+passwdedit=id:ale,grafiklabor
+rev=4
+targets=Grafiklabor.101105KollaborativeBuchWiki
+text=[[Grafiklabor.101105KollaborativeBuchWiki|wiki]]
+time=1288994542
+author:1288994542=
+diff:1288994542:1288993450:=1d0%0a%3c [[Grafiklabor.101105KollaborativeBuchWiki|wiki]]%0a\ No newline at end of file%0a
+host:1288994542=95.152.70.43
+author:1288993375=
+diff:1288993375:1288993375:=
+host:1288993375=95.152.70.43

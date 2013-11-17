@@ -1,0 +1,109 @@
+(:title Adding a new Command to the Scribus Scripter:)
+[[#blogit_pmmarkup]][[!Scribus]], [[!Scripter]](:title Adding a new Command to the Scribus Scripter:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1294173060:)
+(:entryauthor:ale:)
+(:entrytitle:Adding a new Command to the Scribus Scripter:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus, Scripter:)
+[[#blogit_entrybody]]After having seen the [[Blog/Adding-a-sample-Command-to-the-Scribus-Scripter|architecture behind a Scripter Command]] will now add our first simple command to the Scribus Scripter.
+
+
+
+It will be called @@repeatText@@ and it will get the text in a frame and repeat it @@n@@ times.
+
+
+
+This command takes the number of repetitions and the name of the frame (optionally) as parameter, reads the content of the text frame and inserts  @@n@@ times the text into the frame.\\
+
+Probably a useless command, but it's almost a perfect one to understand how the Scripter can be enhanced.
+
+
+
+We will begin by registering the new command in @@scriptplugin.cpp@@ (which -- as all the other files we will modify -- is located in @@[scribus14/]scribus/plugins/scriptplugin@@):
+
+(:source lang=cpp:)
+
+{const_cast%3cchar*>("repeatText"), scribus_repeattext, METH_VARARGS, tr(scribus_repeattext__doc__)},
+
+(:sourceend:)
+
+We will add it right after the definition of @@setText@@ (which at the time of writing is at line 468).
+
+
+
+The command itself goes into the @@cmdtext.cpp@@ file (since it's related to the text handling). Before writing the function itself, we will have to define its header in @@cmdtext.h@@ (similarly to what we did in @@scriptplugin@@ we will add it right after the definition for @@setboxtext@@, which is the definition for the @@setText@@ command):
+
+(:source lang=cpp:)
+
+/*! docstring */
+
+PyDoc_STRVAR(scribus_repeattext__doc__,
+
+QT_TR_NOOP("repeatText(n, [\"name\"])\n\
+
+\n\
+
+Repeat the text of the text frame \"name\" n times.\n\
+
+If \"name\" is not given the currently selected item is used.\n\
+
+"));
+
+/*! Repeat text */
+
+PyObject *scribus_repeattext(PyObject * /*self*/, PyObject* args);
+
+(:sourceend:)
+
+
+
+In @@cmdtext.cpp@@ we can add the function which will contain the code for the command:
+
+(:source lang=cpp:)
+
+
+
+PyObject *scribus_repeattext(PyObject* /* self */, PyObject* args)
+
+{
+
+	Py_RETURN_NONE;
+
+}
+
+(:sourceend:)
+
+
+
+In order to avoid a warning @@‘scribus_repeattext__doc__’ defined but not used@@, we have to add our newly defined doc string (@@cribus_repeattext__doc__@@) to the @@cmdtextdocwarnings()@@ method at the end of @@cmdtext.cpp@@.
+
+
+
+Now, we are ready to do a first compilation of the code: it won't do anything (since we have not written any code) but it should not spit out any error, either.\\
+
+In the build directory for the scripter plugin (if you haven't defined differently, it's the directory where the source code is located) you can now run @@make@@ and cross your fingers.\\
+
+The output of @@make@@ should look similar to:
+
+(:source lang=bash:)
+
+Scanning dependencies of target scriptplugin
+
+[ 95%25] Building CXX object scribus/plugins/scriptplugin/CMakeFiles/scriptplugin.dir/cmdtext.cpp.o
+
+Linking CXX shared module libscriptplugin.so
+
+(:sourceend:)
+
+
+
+Now you're ready to do a @@make install@@ and start your Scribus!\\
+
+If you activate the Console in the Script menu, you can now type our new @@repeatText@@ command.
+
+
+
+In the next post (and last one for this series) we will implement the code for the @@repeatText@@ command.[[#blogit_entrybodyend]]

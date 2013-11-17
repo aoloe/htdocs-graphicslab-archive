@@ -1,0 +1,69 @@
+(:title Warming up for GSOC 2012:)
+[[#blogit_pmmarkup]][[!Scribus]](:title Warming up for GSOC 2012:)[[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1331978400:)
+(:entryauthor:ale:)
+(:entrytitle:Warming up for GSOC 2012:)
+(:entrystatus:publish:)
+(:entrycomments:open:)
+(:entrytags:Scribus:)
+[[#blogit_entrybody]]Scribus has been accepted for the [[http://www.google-melange.com/gsoc/homepage/google/gsoc2012|GSOC 2012]] and several guys (girls where are you?) are popping up and ask about how to get confident with the Scribus code.
+
+Here are some short facts to get you up and running.
+
+First: get the Scribus code and compile it!
+
+(:source lang=bash:)
+$ cd ~/src
+$ svn co svn://scribus.net/trunk/Scribus scribus
+$ cd scribus
+$ mkdir build
+$ cd build
+$ cmake -DCMAKE_INSTALL_PREFIX:PATH=/home/yourhome/bin/scribus -DWANT_DEBUG=1 -DWANT_GUI_LANG="en_GB;de;fr;it;en" ..
+$ make -j2
+$ make install
+$ cd ~/bin/scribus/bin
+$ ./scribus
+(:sourceend:)
+
+Before doing this: you will have to make sure that:
+* you have a working and modern Linux.
+* you have to pull all the dependencies: if your on Debian you can run @@apt-get build-dep scribus@@, for other distributions you will have to read the [[http://wiki.scribus.net/canvas/Building_SVN_versions_with_CMake#Getting_All_the_Things_You_Need|Getting All the Things You Need]] chapter in the Scribus wiki
+* you have a @@src/@@ and a @@bin/@@ directory in your home (which i will call "yourhome" in the rest of this article)
+
+Some remarks:
+* For your contributions you can also use Windows, OS X, or almost any other operating system; but for your first steps the easiest thing is Linux; believe me.
+* The repositories on Sourceforge are not all up to date. For now you should use our SVN repository, but for the GSOC project itself you will be able to use what you prefer (git, hg, ...).
+
+The second topic is: how to talk to "us"!
+
+"We" are mostly in Europe and have a normal day job keeping us busy during day hours. Even if some of us keep an eye on the @@#scribus@@ irc channel on Freenode for most of the CET day, the best time for a chat are CET evenings between 20:00 and 24:00.
+
+If you have a proposal to submit or questions that didn't get answered in the irc channel, please register to the [[http://lists.scribus.info/mailman/listinfo/scribus-dev|scribus-dev mailing list]] and post your question in there.
+
+Third: How to get your feet wet.
+
+On the one side you will probably be curious, to know what it's like to write code for Scribus and on the other side seeing how you program, will help us to choose among the GSOC candidates. We have a [[http://bugs.scribus.net|bug tracker]] where we have lot open issues (and even more closed ones!). Skim through them: you will get an idea of what are the hot topics.
+
+If you feel overwhelmed -- and it's likely that you feel that way after having had a look at the bug tracker -- here is a list of issues you could try to solve:
+
+* [[http://bugs.scribus.net/view.php?id=10541|Guides jumping around on mouse click]] (learning about the canvas)
+* [[http://bugs.scribus.net/view.php?id=10584|Keep insertion mode after inserting glyph]] (a bit harder)
+* [[http://bugs.scribus.net/view.php?id=10571|Some Edit Boxes trigger an action on every user keystroke]] (more Qt oriented)
+* [[http://bugs.scribus.net/view.php?id=10213|Horizontal scroll sometimes not there for main window]] (more GUI oriented)
+
+And once you have some code to show:
+
+(:source lang=bash:)
+$ svn diff filesyouhavechanged > myissue.diff
+(:sourceend:)
+
+and upload the diff file to the bug tracker!
+
+Finally: I wish you good luck with your application for GSOC 2012!
+
+
+P.S.: Ff you get a segmentation fault when launching Scribus, please install qt-config and change the theme used for the Qt apps.
+
+... and as a challenge to our GSOC candidates: you may want to look for the cause of it, fix it or get Scribus to notice that there is a problem and gracefully quit (not before having shown an alert indicating what the user should do)[[#blogit_entrybodyend]]

@@ -1,0 +1,34 @@
+(:title Creating Screencasts:)
+[[#blogit_pmmarkup]][[#blogit_pmmarkupend]]
+(:blogid:blog1:)
+(:entrytype:blog:)
+(:entrydate:1306535340:)
+(:entryauthor:ale:)
+(:entrytitle:Creating Screencasts:)
+(:entrystatus:draft:)
+(:entrycomments:open:)
+(:entrytags::)
+[[#blogit_entrybody]]* gtk-recordmydesktop (it's in debian testing)
+** if (like me) you're not using a desktop environment and don't have a panel to dock gtk-recordmydesktop during the recording, you can use recordmydesktop and use xwininfo to discover the size of the window to record (+the the status at the bottom)
+** recordmydesktop --windowid id_of_window --delay=n_seconds
+** xwininfo | grep -e Width -e Height -e Absolute
+* key-mon (from the .deb from the site)
+** add the window key
+** show only key combination
+* xpad (for "live subtitles")
+** change the background color and set the font to dejavu sans condensed 16
+** hide all decoration
+** one can write before starting two lines at a time, with two empty lines inbetween. and scroll through while recording the desktop (instead of typing during the screencast)
+** the width of note is 60 chars
+* pitivi
+** set at least 920 pixels in horizontal for enough quality on youtube / vimeo
+** one can add SVGs for the titles at the beginning and at the end + for annotations / subtitles! (warning: transparence is rendered as Black if there is no track behind!)
+** for youtube you should export the project in the webm format
+* i have a script using ffmpeg to convert from ogv to anmiated giv. in gnome there is byzanz to directly create an animated gif... or use winff which has ffmpeg inside and a gui!
+* show also recordmydesktop from ubunt and real gui!
+some general notes:
+* tl;dr... if there is no '''real''' need for it, keep your screencast short! (not more than 3 minutes)
+* if you can't be recorded in good quality (or if you're too nervous to talk like on televison) you should think about putting subtitles or notes instead!
+* ... there are a few other solutions for ubuntu (Desktop recorder + rRecordItNow)... and don't forget a setup with a photo camera!
+* There is a simple tool called "xrectsel" that you can use to select an area of the screen by drawing with your mouse, and it will print your selection coordinates which you can then use in ffmpeg. This tool comes as an auxiliary tool with the "FFcast2" bash script that wraps around ffmpeg's screencasting abilities (xrectsel must be downoaded from github and self compiled)
+[[#blogit_entrybodyend]]
