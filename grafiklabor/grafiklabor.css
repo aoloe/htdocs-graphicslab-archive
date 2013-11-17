@@ -1,0 +1,26 @@
+@font-face {font-family:DIN_OSP; src:url("DIN_OSP.ttf");}
+body {width:800px;}
+* {font-family:sans-serif;}
+img {border:none;}
+span.blue {color:#00007f;}
+h1 {font-family:DIN_OSP; font-size:3em; font-weight:normal; margin-top:0em;}
+h1 span {font-family:DIN_OSP;}
+h2 {font-family:DIN_OSP; font-size:2em; font-weight:normal; margin-top:1em;}
+h2 a {font-family:DIN_OSP; font-weight:normal; margin-top:1em;}
+h2 span {font-family:DIN_OSP;}
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 1em;
+  text-indent: -1em;
+}
+ul li:before {
+  content: "\2013 \0020";
+}
+
+
+
+#content {position:absolute; width:600px; margin-top:2em;}
+#sidebar {position:absolute; width:250px; left:620px; margin-top:2em;}
+#sidebar h2 {margin-top:0em;}
+
